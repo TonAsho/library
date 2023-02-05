@@ -1,11 +1,6 @@
 ---
 data:
-  libraryCategories:
-  - name: .
-    pages:
-    - icon: ':warning:'
-      path: help.cpp
-      title: help.cpp
+  libraryCategories: []
   verificationCategories:
   - name: .
     pages:
