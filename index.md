@@ -4,9 +4,6 @@ data:
   - name: .
     pages:
     - icon: ':warning:'
-      path: a.cpp
-      title: a.cpp
-    - icon: ':warning:'
       path: help.cpp
       title: help.cpp
   verificationCategories:
