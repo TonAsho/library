@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * @brief Graph Template(グラフテンプレート)
+ * @brief Graph Template
  */
 template< typename T = int >
 struct Edge {
