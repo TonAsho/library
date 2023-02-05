@@ -10,8 +10,8 @@ data:
   - name: template
     pages:
     - icon: ':warning:'
-      path: template/template.hpp
-      title: template/template.hpp
+      path: template/header.hpp
+      title: Header
   verificationCategories:
   - name: .
     pages:
