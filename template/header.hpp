@@ -1,4 +1,7 @@
 #pragma once
+/**
+ * @brief Header
+ */
 #include <algorithm>
 #include <cmath>
 #include <complex>
