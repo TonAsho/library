@@ -17,14 +17,13 @@ data:
     \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
     \ File \"/opt/hostedtoolcache/Python/3.11.1/x64/lib/python3.11/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../template/template.hpp:\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: template/template-yosupo-hpp:\
     \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
-    \ \"../../template/template.hpp\"\n#include \"../../math/cumulative-sum.hpp\"\n\
-    \nint main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n  \
-    \  rep(i, n) {\n        LL(x);\n        a.add(i, x);\n    }\n    rep(i,q) {\n\
-    \        INT(l, r);\n        cout << a.get(l, r) << endl;\n    }\n    return 0;\n\
-    }"
+    \ \"template/template-yosupo-hpp\"\n#include \"math/cumulative-sum.hpp\"\n\nint\
+    \ main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n    rep(i,\
+    \ n) {\n        LL(x);\n        a.add(i, x);\n    }\n    rep(i,q) {\n        INT(l,\
+    \ r);\n        cout << a.get(l, r) << endl;\n    }\n    return 0;\n}"
   dependsOn: []
   isVerificationFile: true
   path: tests/cumulative-sum.test.cpp

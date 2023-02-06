@@ -14,6 +14,9 @@ data:
   - name: template
     pages:
     - icon: ':warning:'
+      path: template/template-yosupo.hpp
+      title: Header
+    - icon: ':warning:'
       path: template/template.hpp
       title: Template
   verificationCategories:
