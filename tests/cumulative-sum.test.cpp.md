@@ -55,19 +55,19 @@ data:
     \ \"tests/cumulative-sum.test.cpp\"\n\nint main() {\n    int n, q; cin >> n >>\
     \ q;\n    CumulativeSum<ll> a(n);\n    rep(i, n) {\n        LL(x);\n        a.add(i,\
     \ x);\n    }\n    rep(i,q) {\n        INT(l, r);\n        cout << a.get(l, r)\
-    \ << endl;\n    }\n    return 0;\n}\n"
+    \ << endl;\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
     \ \"template/template-yosupo.hpp\"\n#include \"math/cumulative-sum.hpp\"\n\nint\
     \ main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n    rep(i,\
     \ n) {\n        LL(x);\n        a.add(i, x);\n    }\n    rep(i,q) {\n        INT(l,\
-    \ r);\n        cout << a.get(l, r) << endl;\n    }\n    return 0;\n}"
+    \ r);\n        cout << a.get(l, r) << endl;\n    }\n\n    return 0;\n}"
   dependsOn:
   - template/template-yosupo.hpp
   - math/cumulative-sum.hpp
   isVerificationFile: true
   path: tests/cumulative-sum.test.cpp
   requiredBy: []
-  timestamp: '2023-02-06 22:48:41+09:00'
+  timestamp: '2023-02-06 23:01:26+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: tests/cumulative-sum.test.cpp
