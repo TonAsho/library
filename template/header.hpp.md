@@ -35,9 +35,7 @@ data:
     \ vd = vector<double>;\nusing vvd = vector<vd>;\nusing vs = vector<string>;\n\
     using vvs = vector<vs>;\nusing vb = vector<bool>;\nusing vvb = vector<vb>;\nusing\
     \ pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nusing mii = map<int, int>;\n\
-    using mll = map<ll, ll>;\n#include <atcoder/all>\nusing namespace atcoder;\n\n\
-    int main() {\n    ios::sync_with_stdio(false); cin.tie(0); \n    \n    return\
-    \ 0;\n}\n"
+    using mll = map<ll, ll>;\n#include <atcoder/all>\nusing namespace atcoder;\n"
   code: "#pragma once\n/**\n * @brief Header\n */\n#include <algorithm>\n#include\
     \ <cmath>\n#include <complex>\n#include <cstdio>\n#include <iostream>\n#include\
     \ <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include <stack>\n\
@@ -64,14 +62,12 @@ data:
     \ vd = vector<double>;\nusing vvd = vector<vd>;\nusing vs = vector<string>;\n\
     using vvs = vector<vs>;\nusing vb = vector<bool>;\nusing vvb = vector<vb>;\nusing\
     \ pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nusing mii = map<int, int>;\n\
-    using mll = map<ll, ll>;\n#include <atcoder/all>\nusing namespace atcoder;\n\n\
-    int main() {\n    ios::sync_with_stdio(false); cin.tie(0); \n    \n    return\
-    \ 0;\n}"
+    using mll = map<ll, ll>;\n#include <atcoder/all>\nusing namespace atcoder;"
   dependsOn: []
   isVerificationFile: false
   path: template/header.hpp
   requiredBy: []
-  timestamp: '2023-02-05 22:46:14+09:00'
+  timestamp: '2023-02-06 14:48:19+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/header.hpp

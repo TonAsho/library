@@ -53,8 +53,9 @@ data:
   verifiedWith: []
 documentation_of: graph/graph-template.hpp
 layout: document
-redirect_from:
-- /library/graph/graph-template.hpp
-- /library/graph/graph-template.hpp.html
-title: Graph Template
+title: Segment Tree
 ---
+
+## 説明
+
+このファイルでは、……
