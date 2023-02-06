@@ -53,9 +53,9 @@ data:
   verifiedWith: []
 documentation_of: graph/graph-template.hpp
 layout: document
-title: Segment Tree
+title: Graph Template
 ---
 
 ## 説明
 
-このファイルでは、……
+グラフとテンプレートです。無向、有向グラフどちらも使えます。

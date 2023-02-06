@@ -5,11 +5,11 @@ data:
     pages:
     - icon: ':warning:'
       path: graph/graph-template.hpp
-      title: Segment Tree
+      title: Graph Template
   - name: template
     pages:
     - icon: ':warning:'
-      path: template/header.hpp
+      path: template/template.hpp
       title: Header
   verificationCategories:
   - name: .
@@ -19,12 +19,8 @@ data:
       title: example.test.cpp
 layout: toppage
 ---
-競プロ用のテンプレートです。
-
+## 競プロ用のテンプレートです。
 <br>
-
 バグってたらごめんなさい。
-
 <br>
-
 これから色々と追加していきます。

@@ -9,7 +9,7 @@ data:
   attributes:
     document_title: Header
     links: []
-  bundledCode: "#line 2 \"template/header.hpp\"\n/**\n * @brief Header\n */\n#include\
+  bundledCode: "#line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include\
     \ <algorithm>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <iostream>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <set>\n\
     #include <stack>\n#include <string>\n#include <vector>\n#include <climits>\n#include\
@@ -65,15 +65,15 @@ data:
     using mll = map<ll, ll>;\n#include <atcoder/all>\nusing namespace atcoder;"
   dependsOn: []
   isVerificationFile: false
-  path: template/header.hpp
+  path: template/template.hpp
   requiredBy: []
-  timestamp: '2023-02-06 14:48:19+09:00'
+  timestamp: '2023-02-06 16:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: template/header.hpp
+documentation_of: template/template.hpp
 layout: document
 redirect_from:
-- /library/template/header.hpp
-- /library/template/header.hpp.html
+- /library/template/template.hpp
+- /library/template/template.hpp.html
 title: Header
 ---
