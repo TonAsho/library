@@ -9,6 +9,7 @@ int main() {
         LL(x);
         a.add(i, x);
     }
+    a.build();
     rep(i,q) {
         INT(l, r);
         cout << a.get(l, r) << endl;
