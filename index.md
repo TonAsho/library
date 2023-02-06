@@ -10,13 +10,8 @@ data:
     pages:
     - icon: ':warning:'
       path: template/template.hpp
-      title: Header
-  verificationCategories:
-  - name: .
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: example.test.cpp
-      title: example.test.cpp
+      title: Template
+  verificationCategories: []
 layout: toppage
 ---
 ## 競プロ用のテンプレートです。

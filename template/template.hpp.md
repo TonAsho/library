@@ -72,8 +72,9 @@ data:
   verifiedWith: []
 documentation_of: template/template.hpp
 layout: document
-redirect_from:
-- /library/template/template.hpp
-- /library/template/template.hpp.html
-title: Header
+title: Template
 ---
+
+## 説明
+
+僕の競プロ用ヘッダーです。
