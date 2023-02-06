@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: tests/cumulative-sum.text.cpp
-    title: tests/cumulative-sum.text.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: tests/cumulative-sum.test.cpp
+    title: tests/cumulative-sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u8A08\u548C)"
     links: []
@@ -31,11 +31,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/cumulative-sum.hpp
-  requiredBy:
-  - tests/cumulative-sum.text.cpp
+  requiredBy: []
   timestamp: '2023-02-06 22:22:02+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - tests/cumulative-sum.test.cpp
 documentation_of: math/cumulative-sum.hpp
 layout: document
 title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"

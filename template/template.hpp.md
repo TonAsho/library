@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: tests/cumulative-sum.text.cpp
-    title: tests/cumulative-sum.text.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: tests/cumulative-sum.test.cpp
+    title: tests/cumulative-sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Header
     links: []
@@ -69,11 +69,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy:
-  - tests/cumulative-sum.text.cpp
+  requiredBy: []
   timestamp: '2023-02-06 16:28:17+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - tests/cumulative-sum.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

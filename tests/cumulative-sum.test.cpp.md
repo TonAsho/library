@@ -1,21 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':x:'
     path: math/cumulative-sum.hpp
     title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
-  - icon: ':warning:'
+  - icon: ':x:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
-  attributes:
-    links:
-    - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"tests/cumulative-sum.text.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "#line 1 \"tests/cumulative-sum.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\
     \n#line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include <algorithm>\n\
     #include <cmath>\n#include <complex>\n#include <cstdio>\n#include <iostream>\n\
     #include <map>\n#include <numeric>\n#include <queue>\n#include <set>\n#include\
@@ -50,7 +48,7 @@ data:
     \ build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i\
     \ - 1];\n    }\n  }\n  T get(int r) const {\n    if(r < 0) return 0;\n    return\
     \ data[min(r, (int) data.size() - 1)];\n  }\n  T get(int l, int r) const {\n \
-    \   return get(r) - get(l);\n  }\n};\n#line 4 \"tests/cumulative-sum.text.cpp\"\
+    \   return get(r) - get(l);\n  }\n};\n#line 4 \"tests/cumulative-sum.test.cpp\"\
     \n\nint main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n\
     \    rep(i, n) {\n        LL(x);\n        a.add(i, x);\n    }\n    rep(i,q) {\n\
     \        INT(l, r);\n        cout << a.get(l, r) << endl;\n    }\n    return 0;\n\
@@ -63,16 +61,16 @@ data:
   dependsOn:
   - template/template.hpp
   - math/cumulative-sum.hpp
-  isVerificationFile: false
-  path: tests/cumulative-sum.text.cpp
+  isVerificationFile: true
+  path: tests/cumulative-sum.test.cpp
   requiredBy: []
-  timestamp: '2023-02-06 22:22:02+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2023-02-06 22:29:29+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: tests/cumulative-sum.text.cpp
+documentation_of: tests/cumulative-sum.test.cpp
 layout: document
 redirect_from:
-- /library/tests/cumulative-sum.text.cpp
-- /library/tests/cumulative-sum.text.cpp.html
-title: tests/cumulative-sum.text.cpp
+- /verify/tests/cumulative-sum.test.cpp
+- /verify/tests/cumulative-sum.test.cpp.html
+title: tests/cumulative-sum.test.cpp
 ---

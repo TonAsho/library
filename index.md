@@ -8,20 +8,20 @@ data:
       title: Graph Template
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
   - name: template
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: template/template.hpp
       title: Template
+  verificationCategories:
   - name: tests
     pages:
-    - icon: ':warning:'
-      path: tests/cumulative-sum.text.cpp
-      title: tests/cumulative-sum.text.cpp
-  verificationCategories: []
+    - icon: ':x:'
+      path: tests/cumulative-sum.test.cpp
+      title: tests/cumulative-sum.test.cpp
 layout: toppage
 ---
 ## 競プロ用のテンプレートです。
