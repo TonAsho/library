@@ -13,5 +13,6 @@ int main() {
         INT(l, r);
         cout << a.get(l, r) << endl;
     }
+
     return 0;
 }
