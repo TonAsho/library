@@ -8,12 +8,12 @@ data:
       title: Graph Template
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
   - name: template
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: template/template-yosupo.hpp
       title: Header
     - icon: ':warning:'

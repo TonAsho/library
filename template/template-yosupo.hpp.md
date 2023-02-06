@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: tests/cumulative-sum.test.cpp
+    title: tests/cumulative-sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Header
     links: []
@@ -68,8 +71,9 @@ data:
   path: template/template-yosupo.hpp
   requiredBy: []
   timestamp: '2023-02-06 22:47:00+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - tests/cumulative-sum.test.cpp
 documentation_of: template/template-yosupo.hpp
 layout: document
 redirect_from:
