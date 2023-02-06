@@ -8,12 +8,12 @@ data:
       title: Graph Template
   - name: math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
   - name: template
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: template/template-yosupo.hpp
       title: Header
     - icon: ':warning:'
@@ -22,7 +22,7 @@ data:
   verificationCategories:
   - name: tests
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/cumulative-sum.test.cpp
       title: tests/cumulative-sum.test.cpp
 layout: toppage

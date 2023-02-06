@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/cumulative-sum.hpp
     title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: template/template-yosupo.hpp
     title: Header
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -54,21 +54,22 @@ data:
     \  T get(int l, int r) const {\n    return get(r) - get(l);\n  }\n};\n#line 4\
     \ \"tests/cumulative-sum.test.cpp\"\n\nint main() {\n    int n, q; cin >> n >>\
     \ q;\n    CumulativeSum<ll> a(n);\n    rep(i, n) {\n        LL(x);\n        a.add(i,\
-    \ x);\n    }\n    rep(i,q) {\n        INT(l, r);\n        cout << a.get(l, r)\
-    \ << endl;\n    }\n\n    return 0;\n}\n"
+    \ x);\n    }\n    a.build();\n    rep(i,q) {\n        INT(l, r);\n        cout\
+    \ << a.get(l, r) << endl;\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
     \ \"template/template-yosupo.hpp\"\n#include \"math/cumulative-sum.hpp\"\n\nint\
     \ main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n    rep(i,\
-    \ n) {\n        LL(x);\n        a.add(i, x);\n    }\n    rep(i,q) {\n        INT(l,\
-    \ r);\n        cout << a.get(l, r) << endl;\n    }\n\n    return 0;\n}"
+    \ n) {\n        LL(x);\n        a.add(i, x);\n    }\n    a.build();\n    rep(i,q)\
+    \ {\n        INT(l, r);\n        cout << a.get(l, r) << endl;\n    }\n\n    return\
+    \ 0;\n}"
   dependsOn:
   - template/template-yosupo.hpp
   - math/cumulative-sum.hpp
   isVerificationFile: true
   path: tests/cumulative-sum.test.cpp
   requiredBy: []
-  timestamp: '2023-02-06 23:01:26+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-02-06 23:10:21+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/cumulative-sum.test.cpp
 layout: document
