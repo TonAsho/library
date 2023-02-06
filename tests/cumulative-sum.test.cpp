@@ -1,5 +1,5 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
-#include "template/template-yosupo-hpp"
+#include "template/template-yosupo.hpp"
 #include "math/cumulative-sum.hpp"
 
 int main() {
