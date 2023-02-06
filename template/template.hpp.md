@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: tests/cumulative-sum.text.cpp
+    title: tests/cumulative-sum.text.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -66,7 +69,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
-  requiredBy: []
+  requiredBy:
+  - tests/cumulative-sum.text.cpp
   timestamp: '2023-02-06 16:28:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
