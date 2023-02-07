@@ -11,9 +11,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
+    - icon: ':x:'
+      path: math/prime-table.hpp
+      title: math/prime-table.hpp
+    - icon: ':x:'
+      path: math/prime.hpp
+      title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template-yosupo.hpp
       title: Header
     - icon: ':warning:'
@@ -25,6 +31,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/cumulative-sum.test.cpp
       title: tests/cumulative-sum.test.cpp
+    - icon: ':x:'
+      path: tests/prime-table.test.cpp
+      title: tests/prime-table.test.cpp
 layout: toppage
 ---
 ## 競プロ用のテンプレートです。

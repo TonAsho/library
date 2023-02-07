@@ -1,23 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/cumulative-sum.hpp
-    title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
+  - icon: ':x:'
+    path: math/prime-table.hpp
+    title: math/prime-table.hpp
+  - icon: ':x:'
+    path: math/prime.hpp
+    title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
   - icon: ':question:'
     path: template/template-yosupo.hpp
     title: Header
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
+    PROBLEM: https://judge.yosupo.jp/problem/counting_primes
     links:
-    - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"tests/cumulative-sum.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\
+    - https://judge.yosupo.jp/problem/counting_primes
+  bundledCode: "#line 1 \"tests/prime-table.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\
     \n#line 2 \"template/template-yosupo.hpp\"\n/**\n * @brief Header\n */\n#include\
     \ <algorithm>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <iostream>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <set>\n\
@@ -44,37 +47,33 @@ data:
     \ vd = vector<double>;\nusing vvd = vector<vd>;\nusing vs = vector<string>;\n\
     using vvs = vector<vs>;\nusing vb = vector<bool>;\nusing vvb = vector<vb>;\nusing\
     \ pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nusing mii = map<int, int>;\n\
-    using mll = map<ll, ll>;\n#line 2 \"math/cumulative-sum.hpp\"\n/**\n * @brief\
-    \ Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u8A08\u548C)\n */\ntemplate< class T\
-    \ >\nstruct CumulativeSum {\n  vector< T > data;\n  CumulativeSum() = default;\n\
-    \  explicit CumulativeSum(size_t sz) : data(sz + 1, 0) {}\n  void add(int k, const\
-    \ T &x) {data[k + 1] += x;}\n  void build() {\n    for(int i = 1; i < data.size();\
-    \ i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T get(int r) const {\n\
-    \    if(r < 0) return 0;\n    return data[min(r, (int) data.size() - 1)];\n  }\n\
-    \  T get(int l, int r) const {\n    return get(r) - get(l);\n  }\n};\n#line 4\
-    \ \"tests/cumulative-sum.test.cpp\"\n\nint main() {\n    int n, q; cin >> n >>\
-    \ q;\n    CumulativeSum<ll> a(n);\n    rep(i, n) {\n        LL(x);\n        a.add(i,\
-    \ x);\n    }\n    a.build();\n    rep(i,q) {\n        INT(l, r);\n        cout\
-    \ << a.get(l, r) << endl;\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
-    \ \"template/template-yosupo.hpp\"\n#include \"math/cumulative-sum.hpp\"\n\nint\
-    \ main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n    rep(i,\
-    \ n) {\n        LL(x);\n        a.add(i, x);\n    }\n    a.build();\n    rep(i,q)\
-    \ {\n        INT(l, r);\n        cout << a.get(l, r) << endl;\n    }\n\n    return\
-    \ 0;\n}"
+    using mll = map<ll, ll>;\n#line 1 \"math/prime.hpp\"\n/**\n * @brief Prime Table(\u7D20\
+    \u6570\u30C6\u30FC\u30D6\u30EB)\n*/\nvector< bool > prime(int n) {\n  vector<\
+    \ bool > primes(n + 1, true);\n  if(n >= 0) primes[0] = false;\n  if(n >= 1) primes[1]\
+    \ = false;\n  for(int i = 2; i * i <= n; i++) {\n    if(!primes[i]) continue;\n\
+    \    for(int j = i * i; j <= n; j += i) {\n      primes[j] = false;\n    }\n \
+    \ }\n  return primes;\n}\n#line 2 \"math/prime-table.hpp\"\n\nvector< int >  prime_table(int\
+    \ n) {\n    if(n <= 1) return {};\n    auto d = prime(n);\n    vector< int > primes;\n\
+    \    rep(i, d.size()) {\n        if(d[i]) primes.push_back(i);\n    }\n    return\
+    \ primes;\n}\n#line 4 \"tests/prime-table.test.cpp\"\n\nint main() {\n    LL(n);\n\
+    \    cout << prime_table(n).size() << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/counting_primes\"\n#include\
+    \ \"template/template-yosupo.hpp\"\n#include \"math/prime-table.hpp\"\n\nint main()\
+    \ {\n    LL(n);\n    cout << prime_table(n).size() << endl;\n    return 0;\n}"
   dependsOn:
   - template/template-yosupo.hpp
-  - math/cumulative-sum.hpp
+  - math/prime-table.hpp
+  - math/prime.hpp
   isVerificationFile: true
-  path: tests/cumulative-sum.test.cpp
+  path: tests/prime-table.test.cpp
   requiredBy: []
-  timestamp: '2023-02-06 23:10:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-02-07 22:31:03+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: tests/cumulative-sum.test.cpp
+documentation_of: tests/prime-table.test.cpp
 layout: document
 redirect_from:
-- /verify/tests/cumulative-sum.test.cpp
-- /verify/tests/cumulative-sum.test.cpp.html
-title: tests/cumulative-sum.test.cpp
+- /verify/tests/prime-table.test.cpp
+- /verify/tests/prime-table.test.cpp.html
+title: tests/prime-table.test.cpp
 ---

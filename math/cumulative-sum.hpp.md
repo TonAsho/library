@@ -43,7 +43,7 @@ title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
 
 ## 使い方
 
-*add(k, x):位置kに値xを加算.
-*build():累計和の構築
-*get(k): 区間(0...r-1)の和を返す.
-*get(l, r): 区間(l...r-1)の和を返す.
+・add(k, x):位置kに値xを加算.<br>
+・build():累計和の構築.<br>
+・get(k): 区間(0...r-1)の和を返す.<br>
+・get(l, r): 区間(l...r-1)の和を返す.<br>
