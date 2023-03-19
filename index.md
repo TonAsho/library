@@ -8,6 +8,9 @@ data:
       title: Graph Template
   - name: math
     pages:
+    - icon: ':warning:'
+      path: math/cpp_int.hpp
+      title: math/cpp_int.hpp
     - icon: ':heavy_check_mark:'
       path: math/cumulative-sum.hpp
       title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
