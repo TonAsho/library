@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: graph/dijkstra.hpp
+    title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
+  - icon: ':warning:'
+    path: tests/dijkstra.cpp
+    title: tests/dijkstra.cpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -47,7 +53,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: graph/graph-template.hpp
-  requiredBy: []
+  requiredBy:
+  - tests/dijkstra.cpp
+  - graph/dijkstra.hpp
   timestamp: '2023-02-05 22:51:56+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

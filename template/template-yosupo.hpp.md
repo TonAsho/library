@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: tests/dijkstra.cpp
+    title: tests/dijkstra.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: tests/cumulative-sum.test.cpp
@@ -72,7 +75,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template-yosupo.hpp
-  requiredBy: []
+  requiredBy:
+  - tests/dijkstra.cpp
   timestamp: '2023-02-06 22:47:00+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:

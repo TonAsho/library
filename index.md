@@ -4,6 +4,9 @@ data:
   - name: graph
     pages:
     - icon: ':warning:'
+      path: graph/dijkstra.hpp
+      title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
+    - icon: ':warning:'
       path: graph/graph-template.hpp
       title: Graph Template
   - name: math
@@ -28,6 +31,11 @@ data:
     - icon: ':warning:'
       path: template/template.hpp
       title: Template
+  - name: tests
+    pages:
+    - icon: ':warning:'
+      path: tests/dijkstra.cpp
+      title: tests/dijkstra.cpp
   verificationCategories:
   - name: tests
     pages:
