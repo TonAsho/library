@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: Graph Template
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: tests/dijkstra.cpp
-    title: tests/dijkstra.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/dijkstra.test.cpp
+    title: tests/dijkstra.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
     links: []
@@ -61,11 +61,11 @@ data:
   - graph/graph-template.hpp
   isVerificationFile: false
   path: graph/dijkstra.hpp
-  requiredBy:
-  - tests/dijkstra.cpp
+  requiredBy: []
   timestamp: '2023-03-23 17:37:11+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - tests/dijkstra.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document
 redirect_from:

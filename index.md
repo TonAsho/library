@@ -3,10 +3,10 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-template.hpp
       title: Graph Template
   - name: math
@@ -31,17 +31,15 @@ data:
     - icon: ':warning:'
       path: template/template.hpp
       title: Template
-  - name: tests
-    pages:
-    - icon: ':warning:'
-      path: tests/dijkstra.cpp
-      title: tests/dijkstra.cpp
   verificationCategories:
   - name: tests
     pages:
     - icon: ':heavy_check_mark:'
       path: tests/cumulative-sum.test.cpp
       title: tests/cumulative-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/dijkstra.test.cpp
+      title: tests/dijkstra.test.cpp
     - icon: ':x:'
       path: tests/prime-table.test.cpp
       title: tests/prime-table.test.cpp

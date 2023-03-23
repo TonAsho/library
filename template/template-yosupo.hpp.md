@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: tests/dijkstra.cpp
-    title: tests/dijkstra.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: tests/cumulative-sum.test.cpp
     title: tests/cumulative-sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/dijkstra.test.cpp
+    title: tests/dijkstra.test.cpp
   - icon: ':x:'
     path: tests/prime-table.test.cpp
     title: tests/prime-table.test.cpp
@@ -75,13 +75,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template/template-yosupo.hpp
-  requiredBy:
-  - tests/dijkstra.cpp
+  requiredBy: []
   timestamp: '2023-02-06 22:47:00+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - tests/prime-table.test.cpp
   - tests/cumulative-sum.test.cpp
+  - tests/dijkstra.test.cpp
 documentation_of: template/template-yosupo.hpp
 layout: document
 redirect_from:

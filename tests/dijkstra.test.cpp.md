@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: Graph Template
   - icon: ':question:'
@@ -14,11 +14,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
-  bundledCode: "#line 1 \"tests/dijkstra.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
+  bundledCode: "#line 1 \"tests/dijkstra.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \n\n#line 2 \"template/template-yosupo.hpp\"\n/**\n * @brief Header\n */\n#include\
     \ <algorithm>\n#include <cmath>\n#include <complex>\n#include <cstdio>\n#include\
     \ <iostream>\n#include <map>\n#include <numeric>\n#include <queue>\n#include <set>\n\
@@ -74,8 +76,8 @@ data:
     \ {\n      auto next_cost = cost + e.cost;\n      if(dist[e.to] <= next_cost)\
     \ continue;\n      dist[e.to] = next_cost;\n      from[e.to] = idx;\n      id[e.to]\
     \ = e.idx;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n  return {dist,\
-    \ from, id};\n}\n#line 6 \"tests/dijkstra.cpp\"\n\nint main() {\n    int n, m,\
-    \ s; cin >> n >> m >> s;\n    Graph<int> g(n);\n    g.read(m, 0, true, true);\n\
+    \ from, id};\n}\n#line 6 \"tests/dijkstra.test.cpp\"\n\nint main() {\n    int\
+    \ n, m, s; cin >> n >> m >> s;\n    Graph<int> g(n);\n    g.read(m, 0, true, true);\n\
     \    auto d = dijkstra(g, s);\n    for(auto x : d.dist) {\n        if(x == inf)\
     \ cout << \"INF\" << endl;\n        else cout << x << endl;\n    }\n    return\
     \ 0;\n}\n"
@@ -89,16 +91,16 @@ data:
   - template/template-yosupo.hpp
   - graph/graph-template.hpp
   - graph/dijkstra.hpp
-  isVerificationFile: false
-  path: tests/dijkstra.cpp
+  isVerificationFile: true
+  path: tests/dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2023-03-23 17:37:11+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2023-03-23 17:41:33+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: tests/dijkstra.cpp
+documentation_of: tests/dijkstra.test.cpp
 layout: document
 redirect_from:
-- /library/tests/dijkstra.cpp
-- /library/tests/dijkstra.cpp.html
-title: tests/dijkstra.cpp
+- /verify/tests/dijkstra.test.cpp
+- /verify/tests/dijkstra.test.cpp.html
+title: tests/dijkstra.test.cpp
 ---
