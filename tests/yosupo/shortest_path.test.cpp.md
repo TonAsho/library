@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: Graph Template
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
@@ -95,8 +95,8 @@ data:
     \ ;\n    }\n    vector<pair<int, int>> path;\n    int now = T;\n    while(true)\
     \ {\n        path.emplace_back(D.from[now], now);\n        if(D.from[now] == S)\
     \ break;\n        now = D.from[now];\n    }\n    cout << D.dist[T] << \" \" <<\
-    \ path.size() << endl;\n    for(auto &[u, v] : path) cout << u << \" \" << v <<\
-    \ endl;\n}\n"
+    \ path.size() << endl;\n    reverse(all(path));\n    for(auto &[u, v] : path)\
+    \ cout << u << \" \" << v << endl;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
     \ \"template/template.hpp\"\n#include \"graph/graph-template.hpp\"\n#include \"\
     graph/dijkstra.hpp\"\n\nvoid _main() {\n    int N, M, S, T;\n    cin >> N >> M\
@@ -105,8 +105,8 @@ data:
     \ endl;\n        return ;\n    }\n    vector<pair<int, int>> path;\n    int now\
     \ = T;\n    while(true) {\n        path.emplace_back(D.from[now], now);\n    \
     \    if(D.from[now] == S) break;\n        now = D.from[now];\n    }\n    cout\
-    \ << D.dist[T] << \" \" << path.size() << endl;\n    for(auto &[u, v] : path)\
-    \ cout << u << \" \" << v << endl;\n}"
+    \ << D.dist[T] << \" \" << path.size() << endl;\n    reverse(all(path));\n   \
+    \ for(auto &[u, v] : path) cout << u << \" \" << v << endl;\n}"
   dependsOn:
   - template/template.hpp
   - graph/graph-template.hpp
@@ -114,8 +114,8 @@ data:
   isVerificationFile: true
   path: tests/yosupo/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 14:26:16+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-11-12 14:36:27+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/shortest_path.test.cpp
 layout: document

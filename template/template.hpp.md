@@ -9,12 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/yosupo/shortest_path.test.cpp
     title: tests/yosupo/shortest_path.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/static_range_sum.test.cpp
     title: tests/yosupo/static_range_sum.test.cpp
+  - icon: ':x:'
+    path: tests/yosupo/unionfind.test.cpp
+    title: tests/yosupo/unionfind.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -108,6 +111,7 @@ data:
   verifiedWith:
   - tests/cumulative-sum.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/unionfind.test.cpp
   - tests/yosupo/shortest_path.test.cpp
   - tests/dijkstra.test.cpp
 documentation_of: template/template.hpp

@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: datastructure
     pages:
-    - icon: ':warning:'
+    - icon: ':x:'
       path: datastructure/UnionFind.hpp
       title: UnionFind
     - icon: ':warning:'
@@ -17,10 +17,10 @@ data:
     - icon: ':warning:'
       path: graph/bellman-ford.hpp
       title: Bellman-Ford
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: Dijkstra
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-template.hpp
       title: Graph Template
     - icon: ':warning:'
@@ -71,12 +71,15 @@ data:
       title: tests/dijkstra.test.cpp
   - name: tests/yosupo
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/yosupo/shortest_path.test.cpp
       title: tests/yosupo/shortest_path.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/static_range_sum.test.cpp
       title: tests/yosupo/static_range_sum.test.cpp
+    - icon: ':x:'
+      path: tests/yosupo/unionfind.test.cpp
+      title: tests/yosupo/unionfind.test.cpp
 layout: toppage
 ---
 ## 競プロ用のテンプレートです。
