@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/UnionFind.hpp
     title: UnionFind
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: 'https:'
+    PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"tests/yosupo/unionfind.test.cpp\"\n#define PROBLEM https://judge.yosupo.jp/problem/unionfind\n\
-    #line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"tests/yosupo/unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
+    \n#line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\n\
     using namespace std;\ntypedef long long ll;\nvoid _main(); int main() { cin.tie(0);\
     \ ios::sync_with_stdio(false); _main(); return 0;}\n#pragma GCC target(\"avx2\"\
     )\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#define\
@@ -74,19 +74,19 @@ data:
     \ Q;\n    cin >> N >> Q;\n    UnionFind uni(N);\n    rep(qi, Q) {\n        int\
     \ t, u, v;\n        cin >> t >> u >> v;\n        if(t == 0) uni.unite(u, v);\n\
     \        else cout << uni.same(u, v) << '\\n';\n    }\n}\n"
-  code: "#define PROBLEM https://judge.yosupo.jp/problem/unionfind\n#include \"template/template.hpp\"\
-    \n#include \"datastructure/UnionFind.hpp\"\n\nvoid _main() {\n    int N, Q;\n\
-    \    cin >> N >> Q;\n    UnionFind uni(N);\n    rep(qi, Q) {\n        int t, u,\
-    \ v;\n        cin >> t >> u >> v;\n        if(t == 0) uni.unite(u, v);\n     \
-    \   else cout << uni.same(u, v) << '\\n';\n    }\n}"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include \"\
+    template/template.hpp\"\n#include \"datastructure/UnionFind.hpp\"\n\nvoid _main()\
+    \ {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uni(N);\n    rep(qi, Q)\
+    \ {\n        int t, u, v;\n        cin >> t >> u >> v;\n        if(t == 0) uni.unite(u,\
+    \ v);\n        else cout << uni.same(u, v) << '\\n';\n    }\n}"
   dependsOn:
   - template/template.hpp
   - datastructure/UnionFind.hpp
   isVerificationFile: true
   path: tests/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 14:36:27+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-11-12 14:41:26+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/unionfind.test.cpp
 layout: document

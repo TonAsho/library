@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/static_range_sum.test.cpp
     title: tests/yosupo/static_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/yosupo/unionfind.test.cpp
     title: tests/yosupo/unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Header
     links: []
@@ -107,7 +107,7 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/cumulative-sum.test.cpp
   - tests/yosupo/static_range_sum.test.cpp

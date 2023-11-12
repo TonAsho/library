@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: datastructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/UnionFind.hpp
       title: UnionFind
     - icon: ':warning:'
@@ -57,7 +57,7 @@ data:
     - icon: ':warning:'
       path: template/template-yosupo.hpp
       title: Header
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -77,7 +77,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/static_range_sum.test.cpp
       title: tests/yosupo/static_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/yosupo/unionfind.test.cpp
       title: tests/yosupo/unionfind.test.cpp
 layout: toppage
