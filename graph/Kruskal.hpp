@@ -1,4 +1,7 @@
 #pragma once
+/**
+ * @brief Kruskal
+ */
 #include "datastructure/UnionFind.hpp"
 
 template<class T>
