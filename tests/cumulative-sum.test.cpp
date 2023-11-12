@@ -2,7 +2,7 @@
 #include "template/template.hpp"
 #include "math/cumulative-sum.hpp"
 
-int main() {
+void _main() {
     int n, q; cin >> n >> q;
     CumulativeSum<ll> a(n);
     rep(i, n) {
@@ -14,6 +14,4 @@ int main() {
         INT(l, r);
         cout << a.get(l, r) << endl;
     }
-
-    return 0;
 }
