@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/cumulative-sum.hpp
-    title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
+    title: Cumulative Sum
   - icon: ':question:'
     path: template/template-yosupo.hpp
     title: Header
@@ -45,17 +45,17 @@ data:
     using vvs = vector<vs>;\nusing vb = vector<bool>;\nusing vvb = vector<vb>;\nusing\
     \ pii = pair<int, int>;\nusing pll = pair<ll, ll>;\nusing mii = map<int, int>;\n\
     using mll = map<ll, ll>;\n#line 2 \"math/cumulative-sum.hpp\"\n/**\n * @brief\
-    \ Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u8A08\u548C)\n */\ntemplate< class T\
-    \ >\nstruct CumulativeSum {\n  vector< T > data;\n  CumulativeSum() = default;\n\
-    \  explicit CumulativeSum(size_t sz) : data(sz + 1, 0) {}\n  void add(int k, const\
-    \ T &x) {data[k + 1] += x;}\n  void build() {\n    for(int i = 1; i < data.size();\
-    \ i++) {\n      data[i] += data[i - 1];\n    }\n  }\n  T get(int r) const {\n\
-    \    if(r < 0) return 0;\n    return data[min(r, (int) data.size() - 1)];\n  }\n\
-    \  T get(int l, int r) const {\n    return get(r) - get(l);\n  }\n};\n#line 4\
-    \ \"tests/cumulative-sum.test.cpp\"\n\nint main() {\n    int n, q; cin >> n >>\
-    \ q;\n    CumulativeSum<ll> a(n);\n    rep(i, n) {\n        LL(x);\n        a.add(i,\
-    \ x);\n    }\n    a.build();\n    rep(i,q) {\n        INT(l, r);\n        cout\
-    \ << a.get(l, r) << endl;\n    }\n\n    return 0;\n}\n"
+    \ Cumulative Sum\n */\ntemplate< class T >\nstruct CumulativeSum {\n  vector<\
+    \ T > data;\n  CumulativeSum() = default;\n  explicit CumulativeSum(size_t sz)\
+    \ : data(sz + 1, 0) {}\n  void add(int k, const T &x) {data[k + 1] += x;}\n  void\
+    \ build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] += data[i\
+    \ - 1];\n    }\n  }\n  T get(int r) const {\n    if(r < 0) return 0;\n    return\
+    \ data[min(r, (int) data.size() - 1)];\n  }\n  T get(int l, int r) const {\n \
+    \   return get(r) - get(l);\n  }\n};\n#line 4 \"tests/cumulative-sum.test.cpp\"\
+    \n\nint main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n\
+    \    rep(i, n) {\n        LL(x);\n        a.add(i, x);\n    }\n    a.build();\n\
+    \    rep(i,q) {\n        INT(l, r);\n        cout << a.get(l, r) << endl;\n  \
+    \  }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
     \ \"template/template-yosupo.hpp\"\n#include \"math/cumulative-sum.hpp\"\n\nint\
     \ main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n    rep(i,\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: tests/cumulative-sum.test.cpp
   requiredBy: []
-  timestamp: '2023-02-06 23:10:21+09:00'
+  timestamp: '2023-11-12 13:41:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/cumulative-sum.test.cpp

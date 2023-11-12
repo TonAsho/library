@@ -2,16 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
+    path: graph/Kruskal.hpp
+    title: graph/Kruskal.hpp
+  - icon: ':warning:'
+    path: graph/bellman-ford.hpp
+    title: Bellman-Ford
+  - icon: ':x:'
     path: graph/dijkstra.hpp
-    title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
+    title: Dijkstra
+  - icon: ':warning:'
+    path: graph/topo_sort.hpp
+    title: graph/topo_sort.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Graph Template
     links: []
@@ -54,9 +63,12 @@ data:
   isVerificationFile: false
   path: graph/graph-template.hpp
   requiredBy:
+  - graph/Kruskal.hpp
   - graph/dijkstra.hpp
+  - graph/bellman-ford.hpp
+  - graph/topo_sort.hpp
   timestamp: '2023-02-05 22:51:56+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - tests/dijkstra.test.cpp
 documentation_of: graph/graph-template.hpp

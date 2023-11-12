@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/graph-template.hpp
     title: Graph Template
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
-    document_title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
+    document_title: Dijkstra
     links: []
   bundledCode: "#line 2 \"graph/dijkstra.hpp\"\n\n#line 2 \"graph/graph-template.hpp\"\
     \n\n/**\n * @brief Graph Template\n */\ntemplate< typename T = int >\nstruct Edge\
@@ -33,37 +33,36 @@ data:
     \ > > &operator[](const int &k) {\n    return g[k];\n  }\n  inline const vector<\
     \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\ntemplate<\
     \ typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 4 \"graph/dijkstra.hpp\"\
-    \n\n/**\n * @brief Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)\n */\n\
-    template< typename T >\nstruct ShortestPath {\n  vector< T > dist;\n  vector<\
-    \ int > from, id;\n};\n\ntemplate< typename T >\nShortestPath< T > dijkstra(const\
-    \ Graph< T > &g, int s) {\n  vector< T > dist(g.size(), inf);\n  vector< int >\
-    \ from(g.size(), -1), id(g.size(), -1);\n  using Pi = pair< T, int >;\n  priority_queue<\
-    \ Pi, vector< Pi >, greater<> > que;\n  dist[s] = 0;\n  que.emplace(dist[s], s);\n\
-    \  while(!que.empty()) {\n    T cost;\n    int idx;\n    tie(cost, idx) = que.top();\n\
-    \    que.pop();\n    if(dist[idx] < cost) continue;\n    for(auto &e : g[idx])\
-    \ {\n      auto next_cost = cost + e.cost;\n      if(dist[e.to] <= next_cost)\
-    \ continue;\n      dist[e.to] = next_cost;\n      from[e.to] = idx;\n      id[e.to]\
-    \ = e.idx;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n  return {dist,\
-    \ from, id};\n}\n"
-  code: "#pragma once\n\n#include \"graph-template.hpp\"\n\n/**\n * @brief Dijkstra(\u5358\
-    \u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)\n */\ntemplate< typename T >\nstruct ShortestPath\
+    \n\n/**\n * @brief Dijkstra\n */\ntemplate< typename T >\nstruct ShortestPath\
     \ {\n  vector< T > dist;\n  vector< int > from, id;\n};\n\ntemplate< typename\
-    \ T >\nShortestPath< T > dijkstra(const Graph< T > &g, int s) {\n  vector< T >\
-    \ dist(g.size(), inf);\n  vector< int > from(g.size(), -1), id(g.size(), -1);\n\
-    \  using Pi = pair< T, int >;\n  priority_queue< Pi, vector< Pi >, greater<> >\
-    \ que;\n  dist[s] = 0;\n  que.emplace(dist[s], s);\n  while(!que.empty()) {\n\
+    \ T >\nShortestPath< T > dijkstra(const Graph< T > &g, int s, ll INF_NUM) {\n\
+    \  vector< T > dist(g.size(), INF_NUM);\n  vector< int > from(g.size(), -1), id(g.size(),\
+    \ -1);\n  using Pi = pair< T, int >;\n  priority_queue< Pi, vector< Pi >, greater<>\
+    \ > que;\n  dist[s] = 0;\n  que.emplace(dist[s], s);\n  while(!que.empty()) {\n\
     \    T cost;\n    int idx;\n    tie(cost, idx) = que.top();\n    que.pop();\n\
     \    if(dist[idx] < cost) continue;\n    for(auto &e : g[idx]) {\n      auto next_cost\
     \ = cost + e.cost;\n      if(dist[e.to] <= next_cost) continue;\n      dist[e.to]\
     \ = next_cost;\n      from[e.to] = idx;\n      id[e.to] = e.idx;\n      que.emplace(dist[e.to],\
-    \ e.to);\n    }\n  }\n  return {dist, from, id};\n}"
+    \ e.to);\n    }\n  }\n  return {dist, from, id};\n}\n"
+  code: "#pragma once\n\n#include \"graph-template.hpp\"\n\n/**\n * @brief Dijkstra\n\
+    \ */\ntemplate< typename T >\nstruct ShortestPath {\n  vector< T > dist;\n  vector<\
+    \ int > from, id;\n};\n\ntemplate< typename T >\nShortestPath< T > dijkstra(const\
+    \ Graph< T > &g, int s, ll INF_NUM) {\n  vector< T > dist(g.size(), INF_NUM);\n\
+    \  vector< int > from(g.size(), -1), id(g.size(), -1);\n  using Pi = pair< T,\
+    \ int >;\n  priority_queue< Pi, vector< Pi >, greater<> > que;\n  dist[s] = 0;\n\
+    \  que.emplace(dist[s], s);\n  while(!que.empty()) {\n    T cost;\n    int idx;\n\
+    \    tie(cost, idx) = que.top();\n    que.pop();\n    if(dist[idx] < cost) continue;\n\
+    \    for(auto &e : g[idx]) {\n      auto next_cost = cost + e.cost;\n      if(dist[e.to]\
+    \ <= next_cost) continue;\n      dist[e.to] = next_cost;\n      from[e.to] = idx;\n\
+    \      id[e.to] = e.idx;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n \
+    \ return {dist, from, id};\n}"
   dependsOn:
   - graph/graph-template.hpp
   isVerificationFile: false
   path: graph/dijkstra.hpp
   requiredBy: []
-  timestamp: '2023-03-23 17:37:11+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2023-11-12 13:41:13+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - tests/dijkstra.test.cpp
 documentation_of: graph/dijkstra.hpp
@@ -71,5 +70,5 @@ layout: document
 redirect_from:
 - /library/graph/dijkstra.hpp
 - /library/graph/dijkstra.hpp.html
-title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
+title: Dijkstra
 ---

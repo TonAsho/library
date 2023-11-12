@@ -6,12 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/cumulative-sum.test.cpp
     title: tests/cumulative-sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  - icon: ':x:'
-    path: tests/prime-table.test.cpp
-    title: tests/prime-table.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
   _verificationStatusIcon: ':question:'
@@ -79,7 +76,6 @@ data:
   timestamp: '2023-02-06 22:47:00+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - tests/prime-table.test.cpp
   - tests/cumulative-sum.test.cpp
   - tests/dijkstra.test.cpp
 documentation_of: template/template-yosupo.hpp

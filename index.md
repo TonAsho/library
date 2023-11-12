@@ -1,14 +1,34 @@
 ---
 data:
   libraryCategories:
+  - name: datastructure
+    pages:
+    - icon: ':warning:'
+      path: datastructure/UnionFind.hpp
+      title: UnionFind
+    - icon: ':warning:'
+      path: datastructure/WeightedUnionFind.hpp
+      title: WeightedUnionFind
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: graph/Kruskal.hpp
+      title: graph/Kruskal.hpp
+    - icon: ':warning:'
+      path: graph/bellman-ford.hpp
+      title: Bellman-Ford
+    - icon: ':x:'
       path: graph/dijkstra.hpp
-      title: "Dijkstra(\u5358\u4E00\u59CB\u70B9\u6700\u77ED\u8DEF)"
-    - icon: ':heavy_check_mark:'
+      title: Dijkstra
+    - icon: ':x:'
       path: graph/graph-template.hpp
       title: Graph Template
+    - icon: ':warning:'
+      path: graph/lca.hpp
+      title: graph/lca.hpp
+    - icon: ':warning:'
+      path: graph/topo_sort.hpp
+      title: graph/topo_sort.hpp
   - name: math
     pages:
     - icon: ':warning:'
@@ -16,13 +36,22 @@ data:
       title: math/cpp_int.hpp
     - icon: ':heavy_check_mark:'
       path: math/cumulative-sum.hpp
-      title: "Cumulative Sum(\u4E00\u6B21\u5143\u7D2F\u7A4D\u548C)"
-    - icon: ':x:'
+      title: Cumulative Sum
+    - icon: ':warning:'
+      path: math/is-prime.hpp
+      title: Is Prime
+    - icon: ':warning:'
+      path: math/nCr.hpp
+      title: Binomial
+    - icon: ':warning:'
+      path: math/prime-factorization.hpp
+      title: Prime Factorization
+    - icon: ':warning:'
       path: math/prime-table.hpp
       title: math/prime-table.hpp
-    - icon: ':x:'
+    - icon: ':warning:'
       path: math/prime.hpp
-      title: "Prime Table(\u7D20\u6570\u30C6\u30FC\u30D6\u30EB)"
+      title: Prime Table
   - name: template
     pages:
     - icon: ':question:'
@@ -37,12 +66,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/cumulative-sum.test.cpp
       title: tests/cumulative-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/dijkstra.test.cpp
       title: tests/dijkstra.test.cpp
-    - icon: ':x:'
-      path: tests/prime-table.test.cpp
-      title: tests/prime-table.test.cpp
 layout: toppage
 ---
 ## 競プロ用のテンプレートです。
