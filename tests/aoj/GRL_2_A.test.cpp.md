@@ -8,9 +8,6 @@ data:
     path: graph/Kruskal.hpp
     title: graph/Kruskal.hpp
   - icon: ':heavy_check_mark:'
-    path: graph/graph-template.hpp
-    title: Graph Template
-  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
@@ -62,24 +59,7 @@ data:
     using vvl = vector<vl>;\nusing vd = vector<double>;\nusing vvd = vector<vd>;\n\
     using vs = vector<string>;\nusing vvs = vector<vs>;\nusing vb = vector<bool>;\n\
     using vvb = vector<vb>;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\
-    using mii = map<int, int>;\nusing mll = map<ll, ll>;\n#line 2 \"graph/graph-template.hpp\"\
-    \n\n/**\n * @brief Graph Template\n */\ntemplate< typename T = int >\nstruct Edge\
-    \ {\n  int from, to;\n  T cost;\n  int idx;\n  Edge() = default;\n  Edge(int from,\
-    \ int to, T cost = 1, int idx = -1) : from(from), to(to), cost(cost), idx(idx)\
-    \ {}\n  operator int() const { return to; }\n};\ntemplate< typename T = int >\n\
-    struct Graph {\n  vector< vector< Edge< T > > > g;\n  int es;\n  Graph() = default;\n\
-    \  explicit Graph(int n) : g(n), es(0) {}\n  size_t size() const {\n    return\
-    \ g.size();\n  }\n  void add_directed_edge(int from, int to, T cost = 1) {\n \
-    \   g[from].emplace_back(from, to, cost, es++);\n  }\n  void add_edge(int from,\
-    \ int to, T cost = 1) {\n    g[from].emplace_back(from, to, cost, es);\n    g[to].emplace_back(to,\
-    \ from, cost, es++);\n  }\n  void read(int M, int padding = -1, bool weighted\
-    \ = false, bool directed = false) {\n    for(int i = 0; i < M; i++) {\n      int\
-    \ a, b;\n      cin >> a >> b;\n      a += padding;\n      b += padding;\n    \
-    \  T c = T(1);\n      if(weighted) cin >> c;\n      if(directed) add_directed_edge(a,\
-    \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n  inline vector< Edge< T\
-    \ > > &operator[](const int &k) {\n    return g[k];\n  }\n  inline const vector<\
-    \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\ntemplate<\
-    \ typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 2 \"datastructure/UnionFind.hpp\"\
+    using mii = map<int, int>;\nusing mll = map<ll, ll>;\n#line 2 \"datastructure/UnionFind.hpp\"\
     \n/**\n * @brief UnionFind\n**/\nstruct UnionFind {\n    private :\n    int n,\
     \ cnt;\n    vector<int> ps, sz;\n\n    public :\n    UnionFind(int n) : n(n),\
     \ cnt(n), ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n\
@@ -93,32 +73,33 @@ data:
     \ n; ++i) res[leader(i)].push_back(i);\n        res.erase(remove_if(res.begin(),\
     \ res.end(), [&](const vector<int>& v) {return v.empty();}), res.end());\n   \
     \     return res;\n    }\n    int count() const {\n        return cnt;\n    }\n\
-    };\n#line 4 \"graph/Kruskal.hpp\"\n\ntemplate< typename T >\nstruct MinimumSpanningTree\
-    \ {\n  T cost;\n  Edges< T > edges;\n};\n\ntemplate< typename T >\nMinimumSpanningTree<\
-    \ T > kruskal(Edges< T > &edges, int N) {\n  sort(begin(edges), end(edges), [](const\
-    \ Edge< T > &a, const Edge< T > &b) {\n    return a.cost < b.cost;\n  });\n  UnionFind\
-    \ tree(N);\n  T total = T();\n  Edges< T > es;\n  for(auto &e : edges) {\n   \
-    \ if(!tree.same(e.from, e.to)) {\n        tree.unite(e.from, e.to);\n        es.emplace_back(e);\n\
-    \        total += e.cost;\n    }\n  }\n  return {total, es};\n}\n#line 5 \"tests/aoj/GRL_2_A.test.cpp\"\
-    \n\nvoid _main() {\n    int N, M;\n    cin >> N >> M;\n    Edges<ll> E;\n    rep(i,\
-    \ M) {\n        int u, v, w;\n        cin >> u >> v >> w;\n        E.emplace_back(u,\
-    \ v, w, i);\n    }\n    MinimumSpanningTree<ll> K = kruskal(E, N);\n    cout <<\
-    \ K.cost << endl;\n}\n"
+    };\n#line 3 \"graph/Kruskal.hpp\"\n\ntemplate<class T>\nstruct Kruskal : UnionFind\
+    \ {\n    using UnionFind::UnionFind;\n    struct Edge {\n        int from, to;\n\
+    \        T cost;\n        int used;\n        int idx;\n        Edge() = default;\n\
+    \        Edge(int from, int to, T cost = 1, int idx = -1) : from(from), to(to),\
+    \ used(0), cost(cost), idx(idx) {}\n        bool operator<(const Edge& o) const{return\
+    \ cost<o.cost;}\n    };\n    vector<Edge> es;\n    void add_edge(int u, int v,\
+    \ T c) {\n        es.emplace_back(u, v, c);\n    }\n    T build() {\n        sort(es.begin(),\
+    \ es.end());\n        T res = 0;\n        for(auto &e : es) {\n            if(same(e.from,\
+    \ e.to)) continue;\n            unite(e.from, e.to);\n            res += e.cost;\n\
+    \            e.used = 1;\n        }\n        return res;\n    }\n};\n#line 4 \"\
+    tests/aoj/GRL_2_A.test.cpp\"\n\nvoid _main() {\n    int N, M;\n    cin >> N >>\
+    \ M;\n    Kruskal<ll> G(N);\n    rep(i, M) {\n        int u, v, c; cin >> u >>\
+    \ v >> c;\n        G.add_edge(u, v, c);\n    }\n    cout << G.build() << endl;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A\"\
-    \n#include \"template/template.hpp\"\n#include \"graph/graph-template.hpp\"\n\
-    #include \"graph/Kruskal.hpp\"\n\nvoid _main() {\n    int N, M;\n    cin >> N\
-    \ >> M;\n    Edges<ll> E;\n    rep(i, M) {\n        int u, v, w;\n        cin\
-    \ >> u >> v >> w;\n        E.emplace_back(u, v, w, i);\n    }\n    MinimumSpanningTree<ll>\
-    \ K = kruskal(E, N);\n    cout << K.cost << endl;\n}"
+    \n#include \"template/template.hpp\"\n#include \"graph/Kruskal.hpp\"\n\nvoid _main()\
+    \ {\n    int N, M;\n    cin >> N >> M;\n    Kruskal<ll> G(N);\n    rep(i, M) {\n\
+    \        int u, v, c; cin >> u >> v >> c;\n        G.add_edge(u, v, c);\n    }\n\
+    \    cout << G.build() << endl;\n}"
   dependsOn:
   - template/template.hpp
-  - graph/graph-template.hpp
   - graph/Kruskal.hpp
   - datastructure/UnionFind.hpp
   isVerificationFile: true
   path: tests/aoj/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 15:03:31+09:00'
+  timestamp: '2023-11-12 15:30:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/GRL_2_A.test.cpp

@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: graph/Kruskal.hpp
-    title: graph/Kruskal.hpp
   - icon: ':warning:'
     path: graph/bellman-ford.hpp
     title: Bellman-Ford
@@ -15,9 +12,6 @@ data:
     path: graph/topo_sort.hpp
     title: graph/topo_sort.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/GRL_2_A.test.cpp
-    title: tests/aoj/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/aoj/dijkstra.test.cpp
     title: tests/aoj/dijkstra.test.cpp
@@ -69,7 +63,6 @@ data:
   isVerificationFile: false
   path: graph/graph-template.hpp
   requiredBy:
-  - graph/Kruskal.hpp
   - graph/dijkstra.hpp
   - graph/bellman-ford.hpp
   - graph/topo_sort.hpp
@@ -77,7 +70,6 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/shortest_path.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
   - tests/aoj/dijkstra.test.cpp
 documentation_of: graph/graph-template.hpp
 layout: document
