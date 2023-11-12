@@ -21,5 +21,6 @@ void _main() {
         now = D.from[now];
     }
     cout << D.dist[T] << " " << path.size() << endl;
+    reverse(all(path));
     for(auto &[u, v] : path) cout << u << " " << v << endl;
 }
