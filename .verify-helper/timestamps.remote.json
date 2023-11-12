@@ -1,4 +1,5 @@
 {
 "tests/cumulative-sum.test.cpp": "2023-11-12 14:12:00 +0900",
-"tests/dijkstra.test.cpp": "2023-11-12 14:04:04 +0900"
+"tests/dijkstra.test.cpp": "2023-11-12 14:04:04 +0900",
+"tests/yosupo/static_range_sum.test.cpp": "2023-11-12 14:26:16 +0900"
 }
