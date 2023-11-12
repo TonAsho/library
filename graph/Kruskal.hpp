@@ -1,27 +1,31 @@
 #pragma once
-#include "graph-template.hpp"
 #include "datastructure/UnionFind.hpp"
 
-template< typename T >
-struct MinimumSpanningTree {
-  T cost;
-  Edges< T > edges;
-};
-
-template< typename T >
-MinimumSpanningTree< T > kruskal(Edges< T > &edges, int N) {
-  sort(begin(edges), end(edges), [](const Edge< T > &a, const Edge< T > &b) {
-    return a.cost < b.cost;
-  });
-  UnionFind tree(N);
-  T total = T();
-  Edges< T > es;
-  for(auto &e : edges) {
-    if(!tree.same(e.from, e.to)) {
-        tree.unite(e.from, e.to);
-        es.emplace_back(e);
-        total += e.cost;
+template<class T>
+struct Kruskal : UnionFind {
+    using UnionFind::UnionFind;
+    struct Edge {
+        int from, to;
+        T cost;
+        int used;
+        int idx;
+        Edge() = default;
+        Edge(int from, int to, T cost = 1, int idx = -1) : from(from), to(to), used(0), cost(cost), idx(idx) {}
+        bool operator<(const Edge& o) const{return cost<o.cost;}
+    };
+    vector<Edge> es;
+    void add_edge(int u, int v, T c) {
+        es.emplace_back(u, v, c);
     }
-  }
-  return {total, es};
-}
+    T build() {
+        sort(es.begin(), es.end());
+        T res = 0;
+        for(auto &e : es) {
+            if(same(e.from, e.to)) continue;
+            unite(e.from, e.to);
+            res += e.cost;
+            e.used = 1;
+        }
+        return res;
+    }
+};

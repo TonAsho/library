@@ -1,17 +1,14 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A"
 #include "template/template.hpp"
-#include "graph/graph-template.hpp"
 #include "graph/Kruskal.hpp"
 
 void _main() {
     int N, M;
     cin >> N >> M;
-    Edges<ll> E;
+    Kruskal<ll> G(N);
     rep(i, M) {
-        int u, v, w;
-        cin >> u >> v >> w;
-        E.emplace_back(u, v, w, i);
+        int u, v, c; cin >> u >> v >> c;
+        G.add_edge(u, v, c);
     }
-    MinimumSpanningTree<ll> K = kruskal(E, N);
-    cout << K.cost << endl;
+    cout << G.build() << endl;
 }
