@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/UnionFind.hpp
       title: UnionFind
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/WeightedUnionFind.hpp
       title: WeightedUnionFind
   - name: graph
@@ -60,6 +60,9 @@ data:
   verificationCategories:
   - name: tests/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: tests/aoj/DSL_1_B.test.cpp
+      title: tests/aoj/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/aoj/GRL_2_A.test.cpp
       title: tests/aoj/GRL_2_A.test.cpp
