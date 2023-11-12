@@ -88,8 +88,4 @@ data:
       title: tests/yosupo/unionfind.test.cpp
 layout: toppage
 ---
-## 競プロ用のテンプレートです。
-<br>
-バグってたらごめんなさい。
-<br>
-これから色々と追加していきます。
+バグってたらごめんね
