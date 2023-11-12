@@ -2,16 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/cumulative-sum.test.cpp
-    title: tests/cumulative-sum.test.cpp
-  - icon: ':x:'
-    path: tests/dijkstra.test.cpp
-    title: tests/dijkstra.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     document_title: Header
     links: []
@@ -74,10 +68,8 @@ data:
   path: template/template-yosupo.hpp
   requiredBy: []
   timestamp: '2023-02-06 22:47:00+09:00'
-  verificationStatus: LIBRARY_SOME_WA
-  verifiedWith:
-  - tests/cumulative-sum.test.cpp
-  - tests/dijkstra.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: template/template-yosupo.hpp
 layout: document
 redirect_from:

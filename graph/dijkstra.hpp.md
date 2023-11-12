@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: Graph Template
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Dijkstra
     links: []
@@ -62,7 +62,7 @@ data:
   path: graph/dijkstra.hpp
   requiredBy: []
   timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/dijkstra.test.cpp
 documentation_of: graph/dijkstra.hpp

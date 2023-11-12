@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: tests/cumulative-sum.test.cpp
+    title: tests/cumulative-sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/dijkstra.test.cpp
+    title: tests/dijkstra.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Header
     links: []
@@ -92,8 +98,10 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - tests/cumulative-sum.test.cpp
+  - tests/dijkstra.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

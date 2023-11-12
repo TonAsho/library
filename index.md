@@ -17,10 +17,10 @@ data:
     - icon: ':warning:'
       path: graph/bellman-ford.hpp
       title: Bellman-Ford
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.hpp
       title: Dijkstra
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-template.hpp
       title: Graph Template
     - icon: ':warning:'
@@ -34,7 +34,7 @@ data:
     - icon: ':warning:'
       path: math/cpp_int.hpp
       title: math/cpp_int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/cumulative-sum.hpp
       title: Cumulative Sum
     - icon: ':warning:'
@@ -54,19 +54,19 @@ data:
       title: Prime Table
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':warning:'
       path: template/template-yosupo.hpp
       title: Header
-    - icon: ':warning:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
   - name: tests
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/cumulative-sum.test.cpp
       title: tests/cumulative-sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/dijkstra.test.cpp
       title: tests/dijkstra.test.cpp
 layout: toppage
