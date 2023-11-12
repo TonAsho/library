@@ -17,10 +17,10 @@ data:
     - icon: ':warning:'
       path: graph/bellman-ford.hpp
       title: Bellman-Ford
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/dijkstra.hpp
       title: Dijkstra
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/graph-template.hpp
       title: Graph Template
     - icon: ':warning:'
@@ -57,7 +57,7 @@ data:
     - icon: ':warning:'
       path: template/template-yosupo.hpp
       title: Header
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -69,6 +69,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/dijkstra.test.cpp
       title: tests/dijkstra.test.cpp
+  - name: tests/yosupo
+    pages:
+    - icon: ':x:'
+      path: tests/yosupo/shortest_path.test.cpp
+      title: tests/yosupo/shortest_path.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/yosupo/static_range_sum.test.cpp
+      title: tests/yosupo/static_range_sum.test.cpp
 layout: toppage
 ---
 ## 競プロ用のテンプレートです。

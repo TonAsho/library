@@ -9,9 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: tests/yosupo/shortest_path.test.cpp
+    title: tests/yosupo/shortest_path.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/static_range_sum.test.cpp
+    title: tests/yosupo/static_range_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Header
     links: []
@@ -98,9 +104,11 @@ data:
   path: template/template.hpp
   requiredBy: []
   timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - tests/cumulative-sum.test.cpp
+  - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/shortest_path.test.cpp
   - tests/dijkstra.test.cpp
 documentation_of: template/template.hpp
 layout: document

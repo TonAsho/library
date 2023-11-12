@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-template.hpp
     title: Graph Template
   _extendedRequiredBy: []
@@ -9,9 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: tests/yosupo/shortest_path.test.cpp
+    title: tests/yosupo/shortest_path.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Dijkstra
     links: []
@@ -62,8 +65,9 @@ data:
   path: graph/dijkstra.hpp
   requiredBy: []
   timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - tests/yosupo/shortest_path.test.cpp
   - tests/dijkstra.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document

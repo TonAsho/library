@@ -17,20 +17,20 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
     - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"tests/cumulative-sum.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\
-    \n#line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\n\
-    using namespace std;\ntypedef long long ll;\nvoid _main(); int main() { cin.tie(0);\
-    \ ios::sync_with_stdio(false); _main(); return 0;}\n#pragma GCC target(\"avx2\"\
-    )\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#define\
-    \ overload4(_1, _2, _3, _4, name, ...) name\n#define rep1(i, n) for (int i = 0;\
-    \ i < int(n); ++i)\n#define rep2(i, s, n) for (int i = int(s); i < int(n); ++i)\n\
-    #define rep3(i, s, n, d) for(int i = int(s); i < int(n); i+=d)\n#define rep(...)\
-    \ overload4(__VA_ARGS__,rep3,rep2,rep1)(__VA_ARGS__)\n#define all(x) (x).begin(),(x).end()\n\
-    #define rall(x) (x).rbegin(),(x).rend()\n#define fir first\n#define sec second\n\
-    #define pb push_back\n#define em emplace_back\n#define mk make_pair\n#define SUM(a)\
-    \ accumulate(all(a),0LL)\n#define MIN(a) *min_element(all(a))\n#define MAX(a)\
-    \ *max_element(all(a))\ntemplate<class... T>\nconstexpr auto my_max(T... a){\n\
-    \    return max(initializer_list<common_type_t<T...>>{a...});\n}\ntemplate<class...\
+  bundledCode: "#line 1 \"tests/yosupo/static_range_sum.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/static_range_sum\"\n#line 2 \"template/template.hpp\"\
+    \n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    typedef long long ll;\nvoid _main(); int main() { cin.tie(0); ios::sync_with_stdio(false);\
+    \ _main(); return 0;}\n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\"\
+    )\n#pragma GCC optimize(\"unroll-loops\")\n#define overload4(_1, _2, _3, _4, name,\
+    \ ...) name\n#define rep1(i, n) for (int i = 0; i < int(n); ++i)\n#define rep2(i,\
+    \ s, n) for (int i = int(s); i < int(n); ++i)\n#define rep3(i, s, n, d) for(int\
+    \ i = int(s); i < int(n); i+=d)\n#define rep(...) overload4(__VA_ARGS__,rep3,rep2,rep1)(__VA_ARGS__)\n\
+    #define all(x) (x).begin(),(x).end()\n#define rall(x) (x).rbegin(),(x).rend()\n\
+    #define fir first\n#define sec second\n#define pb push_back\n#define em emplace_back\n\
+    #define mk make_pair\n#define SUM(a) accumulate(all(a),0LL)\n#define MIN(a) *min_element(all(a))\n\
+    #define MAX(a) *max_element(all(a))\ntemplate<class... T>\nconstexpr auto my_max(T...\
+    \ a){\n    return max(initializer_list<common_type_t<T...>>{a...});\n}\ntemplate<class...\
     \ T>\nconstexpr auto my_min(T... a){\n    return min(initializer_list<common_type_t<T...>>{a...});\n\
     }\ntemplate<class... T> void input(T&... a){(cin >> ... >> a);}\ntemplate<class\
     \ T> void scan(vector<T>& a){ for(auto& i : a) input(i); }\n#define INT(...) int\
@@ -63,7 +63,7 @@ data:
     \  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] +=\
     \ data[i - 1];\n    }\n  }\n  T get(int r) const {\n    if(r < 0) return 0;\n\
     \    return data[min(r, (int) data.size() - 1)];\n  }\n  T get(int l, int r) const\
-    \ {\n    return get(r) - get(l);\n  }\n};\n#line 4 \"tests/cumulative-sum.test.cpp\"\
+    \ {\n    return get(r) - get(l);\n  }\n};\n#line 4 \"tests/yosupo/static_range_sum.test.cpp\"\
     \n\nvoid _main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n\
     \    rep(i, n) {\n        LL(x);\n        a.add(i, x);\n    }\n    a.build();\n\
     \    rep(i,q) {\n        INT(l, r);\n        cout << a.get(l, r) << endl;\n  \
@@ -77,15 +77,15 @@ data:
   - template/template.hpp
   - math/cumulative-sum.hpp
   isVerificationFile: true
-  path: tests/cumulative-sum.test.cpp
+  path: tests/yosupo/static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 14:12:00+09:00'
+  timestamp: '2023-11-12 14:26:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: tests/cumulative-sum.test.cpp
+documentation_of: tests/yosupo/static_range_sum.test.cpp
 layout: document
 redirect_from:
-- /verify/tests/cumulative-sum.test.cpp
-- /verify/tests/cumulative-sum.test.cpp.html
-title: tests/cumulative-sum.test.cpp
+- /verify/tests/yosupo/static_range_sum.test.cpp
+- /verify/tests/yosupo/static_range_sum.test.cpp.html
+title: tests/yosupo/static_range_sum.test.cpp
 ---

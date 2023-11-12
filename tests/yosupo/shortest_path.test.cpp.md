@@ -12,28 +12,28 @@ data:
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
+    PROBLEM: https://judge.yosupo.jp/problem/shortest_path
     links:
-    - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
-  bundledCode: "#line 1 \"tests/dijkstra.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
-    \n\n#line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\n\
-    using namespace std;\ntypedef long long ll;\nvoid _main(); int main() { cin.tie(0);\
-    \ ios::sync_with_stdio(false); _main(); return 0;}\n#pragma GCC target(\"avx2\"\
-    )\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#define\
-    \ overload4(_1, _2, _3, _4, name, ...) name\n#define rep1(i, n) for (int i = 0;\
-    \ i < int(n); ++i)\n#define rep2(i, s, n) for (int i = int(s); i < int(n); ++i)\n\
-    #define rep3(i, s, n, d) for(int i = int(s); i < int(n); i+=d)\n#define rep(...)\
-    \ overload4(__VA_ARGS__,rep3,rep2,rep1)(__VA_ARGS__)\n#define all(x) (x).begin(),(x).end()\n\
-    #define rall(x) (x).rbegin(),(x).rend()\n#define fir first\n#define sec second\n\
-    #define pb push_back\n#define em emplace_back\n#define mk make_pair\n#define SUM(a)\
-    \ accumulate(all(a),0LL)\n#define MIN(a) *min_element(all(a))\n#define MAX(a)\
-    \ *max_element(all(a))\ntemplate<class... T>\nconstexpr auto my_max(T... a){\n\
-    \    return max(initializer_list<common_type_t<T...>>{a...});\n}\ntemplate<class...\
+    - https://judge.yosupo.jp/problem/shortest_path
+  bundledCode: "#line 1 \"tests/yosupo/shortest_path.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/shortest_path\"\n#line 2 \"template/template.hpp\"\
+    \n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\nusing namespace std;\n\
+    typedef long long ll;\nvoid _main(); int main() { cin.tie(0); ios::sync_with_stdio(false);\
+    \ _main(); return 0;}\n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\"\
+    )\n#pragma GCC optimize(\"unroll-loops\")\n#define overload4(_1, _2, _3, _4, name,\
+    \ ...) name\n#define rep1(i, n) for (int i = 0; i < int(n); ++i)\n#define rep2(i,\
+    \ s, n) for (int i = int(s); i < int(n); ++i)\n#define rep3(i, s, n, d) for(int\
+    \ i = int(s); i < int(n); i+=d)\n#define rep(...) overload4(__VA_ARGS__,rep3,rep2,rep1)(__VA_ARGS__)\n\
+    #define all(x) (x).begin(),(x).end()\n#define rall(x) (x).rbegin(),(x).rend()\n\
+    #define fir first\n#define sec second\n#define pb push_back\n#define em emplace_back\n\
+    #define mk make_pair\n#define SUM(a) accumulate(all(a),0LL)\n#define MIN(a) *min_element(all(a))\n\
+    #define MAX(a) *max_element(all(a))\ntemplate<class... T>\nconstexpr auto my_max(T...\
+    \ a){\n    return max(initializer_list<common_type_t<T...>>{a...});\n}\ntemplate<class...\
     \ T>\nconstexpr auto my_min(T... a){\n    return min(initializer_list<common_type_t<T...>>{a...});\n\
     }\ntemplate<class... T> void input(T&... a){(cin >> ... >> a);}\ntemplate<class\
     \ T> void scan(vector<T>& a){ for(auto& i : a) input(i); }\n#define INT(...) int\
@@ -88,31 +88,39 @@ data:
     \ &e : g[idx]) {\n      auto next_cost = cost + e.cost;\n      if(dist[e.to] <=\
     \ next_cost) continue;\n      dist[e.to] = next_cost;\n      from[e.to] = idx;\n\
     \      id[e.to] = e.idx;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n \
-    \ return {dist, from, id};\n}\n#line 6 \"tests/dijkstra.test.cpp\"\n\nvoid _main()\
-    \ {\n    int N, M, S;\n    cin >> N >> M >> S;\n    Graph<ll> G(N);\n    G.read(M,\
-    \ 0, true, true);\n    ShortestPath<ll> d = dijkstra(G, S, infl);\n    rep(i,\
-    \ N) {\n        if(d.dist[i] == infl) cout << \"INF\" << endl;\n        else cout\
-    \ << d.dist[i] << endl;\n    }\n}\n"
-  code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
-    \n\n#include \"template/template.hpp\"\n#include \"graph/graph-template.hpp\"\n\
-    #include \"graph/dijkstra.hpp\"\n\nvoid _main() {\n    int N, M, S;\n    cin >>\
-    \ N >> M >> S;\n    Graph<ll> G(N);\n    G.read(M, 0, true, true);\n    ShortestPath<ll>\
-    \ d = dijkstra(G, S, infl);\n    rep(i, N) {\n        if(d.dist[i] == infl) cout\
-    \ << \"INF\" << endl;\n        else cout << d.dist[i] << endl;\n    }\n}"
+    \ return {dist, from, id};\n}\n#line 5 \"tests/yosupo/shortest_path.test.cpp\"\
+    \n\nvoid _main() {\n    int N, M, S, T;\n    cin >> N >> M >> S >> T;\n    Graph<ll>\
+    \ G(N);\n    G.read(M, 0, true, true);\n    ShortestPath<ll> D = dijkstra(G, S,\
+    \ infl);\n    if(D.dist[T] == infl) {\n        cout << -1 << endl;\n        return\
+    \ ;\n    }\n    vector<pair<int, int>> path;\n    int now = T;\n    while(true)\
+    \ {\n        path.emplace_back(D.from[now], now);\n        if(D.from[now] == S)\
+    \ break;\n        now = D.from[now];\n    }\n    cout << D.dist[T] << \" \" <<\
+    \ path.size() << endl;\n    for(auto &[u, v] : path) cout << u << \" \" << v <<\
+    \ endl;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\n#include\
+    \ \"template/template.hpp\"\n#include \"graph/graph-template.hpp\"\n#include \"\
+    graph/dijkstra.hpp\"\n\nvoid _main() {\n    int N, M, S, T;\n    cin >> N >> M\
+    \ >> S >> T;\n    Graph<ll> G(N);\n    G.read(M, 0, true, true);\n    ShortestPath<ll>\
+    \ D = dijkstra(G, S, infl);\n    if(D.dist[T] == infl) {\n        cout << -1 <<\
+    \ endl;\n        return ;\n    }\n    vector<pair<int, int>> path;\n    int now\
+    \ = T;\n    while(true) {\n        path.emplace_back(D.from[now], now);\n    \
+    \    if(D.from[now] == S) break;\n        now = D.from[now];\n    }\n    cout\
+    \ << D.dist[T] << \" \" << path.size() << endl;\n    for(auto &[u, v] : path)\
+    \ cout << u << \" \" << v << endl;\n}"
   dependsOn:
   - template/template.hpp
   - graph/graph-template.hpp
   - graph/dijkstra.hpp
   isVerificationFile: true
-  path: tests/dijkstra.test.cpp
+  path: tests/yosupo/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 14:04:04+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-11-12 14:26:16+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: tests/dijkstra.test.cpp
+documentation_of: tests/yosupo/shortest_path.test.cpp
 layout: document
 redirect_from:
-- /verify/tests/dijkstra.test.cpp
-- /verify/tests/dijkstra.test.cpp.html
-title: tests/dijkstra.test.cpp
+- /verify/tests/yosupo/shortest_path.test.cpp
+- /verify/tests/yosupo/shortest_path.test.cpp.html
+title: tests/yosupo/shortest_path.test.cpp
 ---

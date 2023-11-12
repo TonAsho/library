@@ -8,7 +8,7 @@ data:
   - icon: ':warning:'
     path: graph/bellman-ford.hpp
     title: Bellman-Ford
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/dijkstra.hpp
     title: Dijkstra
   - icon: ':warning:'
@@ -18,9 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/dijkstra.test.cpp
     title: tests/dijkstra.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: tests/yosupo/shortest_path.test.cpp
+    title: tests/yosupo/shortest_path.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Graph Template
     links: []
@@ -68,8 +71,9 @@ data:
   - graph/bellman-ford.hpp
   - graph/topo_sort.hpp
   timestamp: '2023-02-05 22:51:56+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - tests/yosupo/shortest_path.test.cpp
   - tests/dijkstra.test.cpp
 documentation_of: graph/graph-template.hpp
 layout: document

@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/cumulative-sum.test.cpp
     title: tests/cumulative-sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/static_range_sum.test.cpp
+    title: tests/yosupo/static_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -35,6 +38,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/cumulative-sum.test.cpp
+  - tests/yosupo/static_range_sum.test.cpp
 documentation_of: math/cumulative-sum.hpp
 layout: document
 title: Cumulative Sum
