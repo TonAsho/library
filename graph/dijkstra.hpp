@@ -3,7 +3,7 @@
 #include "graph-template.hpp"
 
 /**
- * @brief Dijkstra(単一始点最短路)
+ * @brief Dijkstra
  */
 template< typename T >
 struct ShortestPath {
@@ -12,8 +12,8 @@ struct ShortestPath {
 };
 
 template< typename T >
-ShortestPath< T > dijkstra(const Graph< T > &g, int s) {
-  vector< T > dist(g.size(), inf);
+ShortestPath< T > dijkstra(const Graph< T > &g, int s, ll INF_NUM) {
+  vector< T > dist(g.size(), INF_NUM);
   vector< int > from(g.size(), -1), id(g.size(), -1);
   using Pi = pair< T, int >;
   priority_queue< Pi, vector< Pi >, greater<> > que;

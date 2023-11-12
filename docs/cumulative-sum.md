@@ -1,5 +1,5 @@
 ---
-title: Cumulative Sum(一次元累積和)
+title: Cumulative Sum
 documentation_of: ./math/cumulative-sum.hpp
 ---
 

@@ -1,5 +1,5 @@
 /**
- * @brief Prime Table(素数テーブル)
+ * @brief Prime Table
 */
 vector< bool > prime(int n) {
   vector< bool > primes(n + 1, true);

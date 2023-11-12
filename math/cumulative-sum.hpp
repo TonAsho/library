@@ -1,6 +1,6 @@
 #pragma once
 /**
- * @brief Cumulative Sum(一次元累計和)
+ * @brief Cumulative Sum
  */
 template< class T >
 struct CumulativeSum {
