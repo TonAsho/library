@@ -7,8 +7,14 @@ data:
     path: tests/aoj/GRL_2_A.test.cpp
     title: tests/aoj/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
+    path: tests/aoj/GRL_5_C.test.cpp
+    title: tests/aoj/GRL_5_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/dijkstra.test.cpp
     title: tests/aoj/dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/lca.test.cpp
+    title: tests/yosupo/lca.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/shortest_path.test.cpp
     title: tests/yosupo/shortest_path.test.cpp
@@ -109,9 +115,11 @@ data:
   timestamp: '2023-11-12 13:41:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - tests/yosupo/lca.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
   - tests/yosupo/unionfind.test.cpp
   - tests/yosupo/shortest_path.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
   - tests/aoj/GRL_2_A.test.cpp
   - tests/aoj/dijkstra.test.cpp
 documentation_of: template/template.hpp

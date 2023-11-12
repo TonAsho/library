@@ -8,13 +8,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dijkstra.hpp
     title: Dijkstra
+  - icon: ':heavy_check_mark:'
+    path: graph/lca.hpp
+    title: LCA
   - icon: ':warning:'
     path: graph/topo_sort.hpp
     title: graph/topo_sort.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: tests/aoj/GRL_5_C.test.cpp
+    title: tests/aoj/GRL_5_C.test.cpp
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/dijkstra.test.cpp
     title: tests/aoj/dijkstra.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/lca.test.cpp
+    title: tests/yosupo/lca.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/shortest_path.test.cpp
     title: tests/yosupo/shortest_path.test.cpp
@@ -64,12 +73,15 @@ data:
   path: graph/graph-template.hpp
   requiredBy:
   - graph/dijkstra.hpp
+  - graph/lca.hpp
   - graph/bellman-ford.hpp
   - graph/topo_sort.hpp
   timestamp: '2023-02-05 22:51:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - tests/yosupo/lca.test.cpp
   - tests/yosupo/shortest_path.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
   - tests/aoj/dijkstra.test.cpp
 documentation_of: graph/graph-template.hpp
 layout: document

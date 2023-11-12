@@ -6,7 +6,7 @@ data:
     title: UnionFind
   - icon: ':heavy_check_mark:'
     path: graph/Kruskal.hpp
-    title: graph/Kruskal.hpp
+    title: Kruskal
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
@@ -59,11 +59,12 @@ data:
     using vvl = vector<vl>;\nusing vd = vector<double>;\nusing vvd = vector<vd>;\n\
     using vs = vector<string>;\nusing vvs = vector<vs>;\nusing vb = vector<bool>;\n\
     using vvb = vector<vb>;\nusing pii = pair<int, int>;\nusing pll = pair<ll, ll>;\n\
-    using mii = map<int, int>;\nusing mll = map<ll, ll>;\n#line 2 \"datastructure/UnionFind.hpp\"\
-    \n/**\n * @brief UnionFind\n**/\nstruct UnionFind {\n    private :\n    int n,\
-    \ cnt;\n    vector<int> ps, sz;\n\n    public :\n    UnionFind(int n) : n(n),\
-    \ cnt(n), ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n\
-    \    }\n    int leader(int x) {\n        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n\
+    using mii = map<int, int>;\nusing mll = map<ll, ll>;\n#line 2 \"graph/Kruskal.hpp\"\
+    \n/**\n * @brief Kruskal\n */\n#line 2 \"datastructure/UnionFind.hpp\"\n/**\n\
+    \ * @brief UnionFind\n**/\nstruct UnionFind {\n    private :\n    int n, cnt;\n\
+    \    vector<int> ps, sz;\n\n    public :\n    UnionFind(int n) : n(n), cnt(n),\
+    \ ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n \
+    \   int leader(int x) {\n        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n\
     \    }\n    bool same(int x, int y) {\n        return leader(x) == leader(y);\n\
     \    }\n    int unite(int x, int y) {\n        x = leader(x); y = leader(y);\n\
     \        if(x == y) return x;\n        if(sz[x] < sz[y]) swap(x, y);\n       \
@@ -73,7 +74,7 @@ data:
     \ n; ++i) res[leader(i)].push_back(i);\n        res.erase(remove_if(res.begin(),\
     \ res.end(), [&](const vector<int>& v) {return v.empty();}), res.end());\n   \
     \     return res;\n    }\n    int count() const {\n        return cnt;\n    }\n\
-    };\n#line 3 \"graph/Kruskal.hpp\"\n\ntemplate<class T>\nstruct Kruskal : UnionFind\
+    };\n#line 6 \"graph/Kruskal.hpp\"\n\ntemplate<class T>\nstruct Kruskal : UnionFind\
     \ {\n    using UnionFind::UnionFind;\n    struct Edge {\n        int from, to;\n\
     \        T cost;\n        int used;\n        int idx;\n        Edge() = default;\n\
     \        Edge(int from, int to, T cost = 1, int idx = -1) : from(from), to(to),\
@@ -99,7 +100,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 15:30:58+09:00'
+  timestamp: '2023-11-12 15:59:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/GRL_2_A.test.cpp

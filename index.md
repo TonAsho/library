@@ -13,7 +13,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/Kruskal.hpp
-      title: graph/Kruskal.hpp
+      title: Kruskal
     - icon: ':warning:'
       path: graph/bellman-ford.hpp
       title: Bellman-Ford
@@ -23,9 +23,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/graph-template.hpp
       title: Graph Template
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
-      title: graph/lca.hpp
+      title: LCA
     - icon: ':warning:'
       path: graph/topo_sort.hpp
       title: graph/topo_sort.hpp
@@ -64,10 +64,16 @@ data:
       path: tests/aoj/GRL_2_A.test.cpp
       title: tests/aoj/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
+      path: tests/aoj/GRL_5_C.test.cpp
+      title: tests/aoj/GRL_5_C.test.cpp
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/dijkstra.test.cpp
       title: tests/aoj/dijkstra.test.cpp
   - name: tests/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: tests/yosupo/lca.test.cpp
+      title: tests/yosupo/lca.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/shortest_path.test.cpp
       title: tests/yosupo/shortest_path.test.cpp

@@ -13,21 +13,23 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    document_title: Kruskal
     links: []
-  bundledCode: "#line 2 \"datastructure/UnionFind.hpp\"\n/**\n * @brief UnionFind\n\
-    **/\nstruct UnionFind {\n    private :\n    int n, cnt;\n    vector<int> ps, sz;\n\
-    \n    public :\n    UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1) {\n    \
-    \    for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int x) {\n \
-    \       return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n    }\n    bool same(int\
-    \ x, int y) {\n        return leader(x) == leader(y);\n    }\n    int unite(int\
-    \ x, int y) {\n        x = leader(x); y = leader(y);\n        if(x == y) return\
-    \ x;\n        if(sz[x] < sz[y]) swap(x, y);\n        sz[x] += sz[y];\n       \
-    \ ps[y] = x;\n        cnt--;\n        return x;\n    }\n    int size(int x) {\n\
-    \        return sz[leader(x)];\n    }\n    vector<vector<int>> groups() {\n  \
-    \      vector<vector<int>> res(n);\n        for(int i = 0; i < n; ++i) res[leader(i)].push_back(i);\n\
-    \        res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v)\
+  bundledCode: "#line 2 \"graph/Kruskal.hpp\"\n/**\n * @brief Kruskal\n */\n#line\
+    \ 2 \"datastructure/UnionFind.hpp\"\n/**\n * @brief UnionFind\n**/\nstruct UnionFind\
+    \ {\n    private :\n    int n, cnt;\n    vector<int> ps, sz;\n\n    public :\n\
+    \    UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1) {\n        for(int i =\
+    \ 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int x) {\n        return (ps[x]\
+    \ == x ? x : ps[x] = leader(ps[x]));\n    }\n    bool same(int x, int y) {\n \
+    \       return leader(x) == leader(y);\n    }\n    int unite(int x, int y) {\n\
+    \        x = leader(x); y = leader(y);\n        if(x == y) return x;\n       \
+    \ if(sz[x] < sz[y]) swap(x, y);\n        sz[x] += sz[y];\n        ps[y] = x;\n\
+    \        cnt--;\n        return x;\n    }\n    int size(int x) {\n        return\
+    \ sz[leader(x)];\n    }\n    vector<vector<int>> groups() {\n        vector<vector<int>>\
+    \ res(n);\n        for(int i = 0; i < n; ++i) res[leader(i)].push_back(i);\n \
+    \       res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v)\
     \ {return v.empty();}), res.end());\n        return res;\n    }\n    int count()\
-    \ const {\n        return cnt;\n    }\n};\n#line 3 \"graph/Kruskal.hpp\"\n\ntemplate<class\
+    \ const {\n        return cnt;\n    }\n};\n#line 6 \"graph/Kruskal.hpp\"\n\ntemplate<class\
     \ T>\nstruct Kruskal : UnionFind {\n    using UnionFind::UnionFind;\n    struct\
     \ Edge {\n        int from, to;\n        T cost;\n        int used;\n        int\
     \ idx;\n        Edge() = default;\n        Edge(int from, int to, T cost = 1,\
@@ -38,23 +40,23 @@ data:
     \ 0;\n        for(auto &e : es) {\n            if(same(e.from, e.to)) continue;\n\
     \            unite(e.from, e.to);\n            res += e.cost;\n            e.used\
     \ = 1;\n        }\n        return res;\n    }\n};\n"
-  code: "#pragma once\n#include \"datastructure/UnionFind.hpp\"\n\ntemplate<class\
-    \ T>\nstruct Kruskal : UnionFind {\n    using UnionFind::UnionFind;\n    struct\
-    \ Edge {\n        int from, to;\n        T cost;\n        int used;\n        int\
-    \ idx;\n        Edge() = default;\n        Edge(int from, int to, T cost = 1,\
-    \ int idx = -1) : from(from), to(to), used(0), cost(cost), idx(idx) {}\n     \
-    \   bool operator<(const Edge& o) const{return cost<o.cost;}\n    };\n    vector<Edge>\
-    \ es;\n    void add_edge(int u, int v, T c) {\n        es.emplace_back(u, v, c);\n\
-    \    }\n    T build() {\n        sort(es.begin(), es.end());\n        T res =\
-    \ 0;\n        for(auto &e : es) {\n            if(same(e.from, e.to)) continue;\n\
-    \            unite(e.from, e.to);\n            res += e.cost;\n            e.used\
-    \ = 1;\n        }\n        return res;\n    }\n};"
+  code: "#pragma once\n/**\n * @brief Kruskal\n */\n#include \"datastructure/UnionFind.hpp\"\
+    \n\ntemplate<class T>\nstruct Kruskal : UnionFind {\n    using UnionFind::UnionFind;\n\
+    \    struct Edge {\n        int from, to;\n        T cost;\n        int used;\n\
+    \        int idx;\n        Edge() = default;\n        Edge(int from, int to, T\
+    \ cost = 1, int idx = -1) : from(from), to(to), used(0), cost(cost), idx(idx)\
+    \ {}\n        bool operator<(const Edge& o) const{return cost<o.cost;}\n    };\n\
+    \    vector<Edge> es;\n    void add_edge(int u, int v, T c) {\n        es.emplace_back(u,\
+    \ v, c);\n    }\n    T build() {\n        sort(es.begin(), es.end());\n      \
+    \  T res = 0;\n        for(auto &e : es) {\n            if(same(e.from, e.to))\
+    \ continue;\n            unite(e.from, e.to);\n            res += e.cost;\n  \
+    \          e.used = 1;\n        }\n        return res;\n    }\n};"
   dependsOn:
   - datastructure/UnionFind.hpp
   isVerificationFile: false
   path: graph/Kruskal.hpp
   requiredBy: []
-  timestamp: '2023-11-12 15:30:58+09:00'
+  timestamp: '2023-11-12 15:59:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/aoj/GRL_2_A.test.cpp
@@ -63,5 +65,5 @@ layout: document
 redirect_from:
 - /library/graph/Kruskal.hpp
 - /library/graph/Kruskal.hpp.html
-title: graph/Kruskal.hpp
+title: Kruskal
 ---
