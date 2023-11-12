@@ -20,7 +20,7 @@ data:
     PROBLEM: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
     links:
     - http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
-  bundledCode: "#line 1 \"tests/dijkstra.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
+  bundledCode: "#line 1 \"tests/aoj/dijkstra.test.cpp\"\n#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \n\n#line 2 \"template/template.hpp\"\n/**\n * @brief Header\n */\n#include <bits/stdc++.h>\n\
     using namespace std;\ntypedef long long ll;\nvoid _main(); int main() { cin.tie(0);\
     \ ios::sync_with_stdio(false); _main(); return 0;}\n#pragma GCC target(\"avx2\"\
@@ -88,11 +88,11 @@ data:
     \ &e : g[idx]) {\n      auto next_cost = cost + e.cost;\n      if(dist[e.to] <=\
     \ next_cost) continue;\n      dist[e.to] = next_cost;\n      from[e.to] = idx;\n\
     \      id[e.to] = e.idx;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n \
-    \ return {dist, from, id};\n}\n#line 6 \"tests/dijkstra.test.cpp\"\n\nvoid _main()\
-    \ {\n    int N, M, S;\n    cin >> N >> M >> S;\n    Graph<ll> G(N);\n    G.read(M,\
-    \ 0, true, true);\n    ShortestPath<ll> d = dijkstra(G, S, infl);\n    rep(i,\
-    \ N) {\n        if(d.dist[i] == infl) cout << \"INF\" << endl;\n        else cout\
-    \ << d.dist[i] << endl;\n    }\n}\n"
+    \ return {dist, from, id};\n}\n#line 6 \"tests/aoj/dijkstra.test.cpp\"\n\nvoid\
+    \ _main() {\n    int N, M, S;\n    cin >> N >> M >> S;\n    Graph<ll> G(N);\n\
+    \    G.read(M, 0, true, true);\n    ShortestPath<ll> d = dijkstra(G, S, infl);\n\
+    \    rep(i, N) {\n        if(d.dist[i] == infl) cout << \"INF\" << endl;\n   \
+    \     else cout << d.dist[i] << endl;\n    }\n}\n"
   code: "#define PROBLEM \"http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \n\n#include \"template/template.hpp\"\n#include \"graph/graph-template.hpp\"\n\
     #include \"graph/dijkstra.hpp\"\n\nvoid _main() {\n    int N, M, S;\n    cin >>\
@@ -104,15 +104,15 @@ data:
   - graph/graph-template.hpp
   - graph/dijkstra.hpp
   isVerificationFile: true
-  path: tests/dijkstra.test.cpp
+  path: tests/aoj/dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2023-11-12 14:04:04+09:00'
+  timestamp: '2023-11-12 15:03:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: tests/dijkstra.test.cpp
+documentation_of: tests/aoj/dijkstra.test.cpp
 layout: document
 redirect_from:
-- /verify/tests/dijkstra.test.cpp
-- /verify/tests/dijkstra.test.cpp.html
-title: tests/dijkstra.test.cpp
+- /verify/tests/aoj/dijkstra.test.cpp
+- /verify/tests/aoj/dijkstra.test.cpp.html
+title: tests/aoj/dijkstra.test.cpp
 ---

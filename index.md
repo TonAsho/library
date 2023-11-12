@@ -11,7 +11,7 @@ data:
       title: WeightedUnionFind
   - name: graph
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: graph/Kruskal.hpp
       title: graph/Kruskal.hpp
     - icon: ':warning:'
@@ -54,21 +54,18 @@ data:
       title: Prime Table
   - name: template
     pages:
-    - icon: ':warning:'
-      path: template/template-yosupo.hpp
-      title: Header
     - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
-  - name: tests
+  - name: tests/aoj
     pages:
     - icon: ':heavy_check_mark:'
-      path: tests/cumulative-sum.test.cpp
-      title: tests/cumulative-sum.test.cpp
+      path: tests/aoj/GRL_2_A.test.cpp
+      title: tests/aoj/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
-      path: tests/dijkstra.test.cpp
-      title: tests/dijkstra.test.cpp
+      path: tests/aoj/dijkstra.test.cpp
+      title: tests/aoj/dijkstra.test.cpp
   - name: tests/yosupo
     pages:
     - icon: ':heavy_check_mark:'

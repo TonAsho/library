@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: tests/dijkstra.test.cpp
-    title: tests/dijkstra.test.cpp
+    path: tests/aoj/dijkstra.test.cpp
+    title: tests/aoj/dijkstra.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/shortest_path.test.cpp
     title: tests/yosupo/shortest_path.test.cpp
@@ -68,7 +68,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/shortest_path.test.cpp
-  - tests/dijkstra.test.cpp
+  - tests/aoj/dijkstra.test.cpp
 documentation_of: graph/dijkstra.hpp
 layout: document
 redirect_from:

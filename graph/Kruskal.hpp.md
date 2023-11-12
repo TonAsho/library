@@ -2,13 +2,19 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: datastructure/UnionFind.hpp
+    title: UnionFind
+  - icon: ':heavy_check_mark:'
     path: graph/graph-template.hpp
     title: Graph Template
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/GRL_2_A.test.cpp
+    title: tests/aoj/GRL_2_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template\n\
@@ -28,30 +34,45 @@ data:
     \      else add_edge(a, b, c);\n    }\n  }\n  inline vector< Edge< T > > &operator[](const\
     \ int &k) {\n    return g[k];\n  }\n  inline const vector< Edge< T > > &operator[](const\
     \ int &k) const {\n    return g[k];\n  }\n};\ntemplate< typename T = int >\nusing\
-    \ Edges = vector< Edge< T > >;\n#line 3 \"graph/Kruskal.hpp\"\n\ntemplate< typename\
-    \ T >\nstruct MinimumSpanningTree {\n  T cost;\n  Edges< T > edges;\n};\n\ntemplate<\
-    \ typename T >\nMinimumSpanningTree< T > kruskal(Edges< T > &edges, int V) {\n\
-    \  sort(begin(edges), end(edges), [](const Edge< T > &a, const Edge< T > &b) {\n\
-    \    return a.cost < b.cost;\n  });\n  dsu tree(V);\n  T total = T();\n  Edges<\
-    \ T > es;\n  for(auto &e : edges) {\n    if(!tree.same(e.from, e.to)) {\n    \
-    \    tree.merge(e.from, e.to);\n        es.emplace_back(e);\n        total +=\
-    \ e.cost;\n    }\n  }\n  return {total, es};\n}\n"
-  code: "#pragma once\n#include \"graph-template.hpp\"\n\ntemplate< typename T >\n\
-    struct MinimumSpanningTree {\n  T cost;\n  Edges< T > edges;\n};\n\ntemplate<\
-    \ typename T >\nMinimumSpanningTree< T > kruskal(Edges< T > &edges, int V) {\n\
-    \  sort(begin(edges), end(edges), [](const Edge< T > &a, const Edge< T > &b) {\n\
-    \    return a.cost < b.cost;\n  });\n  dsu tree(V);\n  T total = T();\n  Edges<\
-    \ T > es;\n  for(auto &e : edges) {\n    if(!tree.same(e.from, e.to)) {\n    \
-    \    tree.merge(e.from, e.to);\n        es.emplace_back(e);\n        total +=\
-    \ e.cost;\n    }\n  }\n  return {total, es};\n}"
+    \ Edges = vector< Edge< T > >;\n#line 2 \"datastructure/UnionFind.hpp\"\n/**\n\
+    \ * @brief UnionFind\n**/\nstruct UnionFind {\n    private :\n    int n, cnt;\n\
+    \    vector<int> ps, sz;\n\n    public :\n    UnionFind(int n) : n(n), cnt(n),\
+    \ ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n \
+    \   int leader(int x) {\n        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n\
+    \    }\n    bool same(int x, int y) {\n        return leader(x) == leader(y);\n\
+    \    }\n    int unite(int x, int y) {\n        x = leader(x); y = leader(y);\n\
+    \        if(x == y) return x;\n        if(sz[x] < sz[y]) swap(x, y);\n       \
+    \ sz[x] += sz[y];\n        ps[y] = x;\n        cnt--;\n        return x;\n   \
+    \ }\n    int size(int x) {\n        return sz[leader(x)];\n    }\n    vector<vector<int>>\
+    \ groups() {\n        vector<vector<int>> res(n);\n        for(int i = 0; i <\
+    \ n; ++i) res[leader(i)].push_back(i);\n        res.erase(remove_if(res.begin(),\
+    \ res.end(), [&](const vector<int>& v) {return v.empty();}), res.end());\n   \
+    \     return res;\n    }\n    int count() const {\n        return cnt;\n    }\n\
+    };\n#line 4 \"graph/Kruskal.hpp\"\n\ntemplate< typename T >\nstruct MinimumSpanningTree\
+    \ {\n  T cost;\n  Edges< T > edges;\n};\n\ntemplate< typename T >\nMinimumSpanningTree<\
+    \ T > kruskal(Edges< T > &edges, int N) {\n  sort(begin(edges), end(edges), [](const\
+    \ Edge< T > &a, const Edge< T > &b) {\n    return a.cost < b.cost;\n  });\n  UnionFind\
+    \ tree(N);\n  T total = T();\n  Edges< T > es;\n  for(auto &e : edges) {\n   \
+    \ if(!tree.same(e.from, e.to)) {\n        tree.unite(e.from, e.to);\n        es.emplace_back(e);\n\
+    \        total += e.cost;\n    }\n  }\n  return {total, es};\n}\n"
+  code: "#pragma once\n#include \"graph-template.hpp\"\n#include \"datastructure/UnionFind.hpp\"\
+    \n\ntemplate< typename T >\nstruct MinimumSpanningTree {\n  T cost;\n  Edges<\
+    \ T > edges;\n};\n\ntemplate< typename T >\nMinimumSpanningTree< T > kruskal(Edges<\
+    \ T > &edges, int N) {\n  sort(begin(edges), end(edges), [](const Edge< T > &a,\
+    \ const Edge< T > &b) {\n    return a.cost < b.cost;\n  });\n  UnionFind tree(N);\n\
+    \  T total = T();\n  Edges< T > es;\n  for(auto &e : edges) {\n    if(!tree.same(e.from,\
+    \ e.to)) {\n        tree.unite(e.from, e.to);\n        es.emplace_back(e);\n \
+    \       total += e.cost;\n    }\n  }\n  return {total, es};\n}"
   dependsOn:
   - graph/graph-template.hpp
+  - datastructure/UnionFind.hpp
   isVerificationFile: false
   path: graph/Kruskal.hpp
   requiredBy: []
-  timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-11-12 15:03:31+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - tests/aoj/GRL_2_A.test.cpp
 documentation_of: graph/Kruskal.hpp
 layout: document
 redirect_from:
