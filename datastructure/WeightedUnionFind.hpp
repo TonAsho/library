@@ -2,44 +2,54 @@
 /**
  * @brief WeightedUnionFind
 **/
-#include <bits/stdc++.h>
 template <typename T>
 struct WeightedUnionFind{
-  private :
-    vector<int> rs,ps;
+    private :
+    int n, cnt;
+    vector<int> ps, sz;
     vector<T> ws;
-  public :
-    WeightedUnionFind(int n):rs(n,1),ps(n),ws(n,T(0)){
-      iota(ps.begin(),ps.end(),0);
-    }
-    int find(int x){
-      if(x==ps[x]) return x;
-      int t=find(ps[x]);
-      ws[x]+=ws[ps[x]];
-      return ps[x]=t;
-    }
 
-    T weight(int x){
-      find(x);
-      return ws[x];
+    public :
+    WeightedUnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1), ws(n,0) {
+        for(int i = 0; i < n; ++i) ps[i] = i;
     }
-
-    bool same(int x,int y){
-      return find(x)==find(y);
+    int leader(int x) {
+        if(x == ps[x]) return x;
+        int t = leader(ps[x]);
+        ws[x] += ws[ps[x]];
+        return ps[x] = t;
     }
-
-    void unite(int x,int y,T w){
-      w+=weight(x);
-      w-=weight(y);
-      x=find(x);y=find(y);
-      if(x==y) return;
-      if(rs[x]<rs[y]) swap(x,y),w=-w;
-      rs[x]+=rs[y];
-      ps[y]=x;
-      ws[y]=w;
+    T weight(int x) {
+        leader(x);
+        return ws[x];
     }
-
-    T diff(int x,int y){
-      return weight(y)-weight(x);
+    T diff(int x, int y) {
+        return weight(y) - weight(x);
+    }
+    bool same(int x, int y) {
+        return leader(x) == leader(y);
+    }
+    int unite(int x, int y, T w) {
+        w += weight(x); w -= weight(y);
+        x = leader(x); y = leader(y);
+        if(x == y) return x;
+        if(sz[x] < sz[y]) swap(x, y), w = -w;
+        sz[x] += sz[y];
+        ps[y] = x;
+        ws[y] = w;
+        cnt--;
+        return x;
+    }
+    int size(int x) {
+        return sz[leader(x)];
+    }
+    vector<vector<int>> groups() {
+        vector<vector<int>> res(n);
+        for(int i = 0; i < n; ++i) res[leader(i)].push_back(i);
+        res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v) {return v.empty();}), res.end());
+        return res;
+    }
+    int count() const {
+        return cnt;
     }
 };
