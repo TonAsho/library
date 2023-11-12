@@ -34,7 +34,7 @@ data:
     - icon: ':warning:'
       path: math/cpp_int.hpp
       title: math/cpp_int.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/cumulative-sum.hpp
       title: Cumulative Sum
     - icon: ':warning:'
@@ -57,13 +57,13 @@ data:
     - icon: ':warning:'
       path: template/template-yosupo.hpp
       title: Header
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
   - name: tests
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/cumulative-sum.test.cpp
       title: tests/cumulative-sum.test.cpp
     - icon: ':heavy_check_mark:'
