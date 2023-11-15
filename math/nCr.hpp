@@ -1,6 +1,5 @@
 /**
  * @brief Binomial
- * @docs docs/binomial.md
  */
 template< typename T >
 T nCr(ll N, ll K) {
