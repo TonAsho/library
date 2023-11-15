@@ -55,6 +55,18 @@ data:
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
+      path: template/alias.hpp
+      title: template/alias.hpp
+    - icon: ':heavy_check_mark:'
+      path: template/func.hpp
+      title: template/func.hpp
+    - icon: ':heavy_check_mark:'
+      path: template/inout.hpp
+      title: template/inout.hpp
+    - icon: ':heavy_check_mark:'
+      path: template/macro.hpp
+      title: template/macro.hpp
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
