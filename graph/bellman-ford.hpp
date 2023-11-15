@@ -4,7 +4,6 @@
 
 /**
  * @brief Bellman-Ford
- * @docs docs/bellman-ford.md
  */
 template< typename T >
 vector< T > bellman_ford(const Edges< T > &edges, int V, int s) {
