@@ -41,11 +41,11 @@ inline void YES(const bool b = true) { std::cout << (b ? "YES\n" : "NO\n"); }
 inline void NO() { std::cout << "NO\n"; }
 
 template<class T>
-void trace(const T &t){std::cerr<<t<<'\n';}
+void trace(const T &t){std::cerr<<t<<')'<<'\n';}
 template<class Head, class... Tail>
 void trace(const Head &head, const Tail &... tail){std::cerr<<head<<' ';trace(tail...);}
 #ifdef ONLINE_JUDGE
 #define debug(...) (void(0))
 #else
-#define debug(...) do{std::cerr<<#__VA_ARGS__<<"=";trace(__VA_ARGS__);}while(0)
+#define debug(...) do{std::cerr<<'('<<#__VA_ARGS__<<") = (";trace(__VA_ARGS__);}while(0)
 #endif

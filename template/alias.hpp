@@ -20,6 +20,14 @@ using pii = std::pair<int, int>;
 using pll = std::pair<ll, ll>;
 using mii = std::map<int, int>;
 using mll = std::map<ll, ll>;
-const int inf = INT_MAX / 2; 
-const ll infl = 1LL << 60;
+template<typename T>
+struct infinity{
+    static constexpr T max=std::numeric_limits<T>::max();
+    static constexpr T min=std::numeric_limits<T>::min();
+    static constexpr T value=std::numeric_limits<T>::max()/2;
+    static constexpr T mvalue=std::numeric_limits<T>::min()/2;
+};
+template<typename T>constexpr T INF=infinity<T>::value;
+constexpr ll infl=INF<ll>;
+constexpr int inf = INF<int>;
 constexpr ld PI = 3.1415926535897932384626;
