@@ -1,11 +1,14 @@
 #pragma once
+/**
+ * @brief SegmentTree
+**/
 #include <bits/stdc++.h>
 
 #include "others/Monoid.hpp"
 
 template<class M>
 struct SegmentTree {
-private:
+private:e
     using T = typename M::value_type;
     int n, sz;
     std::vector<T> data;
