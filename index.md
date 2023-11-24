@@ -9,7 +9,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/InversionNumber.hpp
       title: "Inversion Number(\u8EE2\u5012\u6570)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/SegmentTree.hpp
       title: SegmentTree
     - icon: ':heavy_check_mark:'
@@ -69,24 +69,24 @@ data:
     - icon: ':heavy_check_mark:'
       path: others/Compressor.hpp
       title: others/Compressor.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: others/Monoid.hpp
       title: others/Monoid.hpp
   - name: template
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/inout.hpp
       title: template/inout.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -98,10 +98,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_1_B.test.cpp
       title: tests/aoj/DSL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_2_A.test.cpp
       title: tests/aoj/DSL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_2_B.test.cpp
       title: tests/aoj/DSL_2_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -121,7 +121,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/lca.test.cpp
       title: tests/yosupo/lca.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/yosupo/point_add_range_sum.test.cpp
       title: tests/yosupo/point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'

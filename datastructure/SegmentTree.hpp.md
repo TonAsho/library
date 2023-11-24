@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: others/Monoid.hpp
     title: others/Monoid.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/DSL_2_A.test.cpp
     title: tests/aoj/DSL_2_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/DSL_2_B.test.cpp
     title: tests/aoj/DSL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tests/yosupo/point_add_range_sum.test.cpp
     title: tests/yosupo/point_add_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: SegmentTree
     links: []
@@ -38,7 +38,7 @@ data:
     \ LCM{\n        using value_type = T;\n        static T op(const T &x,const T\
     \ &y){ return lcm(x, y); }\n        static T id(){ return T(1); }\n    };\n}\n\
     #line 8 \"datastructure/SegmentTree.hpp\"\n\ntemplate<class M>\nstruct SegmentTree\
-    \ {\nprivate:e\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
+    \ {\nprivate:\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
     \ data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n    SegmentTree(int n,\
     \ const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}\n    SegmentTree(const\
     \ std::vector<T> &v) : n(v.size()), sz(1) {\n        while(sz < n) sz <<= 1;\n\
@@ -69,7 +69,7 @@ data:
     \ sum);\n        } while((r & -r) != r);\n        return 0;\n    }\n};\n"
   code: "#pragma once\n/**\n * @brief SegmentTree\n**/\n#include <bits/stdc++.h>\n\
     \n#include \"others/Monoid.hpp\"\n\ntemplate<class M>\nstruct SegmentTree {\n\
-    private:e\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
+    private:\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
     \ data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n    SegmentTree(int n,\
     \ const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}\n    SegmentTree(const\
     \ std::vector<T> &v) : n(v.size()), sz(1) {\n        while(sz < n) sz <<= 1;\n\
@@ -103,8 +103,8 @@ data:
   isVerificationFile: false
   path: datastructure/SegmentTree.hpp
   requiredBy: []
-  timestamp: '2023-11-24 19:27:47+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2023-11-24 19:34:31+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp
   - tests/aoj/DSL_2_A.test.cpp

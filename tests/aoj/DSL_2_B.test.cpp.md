@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: datastructure/SegmentTree.hpp
     title: SegmentTree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: others/Monoid.hpp
     title: others/Monoid.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/inout.hpp
     title: template/inout.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
@@ -117,9 +117,9 @@ data:
     \ T>\n    struct LCM{\n        using value_type = T;\n        static T op(const\
     \ T &x,const T &y){ return lcm(x, y); }\n        static T id(){ return T(1); }\n\
     \    };\n}\n#line 8 \"datastructure/SegmentTree.hpp\"\n\ntemplate<class M>\nstruct\
-    \ SegmentTree {\nprivate:e\n    using T = typename M::value_type;\n    int n,\
-    \ sz;\n    std::vector<T> data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n\
-    \    SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e))\
+    \ SegmentTree {\nprivate:\n    using T = typename M::value_type;\n    int n, sz;\n\
+    \    std::vector<T> data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n  \
+    \  SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e))\
     \ {}\n    SegmentTree(const std::vector<T> &v) : n(v.size()), sz(1) {\n      \
     \  while(sz < n) sz <<= 1;\n        data.resize(sz << 1, M::e());\n        for(int\
     \ i = 0; i < n; ++i) data[sz + i] = v[i];\n        for(int i = sz - 1; i >= 1;\
@@ -168,8 +168,8 @@ data:
   isVerificationFile: true
   path: tests/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2023-11-24 19:27:47+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2023-11-24 19:34:31+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/DSL_2_B.test.cpp
 layout: document
