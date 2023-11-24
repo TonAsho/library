@@ -4,6 +4,9 @@ data:
   - name: datastructure
     pages:
     - icon: ':heavy_check_mark:'
+      path: datastructure/SegmentTree.hpp
+      title: datastructure/SegmentTree.hpp
+    - icon: ':heavy_check_mark:'
       path: datastructure/UnionFind.hpp
       title: UnionFind
     - icon: ':heavy_check_mark:'
@@ -41,6 +44,9 @@ data:
       path: math/is-prime.hpp
       title: Is Prime
     - icon: ':warning:'
+      path: math/modint.hpp
+      title: Cumulative Sum
+    - icon: ':warning:'
       path: math/nCr.hpp
       title: Binomial
     - icon: ':warning:'
@@ -52,6 +58,11 @@ data:
     - icon: ':warning:'
       path: math/prime.hpp
       title: Prime Table
+  - name: others
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: others/Monoid.hpp
+      title: others/Monoid.hpp
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
@@ -76,6 +87,12 @@ data:
       path: tests/aoj/DSL_1_B.test.cpp
       title: tests/aoj/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
+      path: tests/aoj/DSL_2_A.test.cpp
+      title: tests/aoj/DSL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/aoj/DSL_2_B.test.cpp
+      title: tests/aoj/DSL_2_B.test.cpp
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/GRL_2_A.test.cpp
       title: tests/aoj/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -89,6 +106,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/lca.test.cpp
       title: tests/yosupo/lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/yosupo/point_add_range_sum.test.cpp
+      title: tests/yosupo/point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/shortest_path.test.cpp
       title: tests/yosupo/shortest_path.test.cpp

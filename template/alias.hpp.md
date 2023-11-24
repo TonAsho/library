@@ -10,6 +10,12 @@ data:
     path: tests/aoj/DSL_1_B.test.cpp
     title: tests/aoj/DSL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
+    path: tests/aoj/DSL_2_A.test.cpp
+    title: tests/aoj/DSL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/DSL_2_B.test.cpp
+    title: tests/aoj/DSL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/GRL_2_A.test.cpp
     title: tests/aoj/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -21,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/lca.test.cpp
     title: tests/yosupo/lca.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/point_add_range_sum.test.cpp
+    title: tests/yosupo/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/shortest_path.test.cpp
     title: tests/yosupo/shortest_path.test.cpp
@@ -42,8 +51,12 @@ data:
     using vs = std::vector<std::string>;\nusing vvs = std::vector<vs>;\nusing vb =\
     \ std::vector<bool>;\nusing vvb = std::vector<vb>;\nusing vc = std::vector<char>;\n\
     using vvc = std::vector<vc>;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
-    \ ll>;\nusing mii = std::map<int, int>;\nusing mll = std::map<ll, ll>;\nconst\
-    \ int inf = INT_MAX / 2; \nconst ll infl = 1LL << 60;\nconstexpr ld PI = 3.1415926535897932384626;\n"
+    \ ll>;\nusing mii = std::map<int, int>;\nusing mll = std::map<ll, ll>;\ntemplate<typename\
+    \ T>\nstruct infinity{\n    static constexpr T max=std::numeric_limits<T>::max();\n\
+    \    static constexpr T min=std::numeric_limits<T>::min();\n    static constexpr\
+    \ T value=std::numeric_limits<T>::max()/2;\n    static constexpr T mvalue=std::numeric_limits<T>::min()/2;\n\
+    };\ntemplate<typename T>constexpr T INF=infinity<T>::value;\nconstexpr ll infl=INF<ll>;\n\
+    constexpr int inf = INF<int>;\nconstexpr ld PI = 3.1415926535897932384626;\n"
   code: "#pragma once\n#include <bits/stdc++.h>\n\nusing ll = long long;\nusing ull\
     \ = unsigned long long;\nusing ld = long double;\nusing vi = std::vector<int>;\n\
     using vvi = std::vector<vi>;\nusing vl = std::vector<ll>;\nusing vvl = std::vector<vl>;\n\
@@ -51,24 +64,31 @@ data:
     using vvs = std::vector<vs>;\nusing vb = std::vector<bool>;\nusing vvb = std::vector<vb>;\n\
     using vc = std::vector<char>;\nusing vvc = std::vector<vc>;\nusing pii = std::pair<int,\
     \ int>;\nusing pll = std::pair<ll, ll>;\nusing mii = std::map<int, int>;\nusing\
-    \ mll = std::map<ll, ll>;\nconst int inf = INT_MAX / 2; \nconst ll infl = 1LL\
-    \ << 60;\nconstexpr ld PI = 3.1415926535897932384626;"
+    \ mll = std::map<ll, ll>;\ntemplate<typename T>\nstruct infinity{\n    static\
+    \ constexpr T max=std::numeric_limits<T>::max();\n    static constexpr T min=std::numeric_limits<T>::min();\n\
+    \    static constexpr T value=std::numeric_limits<T>::max()/2;\n    static constexpr\
+    \ T mvalue=std::numeric_limits<T>::min()/2;\n};\ntemplate<typename T>constexpr\
+    \ T INF=infinity<T>::value;\nconstexpr ll infl=INF<ll>;\nconstexpr int inf = INF<int>;\n\
+    constexpr ld PI = 3.1415926535897932384626;"
   dependsOn: []
   isVerificationFile: false
   path: template/alias.hpp
   requiredBy:
   - template/template.hpp
-  timestamp: '2023-11-15 21:48:39+09:00'
+  timestamp: '2023-11-24 17:52:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - tests/yosupo/lca.test.cpp
-  - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/point_add_range_sum.test.cpp
   - tests/yosupo/unionfind.test.cpp
   - tests/yosupo/shortest_path.test.cpp
-  - tests/aoj/GRL_5_C.test.cpp
-  - tests/aoj/DSL_1_B.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
+  - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/lca.test.cpp
   - tests/aoj/dijkstra.test.cpp
+  - tests/aoj/DSL_2_A.test.cpp
+  - tests/aoj/DSL_1_B.test.cpp
+  - tests/aoj/DSL_2_B.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/GRL_2_A.test.cpp
 documentation_of: template/alias.hpp
 layout: document
 redirect_from:

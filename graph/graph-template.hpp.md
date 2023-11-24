@@ -72,17 +72,17 @@ data:
   isVerificationFile: false
   path: graph/graph-template.hpp
   requiredBy:
-  - graph/dijkstra.hpp
-  - graph/lca.hpp
   - graph/bellman-ford.hpp
+  - graph/dijkstra.hpp
   - graph/topo_sort.hpp
+  - graph/lca.hpp
   timestamp: '2023-02-05 22:51:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - tests/yosupo/lca.test.cpp
   - tests/yosupo/shortest_path.test.cpp
-  - tests/aoj/GRL_5_C.test.cpp
+  - tests/yosupo/lca.test.cpp
   - tests/aoj/dijkstra.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
 documentation_of: graph/graph-template.hpp
 layout: document
 title: Graph Template

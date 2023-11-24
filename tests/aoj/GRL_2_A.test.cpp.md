@@ -52,11 +52,14 @@ data:
     using vs = std::vector<std::string>;\nusing vvs = std::vector<vs>;\nusing vb =\
     \ std::vector<bool>;\nusing vvb = std::vector<vb>;\nusing vc = std::vector<char>;\n\
     using vvc = std::vector<vc>;\nusing pii = std::pair<int, int>;\nusing pll = std::pair<ll,\
-    \ ll>;\nusing mii = std::map<int, int>;\nusing mll = std::map<ll, ll>;\nconst\
-    \ int inf = INT_MAX / 2; \nconst ll infl = 1LL << 60;\nconstexpr ld PI = 3.1415926535897932384626;\n\
-    #line 3 \"template/inout.hpp\"\n\ntemplate<typename T,typename U>\nstd::istream\
-    \ &operator>>(std::istream&is,std::pair<T,U>&p){is>>p.first>>p.second;return is;}\n\
-    template<typename T>\nstd::istream &operator>>(std::istream&is,std::vector<T>&v){for(T\
+    \ ll>;\nusing mii = std::map<int, int>;\nusing mll = std::map<ll, ll>;\ntemplate<typename\
+    \ T>\nstruct infinity{\n    static constexpr T max=std::numeric_limits<T>::max();\n\
+    \    static constexpr T min=std::numeric_limits<T>::min();\n    static constexpr\
+    \ T value=std::numeric_limits<T>::max()/2;\n    static constexpr T mvalue=std::numeric_limits<T>::min()/2;\n\
+    };\ntemplate<typename T>constexpr T INF=infinity<T>::value;\nconstexpr ll infl=INF<ll>;\n\
+    constexpr int inf = INF<int>;\nconstexpr ld PI = 3.1415926535897932384626;\n#line\
+    \ 3 \"template/inout.hpp\"\n\ntemplate<typename T,typename U>\nstd::istream &operator>>(std::istream&is,std::pair<T,U>&p){is>>p.first>>p.second;return\
+    \ is;}\ntemplate<typename T>\nstd::istream &operator>>(std::istream&is,std::vector<T>&v){for(T\
     \ &in:v){is>>in;}return is;}\ninline void scan(int &a) { std::cin >> a; }\ninline\
     \ void scan(long long &a) { std::cin >> a; }\ninline void scan(std::string &a)\
     \ { std::cin >> a; }\ninline void scan(char &a) { std::cin >> a; }\ninline void\
@@ -79,12 +82,12 @@ data:
     inline void Yes(const bool b = true) { std::cout << (b ? \"Yes\\n\" : \"No\\n\"\
     ); }\ninline void No() { std::cout << \"No\\n\"; }\ninline void YES(const bool\
     \ b = true) { std::cout << (b ? \"YES\\n\" : \"NO\\n\"); }\ninline void NO() {\
-    \ std::cout << \"NO\\n\"; }\n\ntemplate<class T>\nvoid trace(const T &t){std::cerr<<t<<'\\\
+    \ std::cout << \"NO\\n\"; }\n\ntemplate<class T>\nvoid trace(const T &t){std::cerr<<t<<')'<<'\\\
     n';}\ntemplate<class Head, class... Tail>\nvoid trace(const Head &head, const\
     \ Tail &... tail){std::cerr<<head<<' ';trace(tail...);}\n#ifdef ONLINE_JUDGE\n\
-    #define debug(...) (void(0))\n#else\n#define debug(...) do{std::cerr<<#__VA_ARGS__<<\"\
-    =\";trace(__VA_ARGS__);}while(0)\n#endif\n#line 3 \"template/func.hpp\"\n\ntemplate<class...\
-    \ T>\nconstexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
+    #define debug(...) (void(0))\n#else\n#define debug(...) do{std::cerr<<'('<<#__VA_ARGS__<<\"\
+    ) = (\";trace(__VA_ARGS__);}while(0)\n#endif\n#line 3 \"template/func.hpp\"\n\n\
+    template<class... T>\nconstexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<class... T>\nconstexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return\
     \ true;}return false;}\ntemplate<typename T, typename U> bool chmax(T &a, U b)\
@@ -142,7 +145,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/GRL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-11-15 21:48:39+09:00'
+  timestamp: '2023-11-24 17:52:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/GRL_2_A.test.cpp
