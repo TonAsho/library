@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructure/SegmentTree.hpp
-    title: datastructure/SegmentTree.hpp
-  - icon: ':heavy_check_mark:'
+    title: SegmentTree
+  - icon: ':x:'
     path: others/Monoid.hpp
     title: others/Monoid.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/alias.hpp
     title: template/alias.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/func.hpp
     title: template/func.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/inout.hpp
     title: template/inout.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/macro.hpp
     title: template/macro.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_A
@@ -100,11 +100,12 @@ data:
     \    while(b){\n        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n\
     \    return res;\n}\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n  \
     \  if(mod==1)return 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 3 \"datastructure/SegmentTree.hpp\"\
-    \n\n#line 3 \"others/Monoid.hpp\"\n\nnamespace Monoid {\n    template<typename\
-    \ T>\n    struct Sum {\n        using value_type = T;\n        static constexpr\
-    \ T op(const T &x, const T &y) { return x + y; }\n        static constexpr T e()\
-    \ { return T(0); }\n    };\n    template<typename T, T max_value = infinity<T>::value>\n\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/SegmentTree.hpp\"\
+    \n/**\n * @brief SegmentTree\n**/\n#line 6 \"datastructure/SegmentTree.hpp\"\n\
+    \n#line 3 \"others/Monoid.hpp\"\n\nnamespace Monoid {\n    template<typename T>\n\
+    \    struct Sum {\n        using value_type = T;\n        static constexpr T op(const\
+    \ T &x, const T &y) { return x + y; }\n        static constexpr T e() { return\
+    \ T(0); }\n    };\n    template<typename T, T max_value = infinity<T>::value>\n\
     \    struct Min {\n        using value_type = T;\n        static constexpr T op(const\
     \ T &x, const T &y) { return x < y ? x : y; }\n        static constexpr T e()\
     \ { return max_value; }\n    };\n    template<typename T, T min_value = infinity<T>::mvalue>\n\
@@ -115,10 +116,10 @@ data:
     \ gcd(x, y); }\n        static T id() { return T(0); }\n    };\n    template<typename\
     \ T>\n    struct LCM{\n        using value_type = T;\n        static T op(const\
     \ T &x,const T &y){ return lcm(x, y); }\n        static T id(){ return T(1); }\n\
-    \    };\n}\n#line 5 \"datastructure/SegmentTree.hpp\"\n\ntemplate<class M>\nstruct\
-    \ SegmentTree {\nprivate:\n    using T = typename M::value_type;\n    int n, sz;\n\
-    \    std::vector<T> data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n  \
-    \  SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e))\
+    \    };\n}\n#line 8 \"datastructure/SegmentTree.hpp\"\n\ntemplate<class M>\nstruct\
+    \ SegmentTree {\nprivate:e\n    using T = typename M::value_type;\n    int n,\
+    \ sz;\n    std::vector<T> data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n\
+    \    SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e))\
     \ {}\n    SegmentTree(const std::vector<T> &v) : n(v.size()), sz(1) {\n      \
     \  while(sz < n) sz <<= 1;\n        data.resize(sz << 1, M::e());\n        for(int\
     \ i = 0; i < n; ++i) data[sz + i] = v[i];\n        for(int i = sz - 1; i >= 1;\
@@ -167,8 +168,8 @@ data:
   isVerificationFile: true
   path: tests/aoj/DSL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2023-11-24 17:52:33+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2023-11-24 19:27:47+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: tests/aoj/DSL_2_A.test.cpp
 layout: document

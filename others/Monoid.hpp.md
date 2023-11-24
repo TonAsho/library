@@ -2,22 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: datastructure/SegmentTree.hpp
-    title: datastructure/SegmentTree.hpp
+    title: SegmentTree
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/aoj/DSL_2_A.test.cpp
     title: tests/aoj/DSL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/aoj/DSL_2_B.test.cpp
     title: tests/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/yosupo/point_add_range_sum.test.cpp
     title: tests/yosupo/point_add_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"others/Monoid.hpp\"\n#include <bits/stdc++.h>\n\nnamespace\
@@ -56,7 +56,7 @@ data:
   requiredBy:
   - datastructure/SegmentTree.hpp
   timestamp: '2023-11-24 17:52:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp
   - tests/aoj/DSL_2_A.test.cpp

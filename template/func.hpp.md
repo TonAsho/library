@@ -2,19 +2,25 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: tests/aoj/ALDS1_5_D.test.cpp
+    title: tests/aoj/ALDS1_5_D.test.cpp
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/DSL_1_B.test.cpp
     title: tests/aoj/DSL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/aoj/DSL_2_A.test.cpp
     title: tests/aoj/DSL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/aoj/DSL_2_B.test.cpp
     title: tests/aoj/DSL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/DSL_2_B_2.test.cpp
+    title: tests/aoj/DSL_2_B_2.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/aoj/GRL_2_A.test.cpp
     title: tests/aoj/GRL_2_A.test.cpp
@@ -27,9 +33,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/lca.test.cpp
     title: tests/yosupo/lca.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tests/yosupo/point_add_range_sum.test.cpp
     title: tests/yosupo/point_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/point_add_range_sum_2.test.cpp
+    title: tests/yosupo/point_add_range_sum_2.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/shortest_path.test.cpp
     title: tests/yosupo/shortest_path.test.cpp
@@ -39,9 +48,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/unionfind.test.cpp
     title: tests/yosupo/unionfind.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template/func.hpp\"\n#include <bits/stdc++.h>\n\ntemplate<class...\
@@ -80,18 +89,21 @@ data:
   requiredBy:
   - template/template.hpp
   timestamp: '2023-11-15 21:48:39+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp
   - tests/yosupo/unionfind.test.cpp
   - tests/yosupo/shortest_path.test.cpp
+  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
   - tests/yosupo/lca.test.cpp
   - tests/aoj/dijkstra.test.cpp
   - tests/aoj/DSL_2_A.test.cpp
   - tests/aoj/DSL_1_B.test.cpp
   - tests/aoj/DSL_2_B.test.cpp
+  - tests/aoj/DSL_2_B_2.test.cpp
   - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/ALDS1_5_D.test.cpp
   - tests/aoj/GRL_2_A.test.cpp
 documentation_of: template/func.hpp
 layout: document

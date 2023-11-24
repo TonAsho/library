@@ -4,8 +4,14 @@ data:
   - name: datastructure
     pages:
     - icon: ':heavy_check_mark:'
+      path: datastructure/BinaryIndexedTree.hpp
+      title: BinaryIndexedTree
+    - icon: ':heavy_check_mark:'
+      path: datastructure/InversionNumber.hpp
+      title: "Inversion Number(\u8EE2\u5012\u6570)"
+    - icon: ':x:'
       path: datastructure/SegmentTree.hpp
-      title: datastructure/SegmentTree.hpp
+      title: SegmentTree
     - icon: ':heavy_check_mark:'
       path: datastructure/UnionFind.hpp
       title: UnionFind
@@ -61,37 +67,46 @@ data:
   - name: others
     pages:
     - icon: ':heavy_check_mark:'
+      path: others/Compressor.hpp
+      title: others/Compressor.hpp
+    - icon: ':x:'
       path: others/Monoid.hpp
       title: others/Monoid.hpp
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/inout.hpp
       title: template/inout.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
   - name: tests/aoj
     pages:
     - icon: ':heavy_check_mark:'
+      path: tests/aoj/ALDS1_5_D.test.cpp
+      title: tests/aoj/ALDS1_5_D.test.cpp
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_1_B.test.cpp
       title: tests/aoj/DSL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/aoj/DSL_2_A.test.cpp
       title: tests/aoj/DSL_2_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/aoj/DSL_2_B.test.cpp
       title: tests/aoj/DSL_2_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/aoj/DSL_2_B_2.test.cpp
+      title: tests/aoj/DSL_2_B_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/aoj/GRL_2_A.test.cpp
       title: tests/aoj/GRL_2_A.test.cpp
@@ -106,9 +121,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/lca.test.cpp
       title: tests/yosupo/lca.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tests/yosupo/point_add_range_sum.test.cpp
       title: tests/yosupo/point_add_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: tests/yosupo/point_add_range_sum_2.test.cpp
+      title: tests/yosupo/point_add_range_sum_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/shortest_path.test.cpp
       title: tests/yosupo/shortest_path.test.cpp
