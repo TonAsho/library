@@ -13,5 +13,6 @@
 "tests/yosupo/shortest_path.test.cpp": "2023-12-03 11:28:57 +0900",
 "tests/yosupo/static_range_sum.test.cpp": "2023-12-03 11:28:57 +0900",
 "tests/yosupo/unionfind.test.cpp": "2023-12-03 11:28:57 +0900",
-"tests/yukicoder/430.test.cpp": "2023-12-03 15:50:13 +0900"
+"tests/yukicoder/430.test.cpp": "2023-12-03 15:50:13 +0900",
+"tests/yukicoder/599.test.cpp": "2023-12-03 19:06:10 +0900"
 }
