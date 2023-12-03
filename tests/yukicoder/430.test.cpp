@@ -1,7 +1,7 @@
 #define PROBLEM "https://yukicoder.me/problems/no/430"
 #include <bits/stdc++.h>
-#include "string/RollingHash.hpp"
 using namespace std;
+#include "string/RollingHash.hpp"
 
 int main() {
     RollingHash rh;
