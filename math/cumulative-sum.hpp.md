@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/yosupo/static_range_sum.test.cpp
-    title: tests/yosupo/static_range_sum.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     document_title: Cumulative Sum
     links: []
@@ -32,9 +29,8 @@ data:
   path: math/cumulative-sum.hpp
   requiredBy: []
   timestamp: '2023-11-12 13:41:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - tests/yosupo/static_range_sum.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: math/cumulative-sum.hpp
 layout: document
 title: Cumulative Sum

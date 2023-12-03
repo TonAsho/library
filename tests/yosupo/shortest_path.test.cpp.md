@@ -95,42 +95,53 @@ data:
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ninline constexpr bool is_prime(ll n){\n    if(n<=1)return\
-    \ false;\n    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n\
-    \    return true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n\
-    \    while(b){\n        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n\
-    \    return res;\n}\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n  \
-    \  if(mod==1)return 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
+    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
+    \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
+    \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
+    \ {\n        assert(!sorted); sorted = true;\n        for(int i = 1; i < (int)data.size();\
+    \ i++) data[i] += data[i - 1];\n    }\n    T prod(int r) {\n        assert(sorted);\n\
+    \        return (r < 0 ? 0 : data[min(r, (int)data.size() - 1)]);\n    }\n   \
+    \ T prod(int l, int r) {\n        assert(sorted);\n        return prod(r) - prod(l);\
+    \ \n    }\n};\ninline constexpr bool is_prime(ll n){\n    if(n<=1)return false;\n\
+    \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
+    \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
+    \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
+    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
     \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"graph/graph-template.hpp\"\
     \n\n/**\n * @brief Graph Template\n */\ntemplate< typename T = int >\nstruct Edge\
-    \ {\n  int from, to;\n  T cost;\n  int idx;\n  Edge() = default;\n  Edge(int from,\
-    \ int to, T cost = 1, int idx = -1) : from(from), to(to), cost(cost), idx(idx)\
-    \ {}\n  operator int() const { return to; }\n};\ntemplate< typename T = int >\n\
-    struct Graph {\n  vector< vector< Edge< T > > > g;\n  int es;\n  Graph() = default;\n\
-    \  explicit Graph(int n) : g(n), es(0) {}\n  size_t size() const {\n    return\
-    \ g.size();\n  }\n  void add_directed_edge(int from, int to, T cost = 1) {\n \
-    \   g[from].emplace_back(from, to, cost, es++);\n  }\n  void add_edge(int from,\
-    \ int to, T cost = 1) {\n    g[from].emplace_back(from, to, cost, es);\n    g[to].emplace_back(to,\
-    \ from, cost, es++);\n  }\n  void read(int M, int padding = -1, bool weighted\
-    \ = false, bool directed = false) {\n    for(int i = 0; i < M; i++) {\n      int\
-    \ a, b;\n      cin >> a >> b;\n      a += padding;\n      b += padding;\n    \
-    \  T c = T(1);\n      if(weighted) cin >> c;\n      if(directed) add_directed_edge(a,\
-    \ b, c);\n      else add_edge(a, b, c);\n    }\n  }\n  inline vector< Edge< T\
-    \ > > &operator[](const int &k) {\n    return g[k];\n  }\n  inline const vector<\
-    \ Edge< T > > &operator[](const int &k) const {\n    return g[k];\n  }\n};\ntemplate<\
-    \ typename T = int >\nusing Edges = vector< Edge< T > >;\n#line 2 \"graph/dijkstra.hpp\"\
-    \n\n#line 4 \"graph/dijkstra.hpp\"\n\n/**\n * @brief Dijkstra\n */\ntemplate<\
-    \ typename T >\nstruct ShortestPath {\n  vector< T > dist;\n  vector< int > from,\
-    \ id;\n};\n\ntemplate< typename T >\nShortestPath< T > dijkstra(const Graph< T\
-    \ > &g, int s, ll INF_NUM) {\n  vector< T > dist(g.size(), INF_NUM);\n  vector<\
-    \ int > from(g.size(), -1), id(g.size(), -1);\n  using Pi = pair< T, int >;\n\
-    \  priority_queue< Pi, vector< Pi >, greater<> > que;\n  dist[s] = 0;\n  que.emplace(dist[s],\
-    \ s);\n  while(!que.empty()) {\n    T cost;\n    int idx;\n    tie(cost, idx)\
-    \ = que.top();\n    que.pop();\n    if(dist[idx] < cost) continue;\n    for(auto\
-    \ &e : g[idx]) {\n      auto next_cost = cost + e.cost;\n      if(dist[e.to] <=\
-    \ next_cost) continue;\n      dist[e.to] = next_cost;\n      from[e.to] = idx;\n\
-    \      id[e.to] = e.idx;\n      que.emplace(dist[e.to], e.to);\n    }\n  }\n \
-    \ return {dist, from, id};\n}\n#line 5 \"tests/yosupo/shortest_path.test.cpp\"\
+    \ {\n    int from, to;\n    T cost;\n    int idx;\n    Edge() = default;\n   \
+    \ Edge(int from, int to, T cost = 1, int idx = -1) : from(from), to(to), cost(cost),\
+    \ idx(idx) {}\n    operator int() const { return to; }\n    bool operator<(const\
+    \ Edge& o) const{return cost<o.cost;}\n};\ntemplate< typename T = int >\nstruct\
+    \ Graph {\n    vector< vector< Edge< T > > > g;\n    int es;\n    Graph() = default;\n\
+    \    explicit Graph(int n) : g(n), es(0) {}\n    size_t size() const {\n     \
+    \   return g.size();\n    }\n    void add_directed_edge(int from, int to, T cost\
+    \ = 1) {\n        g[from].emplace_back(from, to, cost, es++);\n    }\n    void\
+    \ add_edge(int from, int to, T cost = 1) {\n        g[from].emplace_back(from,\
+    \ to, cost, es);\n        g[to].emplace_back(to, from, cost, es++);\n    }\n \
+    \   void read(int M, int padding = -1, bool weighted = false, bool directed =\
+    \ false) {\n        for(int i = 0; i < M; i++) {\n        int a, b;\n        cin\
+    \ >> a >> b;\n        a += padding;\n        b += padding;\n        T c = T(1);\n\
+    \        if(weighted) cin >> c;\n        if(directed) add_directed_edge(a, b,\
+    \ c);\n        else add_edge(a, b, c);\n        }\n    }\n    inline vector< Edge<\
+    \ T > > &operator[](const int &k) {\n        return g[k];\n    }\n    inline const\
+    \ vector< Edge< T > > &operator[](const int &k) const {\n        return g[k];\n\
+    \    }\n};\ntemplate< typename T = int >\nusing Edges = vector< Edge< T > >;\n\
+    #line 2 \"graph/dijkstra.hpp\"\n\n#line 4 \"graph/dijkstra.hpp\"\n\n/**\n * @brief\
+    \ Dijkstra\n */\ntemplate< typename T >\nstruct ShortestPath {\n  vector< T >\
+    \ dist;\n  vector< int > from, id;\n};\n\ntemplate< typename T >\nShortestPath<\
+    \ T > dijkstra(const Graph< T > &g, int s, ll INF_NUM) {\n  vector< T > dist(g.size(),\
+    \ INF_NUM);\n  vector< int > from(g.size(), -1), id(g.size(), -1);\n  using Pi\
+    \ = pair< T, int >;\n  priority_queue< Pi, vector< Pi >, greater<> > que;\n  dist[s]\
+    \ = 0;\n  que.emplace(dist[s], s);\n  while(!que.empty()) {\n    T cost;\n   \
+    \ int idx;\n    tie(cost, idx) = que.top();\n    que.pop();\n    if(dist[idx]\
+    \ < cost) continue;\n    for(auto &e : g[idx]) {\n      auto next_cost = cost\
+    \ + e.cost;\n      if(dist[e.to] <= next_cost) continue;\n      dist[e.to] = next_cost;\n\
+    \      from[e.to] = idx;\n      id[e.to] = e.idx;\n      que.emplace(dist[e.to],\
+    \ e.to);\n    }\n  }\n  return {dist, from, id};\n}\n#line 5 \"tests/yosupo/shortest_path.test.cpp\"\
     \n\nvoid _main() {\n    int N, M, S, T;\n    cin >> N >> M >> S >> T;\n    Graph<ll>\
     \ G(N);\n    G.read(M, 0, true, true);\n    ShortestPath<ll> D = dijkstra(G, S,\
     \ infl);\n    if(D.dist[T] == infl) {\n        cout << -1 << endl;\n        return\
@@ -160,7 +171,7 @@ data:
   isVerificationFile: true
   path: tests/yosupo/shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2023-11-24 17:52:33+09:00'
+  timestamp: '2023-12-03 11:28:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/shortest_path.test.cpp

@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/cumulative-sum.hpp
-    title: Cumulative Sum
-  - icon: ':heavy_check_mark:'
     path: template/alias.hpp
     title: template/alias.hpp
   - icon: ':heavy_check_mark:'
@@ -92,40 +89,39 @@ data:
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ninline constexpr bool is_prime(ll n){\n    if(n<=1)return\
-    \ false;\n    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n\
-    \    return true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n\
-    \    while(b){\n        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n\
-    \    return res;\n}\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n  \
-    \  if(mod==1)return 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"math/cumulative-sum.hpp\"\
-    \n/**\n * @brief Cumulative Sum\n */\ntemplate< class T >\nstruct CumulativeSum\
-    \ {\n  vector< T > data;\n  CumulativeSum() = default;\n  explicit CumulativeSum(size_t\
-    \ sz) : data(sz + 1, 0) {}\n  void add(int k, const T &x) {data[k + 1] += x;}\n\
-    \  void build() {\n    for(int i = 1; i < data.size(); i++) {\n      data[i] +=\
-    \ data[i - 1];\n    }\n  }\n  T get(int r) const {\n    if(r < 0) return 0;\n\
-    \    return data[min(r, (int) data.size() - 1)];\n  }\n  T get(int l, int r) const\
-    \ {\n    return get(r) - get(l);\n  }\n};\n#line 4 \"tests/yosupo/static_range_sum.test.cpp\"\
-    \n\nvoid _main() {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n\
-    \    rep(i, n) {\n        LL(x);\n        a.add(i, x);\n    }\n    a.build();\n\
-    \    rep(i,q) {\n        INT(l, r);\n        cout << a.get(l, r) << endl;\n  \
-    \  }\n}\n"
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
+    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
+    \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
+    \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
+    \ {\n        assert(!sorted); sorted = true;\n        for(int i = 1; i < (int)data.size();\
+    \ i++) data[i] += data[i - 1];\n    }\n    T prod(int r) {\n        assert(sorted);\n\
+    \        return (r < 0 ? 0 : data[min(r, (int)data.size() - 1)]);\n    }\n   \
+    \ T prod(int l, int r) {\n        assert(sorted);\n        return prod(r) - prod(l);\
+    \ \n    }\n};\ninline constexpr bool is_prime(ll n){\n    if(n<=1)return false;\n\
+    \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
+    \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
+    \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
+    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 3 \"tests/yosupo/static_range_sum.test.cpp\"\
+    \n\nvoid _main() {\n    INT(N, Q);\n    vl A(N);\n    input(A);\n    CumulativeSum<ll>\
+    \ sum(A);\n    sum.build();\n    rep(qi, Q) {\n        INT(l, r);\n        print(sum.prod(l,\
+    \ r));\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n#include\
-    \ \"template/template.hpp\"\n#include \"math/cumulative-sum.hpp\"\n\nvoid _main()\
-    \ {\n    int n, q; cin >> n >> q;\n    CumulativeSum<ll> a(n);\n    rep(i, n)\
-    \ {\n        LL(x);\n        a.add(i, x);\n    }\n    a.build();\n    rep(i,q)\
-    \ {\n        INT(l, r);\n        cout << a.get(l, r) << endl;\n    }\n}"
+    \ \"template/template.hpp\"\n\nvoid _main() {\n    INT(N, Q);\n    vl A(N);\n\
+    \    input(A);\n    CumulativeSum<ll> sum(A);\n    sum.build();\n    rep(qi, Q)\
+    \ {\n        INT(l, r);\n        print(sum.prod(l, r));\n    }\n}"
   dependsOn:
   - template/template.hpp
   - template/macro.hpp
   - template/alias.hpp
   - template/inout.hpp
   - template/func.hpp
-  - math/cumulative-sum.hpp
   isVerificationFile: true
   path: tests/yosupo/static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2023-11-24 17:52:33+09:00'
+  timestamp: '2023-12-03 11:28:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/static_range_sum.test.cpp

@@ -6,6 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: datastructure/BinaryIndexedTree.hpp
       title: BinaryIndexedTree
+    - icon: ':warning:'
+      path: datastructure/CumulativeSum2D.hpp
+      title: CumulativeSum2D
     - icon: ':heavy_check_mark:'
       path: datastructure/InversionNumber.hpp
       title: "Inversion Number(\u8EE2\u5012\u6570)"
@@ -43,7 +46,7 @@ data:
     - icon: ':warning:'
       path: math/cpp_int.hpp
       title: math/cpp_int.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: math/cumulative-sum.hpp
       title: Cumulative Sum
     - icon: ':warning:'

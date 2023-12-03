@@ -91,17 +91,26 @@ data:
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ninline constexpr bool is_prime(ll n){\n    if(n<=1)return\
-    \ false;\n    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n\
-    \    return true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n\
-    \    while(b){\n        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n\
-    \    return res;\n}\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n  \
-    \  if(mod==1)return 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
+    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
+    \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
+    \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
+    \ {\n        assert(!sorted); sorted = true;\n        for(int i = 1; i < (int)data.size();\
+    \ i++) data[i] += data[i - 1];\n    }\n    T prod(int r) {\n        assert(sorted);\n\
+    \        return (r < 0 ? 0 : data[min(r, (int)data.size() - 1)]);\n    }\n   \
+    \ T prod(int l, int r) {\n        assert(sorted);\n        return prod(r) - prod(l);\
+    \ \n    }\n};\ninline constexpr bool is_prime(ll n){\n    if(n<=1)return false;\n\
+    \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
+    \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
+    \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
+    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
     \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/WeightedUnionFind.hpp\"\
     \n/**\n * @brief WeightedUnionFind\n**/\ntemplate <typename T>\nstruct WeightedUnionFind{\n\
-    \    private :\n    int n, cnt;\n    vector<int> ps, sz;\n    vector<T> ws;\n\n\
-    \    public :\n    WeightedUnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1),\
-    \ ws(n,0) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int\
+    private :\n    int n, cnt;\n    std::vector<int> ps, sz;\n    std::vector<T> ws;\n\
+    \npublic :\n    WeightedUnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1), ws(n,0)\
+    \ {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int\
     \ x) {\n        if(x == ps[x]) return x;\n        int t = leader(ps[x]);\n   \
     \     ws[x] += ws[ps[x]];\n        return ps[x] = t;\n    }\n    T weight(int\
     \ x) {\n        leader(x);\n        return ws[x];\n    }\n    T diff(int x, int\
@@ -111,10 +120,10 @@ data:
     \ = leader(y);\n        if(x == y) return x;\n        if(sz[x] < sz[y]) swap(x,\
     \ y), w = -w;\n        sz[x] += sz[y];\n        ps[y] = x;\n        ws[y] = w;\n\
     \        cnt--;\n        return x;\n    }\n    int size(int x) {\n        return\
-    \ sz[leader(x)];\n    }\n    vector<vector<int>> groups() {\n        vector<vector<int>>\
-    \ res(n);\n        for(int i = 0; i < n; ++i) res[leader(i)].push_back(i);\n \
-    \       res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v)\
-    \ {return v.empty();}), res.end());\n        return res;\n    }\n    int count()\
+    \ sz[leader(x)];\n    }\n    std::vector<std::vector<int>> groups() {\n      \
+    \  std::vector<std::vector<int>> res(n);\n        for(int i = 0; i < n; ++i) res[leader(i)].push_back(i);\n\
+    \        res.erase(std::remove_if(res.begin(), res.end(), [&](const std::vector<int>&\
+    \ v) {return v.empty();}), res.end());\n        return res;\n    }\n    int count()\
     \ const {\n        return cnt;\n    }\n};\n#line 4 \"tests/aoj/DSL_1_B.test.cpp\"\
     \n\nvoid _main() {\n    int N, Q;\n    cin >> N >> Q;\n    WeightedUnionFind<ll>\
     \ uni(N);\n    rep(qi, Q) {\n        int t, x, y, w;\n        cin >> t >> x >>\
@@ -138,7 +147,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-11-24 17:52:33+09:00'
+  timestamp: '2023-12-03 11:28:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/DSL_1_B.test.cpp
