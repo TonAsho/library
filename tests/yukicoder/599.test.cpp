@@ -20,5 +20,5 @@ void _main() {
         }
         return memo[{l, r}] = res;
     };
-    print(dfs(0, S.size() - 1));
+    cout << dfs(0, S.size() - 1);
 }
