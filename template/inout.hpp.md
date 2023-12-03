@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template/template.hpp
     title: Template
   _extendedVerifiedWith:
@@ -48,9 +48,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/unionfind.test.cpp
     title: tests/yosupo/unionfind.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: tests/yukicoder/599.test.cpp
+    title: tests/yukicoder/599.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 2 "template/inout.hpp"
@@ -273,7 +276,7 @@ data:
   requiredBy:
   - template/template.hpp
   timestamp: '2023-11-24 17:52:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp
   - tests/yosupo/unionfind.test.cpp
@@ -281,6 +284,7 @@ data:
   - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
   - tests/yosupo/lca.test.cpp
+  - tests/yukicoder/599.test.cpp
   - tests/aoj/dijkstra.test.cpp
   - tests/aoj/DSL_2_A.test.cpp
   - tests/aoj/DSL_1_B.test.cpp

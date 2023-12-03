@@ -6,9 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yukicoder/430.test.cpp
     title: tests/yukicoder/430.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: tests/yukicoder/599.test.cpp
+    title: tests/yukicoder/599.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: RollingHash
     links: []
@@ -67,9 +70,10 @@ data:
   path: string/RollingHash.hpp
   requiredBy: []
   timestamp: '2023-12-03 15:37:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - tests/yukicoder/430.test.cpp
+  - tests/yukicoder/599.test.cpp
 documentation_of: string/RollingHash.hpp
 layout: document
 redirect_from:

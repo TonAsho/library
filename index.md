@@ -52,9 +52,9 @@ data:
     - icon: ':warning:'
       path: math/is-prime.hpp
       title: Is Prime
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/modint.hpp
-      title: Cumulative Sum
+      title: ModInt
     - icon: ':warning:'
       path: math/nCr.hpp
       title: Binomial
@@ -77,24 +77,24 @@ data:
       title: others/Monoid.hpp
   - name: string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/RollingHash.hpp
       title: RollingHash
   - name: template
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/alias.hpp
       title: template/alias.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/func.hpp
       title: template/func.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/inout.hpp
       title: template/inout.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/macro.hpp
       title: template/macro.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template/template.hpp
       title: Template
   verificationCategories:
@@ -149,6 +149,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yukicoder/430.test.cpp
       title: tests/yukicoder/430.test.cpp
+    - icon: ':x:'
+      path: tests/yukicoder/599.test.cpp
+      title: tests/yukicoder/599.test.cpp
 layout: toppage
 ---
 バグってたらごめんね
