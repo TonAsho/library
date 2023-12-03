@@ -77,7 +77,7 @@ data:
       title: others/Monoid.hpp
   - name: string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/RollingHash.hpp
       title: RollingHash
   - name: template
@@ -146,7 +146,7 @@ data:
       title: tests/yosupo/unionfind.test.cpp
   - name: tests/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/yukicoder/430.test.cpp
       title: tests/yukicoder/430.test.cpp
 layout: toppage
