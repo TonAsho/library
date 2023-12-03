@@ -75,6 +75,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: others/Monoid.hpp
       title: others/Monoid.hpp
+  - name: string
+    pages:
+    - icon: ':x:'
+      path: string/RollingHash.hpp
+      title: RollingHash
   - name: template
     pages:
     - icon: ':heavy_check_mark:'
@@ -139,6 +144,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/unionfind.test.cpp
       title: tests/yosupo/unionfind.test.cpp
+  - name: tests/yukicoder
+    pages:
+    - icon: ':x:'
+      path: tests/yukicoder/430.test.cpp
+      title: tests/yukicoder/430.test.cpp
 layout: toppage
 ---
 バグってたらごめんね
