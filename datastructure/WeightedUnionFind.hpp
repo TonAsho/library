@@ -4,12 +4,12 @@
 **/
 template <typename T>
 struct WeightedUnionFind{
-    private :
+private :
     int n, cnt;
-    vector<int> ps, sz;
-    vector<T> ws;
+    std::vector<int> ps, sz;
+    std::vector<T> ws;
 
-    public :
+public :
     WeightedUnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1), ws(n,0) {
         for(int i = 0; i < n; ++i) ps[i] = i;
     }
@@ -43,10 +43,10 @@ struct WeightedUnionFind{
     int size(int x) {
         return sz[leader(x)];
     }
-    vector<vector<int>> groups() {
-        vector<vector<int>> res(n);
+    std::vector<std::vector<int>> groups() {
+        std::vector<std::vector<int>> res(n);
         for(int i = 0; i < n; ++i) res[leader(i)].push_back(i);
-        res.erase(remove_if(res.begin(), res.end(), [&](const vector<int>& v) {return v.empty();}), res.end());
+        res.erase(std::remove_if(res.begin(), res.end(), [&](const std::vector<int>& v) {return v.empty();}), res.end());
         return res;
     }
     int count() const {

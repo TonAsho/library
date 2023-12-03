@@ -14,6 +14,30 @@ std::vector<std::vector<T>> ROTATE(std::vector<std::vector<T>> X) {
     rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];
     return res;
 }
+template<typename T>
+struct CumulativeSum {
+private:    
+    std::vector<T> data;
+    bool sorted = false;
+public:
+    CumulativeSum(int n) : data(n + 1, 0) {}
+    CumulativeSum(const std::vector<T> &v) : data(v.size() + 1, 0) {
+        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);
+    }
+    void add(int k, const T &val) { data[k + 1] += val; }
+    void build() {
+        assert(!sorted); sorted = true;
+        for(int i = 1; i < (int)data.size(); i++) data[i] += data[i - 1];
+    }
+    T prod(int r) {
+        assert(sorted);
+        return (r < 0 ? 0 : data[min(r, (int)data.size() - 1)]);
+    }
+    T prod(int l, int r) {
+        assert(sorted);
+        return prod(r) - prod(l); 
+    }
+};
 inline constexpr bool is_prime(ll n){
     if(n<=1)return false;
     for(ll i=2;i*i<=n;i++){
