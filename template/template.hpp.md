@@ -31,6 +31,9 @@ data:
     path: tests/aoj/DSL_2_B_2.test.cpp
     title: tests/aoj/DSL_2_B_2.test.cpp
   - icon: ':heavy_check_mark:'
+    path: tests/aoj/GRL_2_A.test.cpp
+    title: tests/aoj/GRL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: tests/aoj/GRL_5_C.test.cpp
     title: tests/aoj/GRL_5_C.test.cpp
   - icon: ':heavy_check_mark:'
@@ -176,6 +179,7 @@ data:
   - tests/yosupo/lca.test.cpp
   - tests/yosupo/unionfind.test.cpp
   - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/GRL_2_A.test.cpp
   - tests/aoj/DSL_2_B.test.cpp
   - tests/aoj/DSL_2_B_2.test.cpp
   - tests/aoj/dijkstra.test.cpp

@@ -24,9 +24,6 @@ data:
   - name: graph
     pages:
     - icon: ':warning:'
-      path: graph/Kruskal.hpp
-      title: Kruskal
-    - icon: ':warning:'
       path: graph/bellman-ford.hpp
       title: Bellman-Ford
     - icon: ':heavy_check_mark:'
@@ -35,6 +32,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/graph-template.hpp
       title: Graph Template
+    - icon: ':heavy_check_mark:'
+      path: graph/kruskal.hpp
+      title: Kruskal
     - icon: ':heavy_check_mark:'
       path: graph/lca.hpp
       title: LCA
@@ -112,7 +112,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_2_B_2.test.cpp
       title: tests/aoj/DSL_2_B_2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/GRL_2_A.test.cpp
       title: tests/aoj/GRL_2_A.test.cpp
     - icon: ':heavy_check_mark:'
