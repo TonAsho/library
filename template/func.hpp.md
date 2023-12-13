@@ -57,15 +57,15 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"template/func.hpp\"\n#include <bits/stdc++.h>\n\ntemplate<class...\
-    \ T>\nconstexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
-    \ }\ntemplate<class... T>\nconstexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
+    \ T>\nconstexpr auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
+    \ }\ntemplate<class... T>\nconstexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return\
     \ true;}return false;}\ntemplate<typename T, typename U> bool chmax(T &a, U b)\
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
-    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\n  private:\
+    \    \n    std::vector<T> data;\n    bool sorted = false;\n  public:\n    CumulativeSum(int\
     \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
     \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
     \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
@@ -81,15 +81,15 @@ data:
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
     \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n"
   code: "#pragma once\n#include <bits/stdc++.h>\n\ntemplate<class... T>\nconstexpr\
-    \ auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
-    \ }\ntemplate<class... T>\nconstexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
+    \ auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...}); }\n\
+    template<class... T>\nconstexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return\
     \ true;}return false;}\ntemplate<typename T, typename U> bool chmax(T &a, U b)\
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
-    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\n  private:\
+    \    \n    std::vector<T> data;\n    bool sorted = false;\n  public:\n    CumulativeSum(int\
     \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
     \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
     \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
@@ -109,24 +109,24 @@ data:
   path: template/func.hpp
   requiredBy:
   - template/template.hpp
-  timestamp: '2023-12-03 11:28:57+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - tests/yosupo/point_add_range_sum.test.cpp
-  - tests/yosupo/unionfind.test.cpp
-  - tests/yosupo/shortest_path.test.cpp
-  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/shortest_path.test.cpp
+  - tests/yosupo/point_add_range_sum.test.cpp
+  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/lca.test.cpp
-  - tests/yukicoder/599.test.cpp
-  - tests/aoj/dijkstra.test.cpp
-  - tests/aoj/DSL_2_A.test.cpp
-  - tests/aoj/DSL_1_B.test.cpp
+  - tests/yosupo/unionfind.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/GRL_2_A.test.cpp
   - tests/aoj/DSL_2_B.test.cpp
   - tests/aoj/DSL_2_B_2.test.cpp
-  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/dijkstra.test.cpp
   - tests/aoj/ALDS1_5_D.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
+  - tests/aoj/DSL_2_A.test.cpp
+  - tests/aoj/DSL_1_B.test.cpp
+  - tests/yukicoder/599.test.cpp
 documentation_of: template/func.hpp
 layout: document
 redirect_from:

@@ -47,9 +47,6 @@ data:
       path: math/cpp_int.hpp
       title: math/cpp_int.hpp
     - icon: ':warning:'
-      path: math/cumulative-sum.hpp
-      title: Cumulative Sum
-    - icon: ':warning:'
       path: math/is-prime.hpp
       title: Is Prime
     - icon: ':heavy_check_mark:'

@@ -89,26 +89,26 @@ data:
   isVerificationFile: false
   path: template/alias.hpp
   requiredBy:
-  - template/template.hpp
   - math/modint.hpp
+  - template/template.hpp
   timestamp: '2023-11-24 17:52:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - tests/yosupo/point_add_range_sum.test.cpp
-  - tests/yosupo/unionfind.test.cpp
-  - tests/yosupo/shortest_path.test.cpp
-  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/shortest_path.test.cpp
+  - tests/yosupo/point_add_range_sum.test.cpp
+  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/lca.test.cpp
-  - tests/yukicoder/599.test.cpp
-  - tests/aoj/dijkstra.test.cpp
-  - tests/aoj/DSL_2_A.test.cpp
-  - tests/aoj/DSL_1_B.test.cpp
+  - tests/yosupo/unionfind.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/GRL_2_A.test.cpp
   - tests/aoj/DSL_2_B.test.cpp
   - tests/aoj/DSL_2_B_2.test.cpp
-  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/dijkstra.test.cpp
   - tests/aoj/ALDS1_5_D.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
+  - tests/aoj/DSL_2_A.test.cpp
+  - tests/aoj/DSL_1_B.test.cpp
+  - tests/yukicoder/599.test.cpp
 documentation_of: template/alias.hpp
 layout: document
 redirect_from:

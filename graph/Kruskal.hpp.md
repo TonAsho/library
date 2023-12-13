@@ -17,17 +17,17 @@ data:
     links: []
   bundledCode: "#line 2 \"graph/Kruskal.hpp\"\n/**\n * @brief Kruskal\n */\n#line\
     \ 2 \"datastructure/UnionFind.hpp\"\n#include <bits/stdc++.h>\n/**\n * @brief\
-    \ UnionFind\n**/\nstruct UnionFind {\nprivate :\n    int n, cnt;\n    std::vector<int>\
-    \ ps, sz;\n\npublic :\n    UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1) {\n\
-    \        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int x) {\n\
-    \        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n    }\n    bool same(int\
-    \ x, int y) {\n        return leader(x) == leader(y);\n    }\n    int unite(int\
-    \ x, int y) {\n        x = leader(x); y = leader(y);\n        if(x == y) return\
-    \ x;\n        if(sz[x] < sz[y]) swap(x, y);\n        sz[x] += sz[y];\n       \
-    \ ps[y] = x;\n        cnt--;\n        return x;\n    }\n    int size(int x) {\n\
-    \        return sz[leader(x)];\n    }\n    std::vector<std::vector<int>> groups()\
-    \ {\n        std::vector<std::vector<int>> res(n);\n        for(int i = 0; i <\
-    \ n; ++i) res[leader(i)].push_back(i);\n        res.erase(std::remove_if(res.begin(),\
+    \ UnionFind\n**/\nstruct UnionFind {\n  private :\n    int n, cnt;\n    std::vector<int>\
+    \ ps, sz;\n\n  public :\n    UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1)\
+    \ {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int\
+    \ x) {\n        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n    }\n    bool\
+    \ same(int x, int y) {\n        return leader(x) == leader(y);\n    }\n    int\
+    \ unite(int x, int y) {\n        x = leader(x); y = leader(y);\n        if(x ==\
+    \ y) return x;\n        if(sz[x] < sz[y]) swap(x, y);\n        sz[x] += sz[y];\n\
+    \        ps[y] = x;\n        cnt--;\n        return x;\n    }\n    int size(int\
+    \ x) {\n        return sz[leader(x)];\n    }\n    std::vector<std::vector<int>>\
+    \ groups() {\n        std::vector<std::vector<int>> res(n);\n        for(int i\
+    \ = 0; i < n; ++i) res[leader(i)].push_back(i);\n        res.erase(std::remove_if(res.begin(),\
     \ res.end(), [&](const std::vector<int>& v) {return v.empty();}), res.end());\n\
     \        return res;\n    }\n    int count() const {\n        return cnt;\n  \
     \  }\n};\n#line 6 \"graph/Kruskal.hpp\"\n\ntemplate<class T>\nstruct Kruskal :\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: false
   path: graph/Kruskal.hpp
   requiredBy: []
-  timestamp: '2023-12-03 11:28:57+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/aoj/GRL_2_A.test.cpp

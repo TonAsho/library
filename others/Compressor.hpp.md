@@ -15,8 +15,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"others/Compressor.hpp\"\n#include <bits/stdc++.h>\n\ntemplate<typename\
-    \ T>\nstruct Compressor {\nprivate:\n    std::vector<T> data;\n    bool sorted\
-    \ = false;\npublic:\n    Compressor(const std::vector<T> &v) : data(std::move(v))\
+    \ T>\nstruct Compressor {\n  private:\n    std::vector<T> data;\n    bool sorted\
+    \ = false;\n  public:\n    Compressor(const std::vector<T> &v) : data(std::move(v))\
     \ {}\n    void build() {\n        assert(!sorted);\n        sorted = 1;\n    \
     \    std::sort(data.begin(), data.end());\n        data.erase(std::unique(data.begin(),\
     \ data.end()), data.end());\n    }\n    int get_index(const T &v) {\n        assert(sorted);\n\
@@ -28,8 +28,8 @@ data:
     \      return res;\n    }\n    int size() const {\n        return (int)data.size();\n\
     \    }\n};\n"
   code: "#pragma once\n#include <bits/stdc++.h>\n\ntemplate<typename T>\nstruct Compressor\
-    \ {\nprivate:\n    std::vector<T> data;\n    bool sorted = false;\npublic:\n \
-    \   Compressor(const std::vector<T> &v) : data(std::move(v)) {}\n    void build()\
+    \ {\n  private:\n    std::vector<T> data;\n    bool sorted = false;\n  public:\n\
+    \    Compressor(const std::vector<T> &v) : data(std::move(v)) {}\n    void build()\
     \ {\n        assert(!sorted);\n        sorted = 1;\n        std::sort(data.begin(),\
     \ data.end());\n        data.erase(std::unique(data.begin(), data.end()), data.end());\n\
     \    }\n    int get_index(const T &v) {\n        assert(sorted);\n        return\
@@ -45,7 +45,7 @@ data:
   path: others/Compressor.hpp
   requiredBy:
   - datastructure/InversionNumber.hpp
-  timestamp: '2023-11-24 19:27:47+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/aoj/ALDS1_5_D.test.cpp

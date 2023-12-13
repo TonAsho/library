@@ -77,16 +77,16 @@ data:
   path: graph/graph-template.hpp
   requiredBy:
   - graph/bellman-ford.hpp
-  - graph/dijkstra.hpp
-  - graph/topo_sort.hpp
   - graph/lca.hpp
+  - graph/topo_sort.hpp
+  - graph/dijkstra.hpp
   timestamp: '2023-12-03 11:28:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/shortest_path.test.cpp
   - tests/yosupo/lca.test.cpp
-  - tests/aoj/dijkstra.test.cpp
   - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/dijkstra.test.cpp
 documentation_of: graph/graph-template.hpp
 layout: document
 title: Graph Template

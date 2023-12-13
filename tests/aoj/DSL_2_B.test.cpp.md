@@ -70,7 +70,9 @@ data:
     inline void input(Head &head, Tail &...tail) {scan(head);input(tail...);}\n\n\
     template<typename T>\nstd::ostream &operator<<(std::ostream&os,const std::vector<T>&v){for(auto\
     \ it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?\" \":\"\"\
-    );}return os;}\ntemplate<typename T,typename U>\nstd::ostream &operator<<(std::ostream&os,const\
+    );}return os;}\ntemplate<typename T>\nstd::ostream &operator<<(std::ostream&os,const\
+    \ std::set<T>&v){for(auto it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?\"\
+    \ \":\"\");}return os;}\ntemplate<typename T,typename U>\nstd::ostream &operator<<(std::ostream&os,const\
     \ std::pair<T,U>&p){os<<p.first<<\" \"<<p.second;return os;}\ntemplate<class T>\n\
     inline void print(const T &t){std::cout<<t<<'\\n';}\ntemplate<class Head, class...\
     \ Tail>\ninline void print(const Head &head, const Tail &... tail){std::cout<<head<<'\
@@ -78,7 +80,7 @@ data:
     template<class T>\ninline void printl(const T &t){std::cout<<t<<'\\n';}\ntemplate\
     \ <class T>\ninline void printl(const std::vector<T> &a){for(const auto &v : a)\
     \ std::cout << v << '\\n';}\ntemplate<class Head, class... Tail>\ninline void\
-    \ printl(const Head &head, const Tail &... tail){std::cout<<head<<' ';print(tail...);}\n\
+    \ printl(const Head &head, const Tail &... tail){std::cout<<head<<'\\n';printl(tail...);}\n\
     inline void Yes(const bool b = true) { std::cout << (b ? \"Yes\\n\" : \"No\\n\"\
     ); }\ninline void No() { std::cout << \"No\\n\"; }\ninline void YES(const bool\
     \ b = true) { std::cout << (b ? \"YES\\n\" : \"NO\\n\"); }\ninline void NO() {\
@@ -87,15 +89,15 @@ data:
     \ Tail &... tail){std::cerr<<head<<' ';trace(tail...);}\n#ifdef ONLINE_JUDGE\n\
     #define debug(...) (void(0))\n#else\n#define debug(...) do{std::cerr<<'('<<#__VA_ARGS__<<\"\
     ) = (\";trace(__VA_ARGS__);}while(0)\n#endif\n#line 3 \"template/func.hpp\"\n\n\
-    template<class... T>\nconstexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
-    \ }\ntemplate<class... T>\nconstexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
+    template<class... T>\nconstexpr auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
+    \ }\ntemplate<class... T>\nconstexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return\
     \ true;}return false;}\ntemplate<typename T, typename U> bool chmax(T &a, U b)\
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
-    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\n  private:\
+    \    \n    std::vector<T> data;\n    bool sorted = false;\n  public:\n    CumulativeSum(int\
     \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
     \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
     \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
@@ -126,17 +128,17 @@ data:
     \ T>\n    struct LCM{\n        using value_type = T;\n        static T op(const\
     \ T &x,const T &y){ return lcm(x, y); }\n        static T id(){ return T(1); }\n\
     \    };\n}\n#line 8 \"datastructure/SegmentTree.hpp\"\n\ntemplate<class M>\nstruct\
-    \ SegmentTree {\nprivate:\n    using T = typename M::value_type;\n    int n, sz;\n\
-    \    std::vector<T> data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n  \
-    \  SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e))\
-    \ {}\n    SegmentTree(const std::vector<T> &v) : n(v.size()), sz(1) {\n      \
-    \  while(sz < n) sz <<= 1;\n        data.resize(sz << 1, M::e());\n        for(int\
-    \ i = 0; i < n; ++i) data[sz + i] = v[i];\n        for(int i = sz - 1; i >= 1;\
-    \ i--) data[i] = M::op(data[i << 1], data[i << 1 ^ 1]);\n    }\n    void update(int\
-    \ x, T val) {\n        x += sz;\n        data[x] = val;\n        while(x >>= 1)\
-    \ data[x] = M::op(data[x << 1], data[x << 1 ^ 1]);\n    }\n    T prod(int l, int\
-    \ r) const {\n        l += sz, r += sz;\n        T lsm = M::e(), rsm = M::e();\n\
-    \        while(l != r) {\n            if(l & 1) lsm = M::op(lsm, data[l++]);\n\
+    \ SegmentTree {\n  private:\n    using T = typename M::value_type;\n    int n,\
+    \ sz;\n    std::vector<T> data;\n  public:\n    SegmentTree() : SegmentTree(0)\
+    \ {}\n    SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n,\
+    \ e)) {}\n    SegmentTree(const std::vector<T> &v) : n(v.size()), sz(1) {\n  \
+    \      while(sz < n) sz <<= 1;\n        data.resize(sz << 1, M::e());\n      \
+    \  for(int i = 0; i < n; ++i) data[sz + i] = v[i];\n        for(int i = sz - 1;\
+    \ i >= 1; i--) data[i] = M::op(data[i << 1], data[i << 1 ^ 1]);\n    }\n    void\
+    \ update(int x, T val) {\n        x += sz;\n        data[x] = val;\n        while(x\
+    \ >>= 1) data[x] = M::op(data[x << 1], data[x << 1 ^ 1]);\n    }\n    T prod(int\
+    \ l, int r) const {\n        l += sz, r += sz;\n        T lsm = M::e(), rsm =\
+    \ M::e();\n        while(l != r) {\n            if(l & 1) lsm = M::op(lsm, data[l++]);\n\
     \            if(r & 1) rsm = M::op(data[--r], rsm);\n            l >>= 1;\n  \
     \          r >>= 1;\n        }\n        return M::op(lsm, rsm);\n    }\n    T\
     \ all_prod() const { return data[1]; }\n    T get(int x) const { return data[sz\
@@ -177,7 +179,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 11:28:57+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/DSL_2_B.test.cpp

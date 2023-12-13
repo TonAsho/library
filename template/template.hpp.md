@@ -102,7 +102,9 @@ data:
     inline void input(Head &head, Tail &...tail) {scan(head);input(tail...);}\n\n\
     template<typename T>\nstd::ostream &operator<<(std::ostream&os,const std::vector<T>&v){for(auto\
     \ it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?\" \":\"\"\
-    );}return os;}\ntemplate<typename T,typename U>\nstd::ostream &operator<<(std::ostream&os,const\
+    );}return os;}\ntemplate<typename T>\nstd::ostream &operator<<(std::ostream&os,const\
+    \ std::set<T>&v){for(auto it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?\"\
+    \ \":\"\");}return os;}\ntemplate<typename T,typename U>\nstd::ostream &operator<<(std::ostream&os,const\
     \ std::pair<T,U>&p){os<<p.first<<\" \"<<p.second;return os;}\ntemplate<class T>\n\
     inline void print(const T &t){std::cout<<t<<'\\n';}\ntemplate<class Head, class...\
     \ Tail>\ninline void print(const Head &head, const Tail &... tail){std::cout<<head<<'\
@@ -110,7 +112,7 @@ data:
     template<class T>\ninline void printl(const T &t){std::cout<<t<<'\\n';}\ntemplate\
     \ <class T>\ninline void printl(const std::vector<T> &a){for(const auto &v : a)\
     \ std::cout << v << '\\n';}\ntemplate<class Head, class... Tail>\ninline void\
-    \ printl(const Head &head, const Tail &... tail){std::cout<<head<<' ';print(tail...);}\n\
+    \ printl(const Head &head, const Tail &... tail){std::cout<<head<<'\\n';printl(tail...);}\n\
     inline void Yes(const bool b = true) { std::cout << (b ? \"Yes\\n\" : \"No\\n\"\
     ); }\ninline void No() { std::cout << \"No\\n\"; }\ninline void YES(const bool\
     \ b = true) { std::cout << (b ? \"YES\\n\" : \"NO\\n\"); }\ninline void NO() {\
@@ -119,15 +121,15 @@ data:
     \ Tail &... tail){std::cerr<<head<<' ';trace(tail...);}\n#ifdef ONLINE_JUDGE\n\
     #define debug(...) (void(0))\n#else\n#define debug(...) do{std::cerr<<'('<<#__VA_ARGS__<<\"\
     ) = (\";trace(__VA_ARGS__);}while(0)\n#endif\n#line 3 \"template/func.hpp\"\n\n\
-    template<class... T>\nconstexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
-    \ }\ntemplate<class... T>\nconstexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
+    template<class... T>\nconstexpr auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
+    \ }\ntemplate<class... T>\nconstexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return\
     \ true;}return false;}\ntemplate<typename T, typename U> bool chmax(T &a, U b)\
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
-    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\n  private:\
+    \    \n    std::vector<T> data;\n    bool sorted = false;\n  public:\n    CumulativeSum(int\
     \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
     \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
     \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
@@ -167,24 +169,24 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2023-12-03 11:28:57+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - tests/yosupo/point_add_range_sum.test.cpp
-  - tests/yosupo/unionfind.test.cpp
-  - tests/yosupo/shortest_path.test.cpp
-  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/static_range_sum.test.cpp
+  - tests/yosupo/shortest_path.test.cpp
+  - tests/yosupo/point_add_range_sum.test.cpp
+  - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/lca.test.cpp
-  - tests/yukicoder/599.test.cpp
-  - tests/aoj/dijkstra.test.cpp
-  - tests/aoj/DSL_2_A.test.cpp
-  - tests/aoj/DSL_1_B.test.cpp
+  - tests/yosupo/unionfind.test.cpp
+  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/GRL_2_A.test.cpp
   - tests/aoj/DSL_2_B.test.cpp
   - tests/aoj/DSL_2_B_2.test.cpp
-  - tests/aoj/GRL_5_C.test.cpp
+  - tests/aoj/dijkstra.test.cpp
   - tests/aoj/ALDS1_5_D.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
+  - tests/aoj/DSL_2_A.test.cpp
+  - tests/aoj/DSL_1_B.test.cpp
+  - tests/yukicoder/599.test.cpp
 documentation_of: template/template.hpp
 layout: document
 title: Template

@@ -68,7 +68,9 @@ data:
     inline void input(Head &head, Tail &...tail) {scan(head);input(tail...);}\n\n\
     template<typename T>\nstd::ostream &operator<<(std::ostream&os,const std::vector<T>&v){for(auto\
     \ it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?\" \":\"\"\
-    );}return os;}\ntemplate<typename T,typename U>\nstd::ostream &operator<<(std::ostream&os,const\
+    );}return os;}\ntemplate<typename T>\nstd::ostream &operator<<(std::ostream&os,const\
+    \ std::set<T>&v){for(auto it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?\"\
+    \ \":\"\");}return os;}\ntemplate<typename T,typename U>\nstd::ostream &operator<<(std::ostream&os,const\
     \ std::pair<T,U>&p){os<<p.first<<\" \"<<p.second;return os;}\ntemplate<class T>\n\
     inline void print(const T &t){std::cout<<t<<'\\n';}\ntemplate<class Head, class...\
     \ Tail>\ninline void print(const Head &head, const Tail &... tail){std::cout<<head<<'\
@@ -76,7 +78,7 @@ data:
     template<class T>\ninline void printl(const T &t){std::cout<<t<<'\\n';}\ntemplate\
     \ <class T>\ninline void printl(const std::vector<T> &a){for(const auto &v : a)\
     \ std::cout << v << '\\n';}\ntemplate<class Head, class... Tail>\ninline void\
-    \ printl(const Head &head, const Tail &... tail){std::cout<<head<<' ';print(tail...);}\n\
+    \ printl(const Head &head, const Tail &... tail){std::cout<<head<<'\\n';printl(tail...);}\n\
     inline void Yes(const bool b = true) { std::cout << (b ? \"Yes\\n\" : \"No\\n\"\
     ); }\ninline void No() { std::cout << \"No\\n\"; }\ninline void YES(const bool\
     \ b = true) { std::cout << (b ? \"YES\\n\" : \"NO\\n\"); }\ninline void NO() {\
@@ -85,15 +87,15 @@ data:
     \ Tail &... tail){std::cerr<<head<<' ';trace(tail...);}\n#ifdef ONLINE_JUDGE\n\
     #define debug(...) (void(0))\n#else\n#define debug(...) do{std::cerr<<'('<<#__VA_ARGS__<<\"\
     ) = (\";trace(__VA_ARGS__);}while(0)\n#endif\n#line 3 \"template/func.hpp\"\n\n\
-    template<class... T>\nconstexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
-    \ }\ntemplate<class... T>\nconstexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
+    template<class... T>\nconstexpr auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...});\
+    \ }\ntemplate<class... T>\nconstexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
     \ }\ntemplate<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return\
     \ true;}return false;}\ntemplate<typename T, typename U> bool chmax(T &a, U b)\
     \ {if (a<b) {a=b;return true;}return false;}\ntemplate<class T>\nstd::vector<std::vector<T>>\
     \ ROTATE(std::vector<std::vector<T>> X) {\n    if(X.size() == 0) return X;\n \
     \   std::vector<vector<T>> res(X[0].size(),std::vector<T>(X.size()));\n    rep(i,X.size())rep(j,X[0].size())res[j][X.size()-i-1]=X[i][j];\n\
-    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\nprivate:  \
-    \  \n    std::vector<T> data;\n    bool sorted = false;\npublic:\n    CumulativeSum(int\
+    \    return res;\n}\ntemplate<typename T>\nstruct CumulativeSum {\n  private:\
+    \    \n    std::vector<T> data;\n    bool sorted = false;\n  public:\n    CumulativeSum(int\
     \ n) : data(n + 1, 0) {}\n    CumulativeSum(const std::vector<T> &v) : data(v.size()\
     \ + 1, 0) {\n        for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);\n  \
     \  }\n    void add(int k, const T &val) { data[k + 1] += val; }\n    void build()\
@@ -109,10 +111,10 @@ data:
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
     \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/BinaryIndexedTree.hpp\"\
     \n/**\n * @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/BinaryIndexedTree.hpp\"\
-    \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\nprivate:\n    int n;\n \
-    \   std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
+    \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\n  private:\n    int n;\n\
+    \    std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
     \ {\n            res += data[x];\n            x -= x & -x;\n        }\n      \
-    \  return res;\n    }\npublic:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
+    \  return res;\n    }\n  public:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
     \ n) : n(n), data(n + 1, 0) {}\n    BinaryIndexedTree(const std::vector<T> &v)\
     \ : n(v.size()), data(v.size() + 1, 0) {\n        for(int i = 0; i < n; ++i) add(i,\
     \ v[i]);\n    }\n    void add(int x, T val) {\n        x++;\n        while(x <=\
@@ -137,7 +139,7 @@ data:
   isVerificationFile: true
   path: tests/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2023-12-03 11:28:57+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/point_add_range_sum_2.test.cpp

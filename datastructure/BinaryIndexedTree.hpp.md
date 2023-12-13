@@ -23,9 +23,9 @@ data:
     links: []
   bundledCode: "#line 2 \"datastructure/BinaryIndexedTree.hpp\"\n/**\n * @brief BinaryIndexedTree\n\
     **/\n#include <bits/stdc++.h>\n\ntemplate<typename T>\nstruct BinaryIndexedTree\
-    \ {\nprivate:\n    int n;\n    std::vector<T> data;\n    T sum(int x) {\n    \
-    \    T res = 0;\n        while(x) {\n            res += data[x];\n           \
-    \ x -= x & -x;\n        }\n        return res;\n    }\npublic:\n    BinaryIndexedTree()\
+    \ {\n  private:\n    int n;\n    std::vector<T> data;\n    T sum(int x) {\n  \
+    \      T res = 0;\n        while(x) {\n            res += data[x];\n         \
+    \   x -= x & -x;\n        }\n        return res;\n    }\n  public:\n    BinaryIndexedTree()\
     \ : n(0) {}\n    BinaryIndexedTree(int n) : n(n), data(n + 1, 0) {}\n    BinaryIndexedTree(const\
     \ std::vector<T> &v) : n(v.size()), data(v.size() + 1, 0) {\n        for(int i\
     \ = 0; i < n; ++i) add(i, v[i]);\n    }\n    void add(int x, T val) {\n      \
@@ -34,10 +34,10 @@ data:
     \ - sum(l);\n    }\n    T operator[](int x) const { return sum(x, x + 1); }\n\
     };\n"
   code: "#pragma once\n/**\n * @brief BinaryIndexedTree\n**/\n#include <bits/stdc++.h>\n\
-    \ntemplate<typename T>\nstruct BinaryIndexedTree {\nprivate:\n    int n;\n   \
-    \ std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
+    \ntemplate<typename T>\nstruct BinaryIndexedTree {\n  private:\n    int n;\n \
+    \   std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
     \ {\n            res += data[x];\n            x -= x & -x;\n        }\n      \
-    \  return res;\n    }\npublic:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
+    \  return res;\n    }\n  public:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
     \ n) : n(n), data(n + 1, 0) {}\n    BinaryIndexedTree(const std::vector<T> &v)\
     \ : n(v.size()), data(v.size() + 1, 0) {\n        for(int i = 0; i < n; ++i) add(i,\
     \ v[i]);\n    }\n    void add(int x, T val) {\n        x++;\n        while(x <=\
@@ -49,7 +49,7 @@ data:
   path: datastructure/BinaryIndexedTree.hpp
   requiredBy:
   - datastructure/InversionNumber.hpp
-  timestamp: '2023-11-24 19:27:47+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum_2.test.cpp

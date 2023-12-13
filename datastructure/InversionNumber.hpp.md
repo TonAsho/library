@@ -21,20 +21,20 @@ data:
   bundledCode: "#line 2 \"datastructure/InversionNumber.hpp\"\n/**\n * @brief Inversion\
     \ Number(\u8EE2\u5012\u6570)\n*/\n#include <bits/stdc++.h>\n#line 2 \"datastructure/BinaryIndexedTree.hpp\"\
     \n/**\n * @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/BinaryIndexedTree.hpp\"\
-    \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\nprivate:\n    int n;\n \
-    \   std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
+    \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\n  private:\n    int n;\n\
+    \    std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
     \ {\n            res += data[x];\n            x -= x & -x;\n        }\n      \
-    \  return res;\n    }\npublic:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
+    \  return res;\n    }\n  public:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
     \ n) : n(n), data(n + 1, 0) {}\n    BinaryIndexedTree(const std::vector<T> &v)\
     \ : n(v.size()), data(v.size() + 1, 0) {\n        for(int i = 0; i < n; ++i) add(i,\
     \ v[i]);\n    }\n    void add(int x, T val) {\n        x++;\n        while(x <=\
     \ n) {\n            data[x] += val;\n            x += x & -x;\n        }\n   \
     \ }\n    T sum(int l, int r) {\n        return sum(r) - sum(l);\n    }\n    T\
     \ operator[](int x) const { return sum(x, x + 1); }\n};\n#line 3 \"others/Compressor.hpp\"\
-    \n\ntemplate<typename T>\nstruct Compressor {\nprivate:\n    std::vector<T> data;\n\
-    \    bool sorted = false;\npublic:\n    Compressor(const std::vector<T> &v) :\
-    \ data(std::move(v)) {}\n    void build() {\n        assert(!sorted);\n      \
-    \  sorted = 1;\n        std::sort(data.begin(), data.end());\n        data.erase(std::unique(data.begin(),\
+    \n\ntemplate<typename T>\nstruct Compressor {\n  private:\n    std::vector<T>\
+    \ data;\n    bool sorted = false;\n  public:\n    Compressor(const std::vector<T>\
+    \ &v) : data(std::move(v)) {}\n    void build() {\n        assert(!sorted);\n\
+    \        sorted = 1;\n        std::sort(data.begin(), data.end());\n        data.erase(std::unique(data.begin(),\
     \ data.end()), data.end());\n    }\n    int get_index(const T &v) {\n        assert(sorted);\n\
     \        return int(std::lower_bound(data.begin(), data.end(), v) - data.begin());\n\
     \    }\n    void press(std::vector<T> &v) {\n        assert(sorted);\n       \
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: datastructure/InversionNumber.hpp
   requiredBy: []
-  timestamp: '2023-11-24 19:27:47+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/aoj/ALDS1_5_D.test.cpp

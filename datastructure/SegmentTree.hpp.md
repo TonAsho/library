@@ -38,9 +38,9 @@ data:
     \ LCM{\n        using value_type = T;\n        static T op(const T &x,const T\
     \ &y){ return lcm(x, y); }\n        static T id(){ return T(1); }\n    };\n}\n\
     #line 8 \"datastructure/SegmentTree.hpp\"\n\ntemplate<class M>\nstruct SegmentTree\
-    \ {\nprivate:\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
-    \ data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n    SegmentTree(int n,\
-    \ const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}\n    SegmentTree(const\
+    \ {\n  private:\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
+    \ data;\n  public:\n    SegmentTree() : SegmentTree(0) {}\n    SegmentTree(int\
+    \ n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}\n    SegmentTree(const\
     \ std::vector<T> &v) : n(v.size()), sz(1) {\n        while(sz < n) sz <<= 1;\n\
     \        data.resize(sz << 1, M::e());\n        for(int i = 0; i < n; ++i) data[sz\
     \ + i] = v[i];\n        for(int i = sz - 1; i >= 1; i--) data[i] = M::op(data[i\
@@ -69,9 +69,9 @@ data:
     \ sum);\n        } while((r & -r) != r);\n        return 0;\n    }\n};\n"
   code: "#pragma once\n/**\n * @brief SegmentTree\n**/\n#include <bits/stdc++.h>\n\
     \n#include \"others/Monoid.hpp\"\n\ntemplate<class M>\nstruct SegmentTree {\n\
-    private:\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
-    \ data;\npublic:\n    SegmentTree() : SegmentTree(0) {}\n    SegmentTree(int n,\
-    \ const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}\n    SegmentTree(const\
+    \  private:\n    using T = typename M::value_type;\n    int n, sz;\n    std::vector<T>\
+    \ data;\n  public:\n    SegmentTree() : SegmentTree(0) {}\n    SegmentTree(int\
+    \ n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}\n    SegmentTree(const\
     \ std::vector<T> &v) : n(v.size()), sz(1) {\n        while(sz < n) sz <<= 1;\n\
     \        data.resize(sz << 1, M::e());\n        for(int i = 0; i < n; ++i) data[sz\
     \ + i] = v[i];\n        for(int i = sz - 1; i >= 1; i--) data[i] = M::op(data[i\
@@ -103,12 +103,12 @@ data:
   isVerificationFile: false
   path: datastructure/SegmentTree.hpp
   requiredBy: []
-  timestamp: '2023-11-24 19:34:31+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp
-  - tests/aoj/DSL_2_A.test.cpp
   - tests/aoj/DSL_2_B.test.cpp
+  - tests/aoj/DSL_2_A.test.cpp
 documentation_of: datastructure/SegmentTree.hpp
 layout: document
 title: SegmentTree

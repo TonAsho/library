@@ -41,9 +41,9 @@ data:
     \ \"T must be integral\");\n    static_assert(std::is_unsigned<T>::value, \"T\
     \ must be unsgined\");\n    static_assert(mod>0, \"mod must be positive\");\n\
     \    static_assert(mod<=INF<T>, \"mod*2 must be less than or equal to T::max()\"\
-    );\n    private:\n    using large_t = typename uint_least<std::numeric_limits<T>::digits\
+    );\n  private:\n    using large_t = typename uint_least<std::numeric_limits<T>::digits\
     \ * 2>::type;\n    using signed_t = typename std::make_signed<T>::type;\n    T\
-    \ val;\n    public:\n    constexpr StaticModInt():val(0){}\n    template<typename\
+    \ val;\n  public:\n    constexpr StaticModInt():val(0){}\n    template<typename\
     \ U,typename std::enable_if<std::is_integral<U>::value&&std::is_unsigned<U>::value>::type*\
     \ =nullptr>\n    constexpr StaticModInt(U x):val(x%mod){}\n    template<typename\
     \ U,typename std::enable_if<std::is_integral<U>::value&&std::is_signed<U>::value>::type*\
@@ -96,9 +96,9 @@ data:
     \ \"T must be integral\");\n    static_assert(std::is_unsigned<T>::value, \"T\
     \ must be unsgined\");\n    static_assert(mod>0, \"mod must be positive\");\n\
     \    static_assert(mod<=INF<T>, \"mod*2 must be less than or equal to T::max()\"\
-    );\n    private:\n    using large_t = typename uint_least<std::numeric_limits<T>::digits\
+    );\n  private:\n    using large_t = typename uint_least<std::numeric_limits<T>::digits\
     \ * 2>::type;\n    using signed_t = typename std::make_signed<T>::type;\n    T\
-    \ val;\n    public:\n    constexpr StaticModInt():val(0){}\n    template<typename\
+    \ val;\n  public:\n    constexpr StaticModInt():val(0){}\n    template<typename\
     \ U,typename std::enable_if<std::is_integral<U>::value&&std::is_unsigned<U>::value>::type*\
     \ =nullptr>\n    constexpr StaticModInt(U x):val(x%mod){}\n    template<typename\
     \ U,typename std::enable_if<std::is_integral<U>::value&&std::is_signed<U>::value>::type*\
@@ -142,7 +142,7 @@ data:
   isVerificationFile: false
   path: math/modint.hpp
   requiredBy: []
-  timestamp: '2023-12-03 18:58:52+09:00'
+  timestamp: '2023-12-13 17:49:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yukicoder/599.test.cpp
