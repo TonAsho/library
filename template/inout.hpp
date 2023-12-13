@@ -21,6 +21,8 @@ inline void input(Head &head, Tail &...tail) {scan(head);input(tail...);}
 
 template<typename T>
 std::ostream &operator<<(std::ostream&os,const std::vector<T>&v){for(auto it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?" ":"");}return os;}
+template<typename T>
+std::ostream &operator<<(std::ostream&os,const std::set<T>&v){for(auto it=std::begin(v);it!=std::end(v);){os<<*it<<((++it)!=std::end(v)?" ":"");}return os;}
 template<typename T,typename U>
 std::ostream &operator<<(std::ostream&os,const std::pair<T,U>&p){os<<p.first<<" "<<p.second;return os;}
 template<class T>
@@ -34,7 +36,7 @@ inline void printl(const T &t){std::cout<<t<<'\n';}
 template <class T>
 inline void printl(const std::vector<T> &a){for(const auto &v : a) std::cout << v << '\n';}
 template<class Head, class... Tail>
-inline void printl(const Head &head, const Tail &... tail){std::cout<<head<<' ';print(tail...);}
+inline void printl(const Head &head, const Tail &... tail){std::cout<<head<<'\n';printl(tail...);}
 inline void Yes(const bool b = true) { std::cout << (b ? "Yes\n" : "No\n"); }
 inline void No() { std::cout << "No\n"; }
 inline void YES(const bool b = true) { std::cout << (b ? "YES\n" : "NO\n"); }

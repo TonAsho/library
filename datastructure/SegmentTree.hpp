@@ -8,11 +8,11 @@
 
 template<class M>
 struct SegmentTree {
-private:
+  private:
     using T = typename M::value_type;
     int n, sz;
     std::vector<T> data;
-public:
+  public:
     SegmentTree() : SegmentTree(0) {}
     SegmentTree(int n, const T &e = M::e()) : SegmentTree(std::vector<T>(n, e)) {}
     SegmentTree(const std::vector<T> &v) : n(v.size()), sz(1) {

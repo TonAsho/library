@@ -6,7 +6,7 @@
 
 template<typename T>
 struct BinaryIndexedTree {
-private:
+  private:
     int n;
     std::vector<T> data;
     T sum(int x) {
@@ -17,7 +17,7 @@ private:
         }
         return res;
     }
-public:
+  public:
     BinaryIndexedTree() : n(0) {}
     BinaryIndexedTree(int n) : n(n), data(n + 1, 0) {}
     BinaryIndexedTree(const std::vector<T> &v) : n(v.size()), data(v.size() + 1, 0) {

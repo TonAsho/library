@@ -2,9 +2,9 @@
 #include <bits/stdc++.h>
 
 template<class... T>
-constexpr auto my_max(T... a){ return max(initializer_list<common_type_t<T...>>{a...}); }
+constexpr auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...}); }
 template<class... T>
-constexpr auto my_min(T... a){ return min(initializer_list<common_type_t<T...>>{a...}); }
+constexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...}); }
 template<typename T, typename U> bool chmin(T &a, U b) {if (a>b) {a=b;return true;}return false;}
 template<typename T, typename U> bool chmax(T &a, U b) {if (a<b) {a=b;return true;}return false;}
 template<class T>
@@ -16,10 +16,10 @@ std::vector<std::vector<T>> ROTATE(std::vector<std::vector<T>> X) {
 }
 template<typename T>
 struct CumulativeSum {
-private:    
+  private:    
     std::vector<T> data;
     bool sorted = false;
-public:
+  public:
     CumulativeSum(int n) : data(n + 1, 0) {}
     CumulativeSum(const std::vector<T> &v) : data(v.size() + 1, 0) {
         for(int i = 0; i < (int)v.size(); i++) add(i, v[i]);

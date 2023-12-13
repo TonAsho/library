@@ -6,9 +6,9 @@
 
 template<class T>
 struct LCA : Graph<T> {
-    private:
-    vector<vector<int>> parent;
-    vector<int> depth; // dist from root
+  private:
+    std::vector<std::vector<int>> parent;
+    std::vector<int> depth; // dist from root
     void dfs(int v, int p, int d) {
         parent[0][v] = p;
         depth[v] = d;
@@ -16,7 +16,7 @@ struct LCA : Graph<T> {
             dfs(e.to, v, d + 1);
         }
     }
-    public:
+  public:
     using Graph<T>::g;
     LCA(int n) : Graph<T>(n) {} 
     void build(int root = 0) {

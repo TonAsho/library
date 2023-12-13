@@ -4,11 +4,11 @@
  * @brief UnionFind
 **/
 struct UnionFind {
-private :
+  private :
     int n, cnt;
     std::vector<int> ps, sz;
 
-public :
+  public :
     UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1) {
         for(int i = 0; i < n; ++i) ps[i] = i;
     }

@@ -5,7 +5,7 @@
  */
 
 struct RollingHash {
-private:
+  private:
     static const uint64_t mod = (1ull << 61ull) - 1;
     using uint128_t = __uint128_t;
     std::vector<uint64_t> power;
@@ -32,7 +32,7 @@ private:
             }
         }
     }
-public:
+  public:
     RollingHash(uint64_t base = generate_base()) : base(base), power{1} {}
     std::vector<uint64_t> build(const std::string &s) const {
         int sz = s.size();
@@ -57,5 +57,9 @@ public:
     }
     uint64_t all_hash(const std::vector<uint64_t> &s) {
         return s.back();
+    }
+    uint64_t combine(uint64_t h1, uint64_t h2, size_t h2len) {
+        expand(h2len);
+        return add(mul(h1, power[h2len]), h2);
     }
 };

@@ -3,10 +3,10 @@
 
 template<typename T>
 struct Compressor {
-private:
+  private:
     std::vector<T> data;
     bool sorted = false;
-public:
+  public:
     Compressor(const std::vector<T> &v) : data(std::move(v)) {}
     void build() {
         assert(!sorted);

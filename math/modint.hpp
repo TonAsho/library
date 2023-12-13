@@ -27,11 +27,11 @@ struct StaticModInt:internal::modint_base{
     static_assert(std::is_unsigned<T>::value, "T must be unsgined");
     static_assert(mod>0, "mod must be positive");
     static_assert(mod<=INF<T>, "mod*2 must be less than or equal to T::max()");
-    private:
+  private:
     using large_t = typename uint_least<std::numeric_limits<T>::digits * 2>::type;
     using signed_t = typename std::make_signed<T>::type;
     T val;
-    public:
+  public:
     constexpr StaticModInt():val(0){}
     template<typename U,typename std::enable_if<std::is_integral<U>::value&&std::is_unsigned<U>::value>::type* =nullptr>
     constexpr StaticModInt(U x):val(x%mod){}

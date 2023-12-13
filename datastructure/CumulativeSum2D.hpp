@@ -6,10 +6,10 @@
 
 template<typename T>
 struct CumulativeSum2D {
-private: 
+  private: 
     std::vector<std::vector<T>> data;
     bool sorted = false;
-public:
+  public:
     CumulativeSum2D(int H, int W) : data(H + 1, std::vector<T>(W + 1, 0)) {}
     void add(int h, int w, T val) {
         h++, w++;

@@ -4,12 +4,12 @@
 **/
 template <typename T>
 struct WeightedUnionFind{
-private :
+  private :
     int n, cnt;
     std::vector<int> ps, sz;
     std::vector<T> ws;
 
-public :
+  public :
     WeightedUnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1), ws(n,0) {
         for(int i = 0; i < n; ++i) ps[i] = i;
     }
