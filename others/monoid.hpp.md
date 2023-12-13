@@ -1,14 +1,26 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/segment-tree.hpp
+    title: SegmentTree
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/DSL_2_A.test.cpp
+    title: tests/aoj/DSL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/DSL_2_B.test.cpp
+    title: tests/aoj/DSL_2_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: tests/yosupo/point_add_range_sum.test.cpp
+    title: tests/yosupo/point_add_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"others/Monoid.hpp\"\n#include <bits/stdc++.h>\n\nnamespace\
+  bundledCode: "#line 2 \"others/monoid.hpp\"\n#include <bits/stdc++.h>\n\nnamespace\
     \ Monoid {\n    template<typename T>\n    struct Sum {\n        using value_type\
     \ = T;\n        static constexpr T op(const T &x, const T &y) { return x + y;\
     \ }\n        static constexpr T e() { return T(0); }\n    };\n    template<typename\
@@ -37,18 +49,22 @@ data:
     \ gcd(x, y); }\n        static T id() { return T(0); }\n    };\n    template<typename\
     \ T>\n    struct LCM{\n        using value_type = T;\n        static T op(const\
     \ T &x,const T &y){ return lcm(x, y); }\n        static T id(){ return T(1); }\n\
-    \    };\n}"
+    \    };\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: others/Monoid.hpp
-  requiredBy: []
-  timestamp: '2023-11-24 17:52:33+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: others/Monoid.hpp
+  path: others/monoid.hpp
+  requiredBy:
+  - datastructure/segment-tree.hpp
+  timestamp: '2023-12-13 18:22:51+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - tests/yosupo/point_add_range_sum.test.cpp
+  - tests/aoj/DSL_2_B.test.cpp
+  - tests/aoj/DSL_2_A.test.cpp
+documentation_of: others/monoid.hpp
 layout: document
 redirect_from:
-- /library/others/Monoid.hpp
-- /library/others/Monoid.hpp.html
-title: others/Monoid.hpp
+- /library/others/monoid.hpp
+- /library/others/monoid.hpp.html
+title: others/monoid.hpp
 ---

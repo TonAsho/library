@@ -1,14 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/inversion-number.hpp
+    title: "Inversion Number(\u8EE2\u5012\u6570)"
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/ALDS1_5_D.test.cpp
+    title: tests/aoj/ALDS1_5_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"others/Compressor.hpp\"\n#include <bits/stdc++.h>\n\ntemplate<typename\
+  bundledCode: "#line 2 \"others/compressor.hpp\"\n#include <bits/stdc++.h>\n\ntemplate<typename\
     \ T>\nstruct Compressor {\n  private:\n    std::vector<T> data;\n    bool sorted\
     \ = false;\n  public:\n    Compressor(const std::vector<T> &v) : data(std::move(v))\
     \ {}\n    void build() {\n        assert(!sorted);\n        sorted = 1;\n    \
@@ -33,18 +39,20 @@ data:
     \ &v) {\n        assert(sorted);\n        std::vector<int> res(v.size());\n  \
     \      for(int i = 0; i < (int)v.size(); ++i) res[i] = get_index(v[i]);\n    \
     \    return res;\n    }\n    int size() const {\n        return (int)data.size();\n\
-    \    }\n};"
+    \    }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: others/Compressor.hpp
-  requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: others/Compressor.hpp
+  path: others/compressor.hpp
+  requiredBy:
+  - datastructure/inversion-number.hpp
+  timestamp: '2023-12-13 18:22:41+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - tests/aoj/ALDS1_5_D.test.cpp
+documentation_of: others/compressor.hpp
 layout: document
 redirect_from:
-- /library/others/Compressor.hpp
-- /library/others/Compressor.hpp.html
-title: others/Compressor.hpp
+- /library/others/compressor.hpp
+- /library/others/compressor.hpp.html
+title: others/compressor.hpp
 ---

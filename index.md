@@ -9,10 +9,10 @@ data:
     - icon: ':warning:'
       path: datastructure/cumulative-sum-2d.hpp
       title: CumulativeSum2D
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/inversion-number.hpp
       title: "Inversion Number(\u8EE2\u5012\u6570)"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: datastructure/segment-tree.hpp
       title: SegmentTree
     - icon: ':heavy_check_mark:'
@@ -66,12 +66,12 @@ data:
       title: Prime Table
   - name: others
     pages:
-    - icon: ':warning:'
-      path: others/Compressor.hpp
-      title: others/Compressor.hpp
-    - icon: ':warning:'
-      path: others/Monoid.hpp
-      title: others/Monoid.hpp
+    - icon: ':heavy_check_mark:'
+      path: others/compressor.hpp
+      title: others/compressor.hpp
+    - icon: ':heavy_check_mark:'
+      path: others/monoid.hpp
+      title: others/monoid.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -97,16 +97,16 @@ data:
   verificationCategories:
   - name: tests/aoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/ALDS1_5_D.test.cpp
       title: tests/aoj/ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_1_B.test.cpp
       title: tests/aoj/DSL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_2_A.test.cpp
       title: tests/aoj/DSL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/aoj/DSL_2_B.test.cpp
       title: tests/aoj/DSL_2_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -126,7 +126,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: tests/yosupo/lca.test.cpp
       title: tests/yosupo/lca.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tests/yosupo/point_add_range_sum.test.cpp
       title: tests/yosupo/point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'

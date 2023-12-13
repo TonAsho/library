@@ -1,26 +1,53 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/binary-indexed-tree.hpp
+    title: BinaryIndexedTree
+  - icon: ':heavy_check_mark:'
+    path: others/compressor.hpp
+    title: others/compressor.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/ALDS1_5_D.test.cpp
+    title: tests/aoj/ALDS1_5_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Inversion Number(\u8EE2\u5012\u6570)"
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
-    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
-    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
-    \ File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: others/compressor.hpp:\
-    \ line -1: no such header\n"
+  bundledCode: "#line 2 \"datastructure/inversion-number.hpp\"\n/**\n * @brief Inversion\
+    \ Number(\u8EE2\u5012\u6570)\n*/\n#include <bits/stdc++.h>\n#line 2 \"datastructure/binary-indexed-tree.hpp\"\
+    \n/**\n * @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/binary-indexed-tree.hpp\"\
+    \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\n  private:\n    int n;\n\
+    \    std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
+    \ {\n            res += data[x];\n            x -= x & -x;\n        }\n      \
+    \  return res;\n    }\n  public:\n    BinaryIndexedTree() : n(0) {}\n    BinaryIndexedTree(int\
+    \ n) : n(n), data(n + 1, 0) {}\n    BinaryIndexedTree(const std::vector<T> &v)\
+    \ : n(v.size()), data(v.size() + 1, 0) {\n        for(int i = 0; i < n; ++i) add(i,\
+    \ v[i]);\n    }\n    void add(int x, T val) {\n        x++;\n        while(x <=\
+    \ n) {\n            data[x] += val;\n            x += x & -x;\n        }\n   \
+    \ }\n    T sum(int l, int r) {\n        return sum(r) - sum(l);\n    }\n    T\
+    \ operator[](int x) const { return sum(x, x + 1); }\n};\n#line 3 \"others/compressor.hpp\"\
+    \n\ntemplate<typename T>\nstruct Compressor {\n  private:\n    std::vector<T>\
+    \ data;\n    bool sorted = false;\n  public:\n    Compressor(const std::vector<T>\
+    \ &v) : data(std::move(v)) {}\n    void build() {\n        assert(!sorted);\n\
+    \        sorted = 1;\n        std::sort(data.begin(), data.end());\n        data.erase(std::unique(data.begin(),\
+    \ data.end()), data.end());\n    }\n    int get_index(const T &v) {\n        assert(sorted);\n\
+    \        return int(std::lower_bound(data.begin(), data.end(), v) - data.begin());\n\
+    \    }\n    void press(std::vector<T> &v) {\n        assert(sorted);\n       \
+    \ for(auto &i : v) i = get_index(i);\n    }\n    std::vector<int> pressed(const\
+    \ std::vector<T> &v) {\n        assert(sorted);\n        std::vector<int> res(v.size());\n\
+    \        for(int i = 0; i < (int)v.size(); ++i) res[i] = get_index(v[i]);\n  \
+    \      return res;\n    }\n    int size() const {\n        return (int)data.size();\n\
+    \    }\n};\n#line 8 \"datastructure/inversion-number.hpp\"\n\ntemplate<typename\
+    \ T>\nlong long inversion(std::vector<T> a) {\n    int n = a.size();\n    Compressor<int>\
+    \ c(a);\n    c.build();\n    std::vector<int> b = c.pressed(a);\n    long long\
+    \ res = 0;\n    BinaryIndexedTree<ll> bit(c.size());\n    for(int i = 0; i < n;\
+    \ ++i) {\n        res += i - bit.sum(0, b[i] + 1);\n        bit.add(b[i], 1);\n\
+    \    }\n    return res;\n}\n"
   code: "#pragma once\n/**\n * @brief Inversion Number(\u8EE2\u5012\u6570)\n*/\n#include\
     \ <bits/stdc++.h>\n#include \"binary-indexed-tree.hpp\"\n#include \"others/compressor.hpp\"\
     \n\ntemplate<typename T>\nlong long inversion(std::vector<T> a) {\n    int n =\
@@ -28,13 +55,16 @@ data:
     \ = c.pressed(a);\n    long long res = 0;\n    BinaryIndexedTree<ll> bit(c.size());\n\
     \    for(int i = 0; i < n; ++i) {\n        res += i - bit.sum(0, b[i] + 1);\n\
     \        bit.add(b[i], 1);\n    }\n    return res;\n}"
-  dependsOn: []
+  dependsOn:
+  - datastructure/binary-indexed-tree.hpp
+  - others/compressor.hpp
   isVerificationFile: false
   path: datastructure/inversion-number.hpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2023-12-13 18:22:41+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - tests/aoj/ALDS1_5_D.test.cpp
 documentation_of: datastructure/inversion-number.hpp
 layout: document
 redirect_from:

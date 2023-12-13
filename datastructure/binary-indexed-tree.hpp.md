@@ -1,8 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: datastructure/inversion-number.hpp
+    title: "Inversion Number(\u8EE2\u5012\u6570)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: tests/aoj/ALDS1_5_D.test.cpp
+    title: tests/aoj/ALDS1_5_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/aoj/DSL_2_B_2.test.cpp
     title: tests/aoj/DSL_2_B_2.test.cpp
@@ -41,12 +47,14 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: datastructure/binary-indexed-tree.hpp
-  requiredBy: []
+  requiredBy:
+  - datastructure/inversion-number.hpp
   timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/aoj/DSL_2_B_2.test.cpp
+  - tests/aoj/ALDS1_5_D.test.cpp
 documentation_of: datastructure/binary-indexed-tree.hpp
 layout: document
 redirect_from:
