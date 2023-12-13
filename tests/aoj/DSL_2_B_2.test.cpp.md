@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructure/BinaryIndexedTree.hpp
+    path: datastructure/binary-indexed-tree.hpp
     title: BinaryIndexedTree
   - icon: ':heavy_check_mark:'
     path: template/alias.hpp
@@ -108,8 +108,8 @@ data:
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
     }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/BinaryIndexedTree.hpp\"\
-    \n/**\n * @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/BinaryIndexedTree.hpp\"\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/binary-indexed-tree.hpp\"\
+    \n/**\n * @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/binary-indexed-tree.hpp\"\
     \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\n  private:\n    int n;\n\
     \    std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
     \ {\n            res += data[x];\n            x -= x & -x;\n        }\n      \
@@ -124,7 +124,7 @@ data:
     \ Q) {\n        INT(T, x, y);\n        if(T == 0) bit.add(x - 1, y);\n       \
     \ else print(bit.sum(x - 1, y));\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
-    \n#include \"template/template.hpp\"\n#include \"datastructure/BinaryIndexedTree.hpp\"\
+    \n#include \"template/template.hpp\"\n#include \"datastructure/binary-indexed-tree.hpp\"\
     \n\nvoid _main() {\n    INT(N, Q);\n    BinaryIndexedTree<ll> bit(N);\n    rep(qi,\
     \ Q) {\n        INT(T, x, y);\n        if(T == 0) bit.add(x - 1, y);\n       \
     \ else print(bit.sum(x - 1, y));\n    }\n}"
@@ -134,11 +134,11 @@ data:
   - template/alias.hpp
   - template/inout.hpp
   - template/func.hpp
-  - datastructure/BinaryIndexedTree.hpp
+  - datastructure/binary-indexed-tree.hpp
   isVerificationFile: true
   path: tests/aoj/DSL_2_B_2.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/DSL_2_B_2.test.cpp

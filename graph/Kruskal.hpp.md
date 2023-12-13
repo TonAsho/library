@@ -2,21 +2,18 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructure/UnionFind.hpp
+    path: datastructure/union-find.hpp
     title: UnionFind
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/GRL_2_A.test.cpp
-    title: tests/aoj/GRL_2_A.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     document_title: Kruskal
     links: []
   bundledCode: "#line 2 \"graph/Kruskal.hpp\"\n/**\n * @brief Kruskal\n */\n#line\
-    \ 2 \"datastructure/UnionFind.hpp\"\n#include <bits/stdc++.h>\n/**\n * @brief\
+    \ 2 \"datastructure/union-find.hpp\"\n#include <bits/stdc++.h>\n/**\n * @brief\
     \ UnionFind\n**/\nstruct UnionFind {\n  private :\n    int n, cnt;\n    std::vector<int>\
     \ ps, sz;\n\n  public :\n    UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1)\
     \ {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int\
@@ -41,7 +38,7 @@ data:
     \ : es) {\n            if(same(e.from, e.to)) continue;\n            unite(e.from,\
     \ e.to);\n            res += e.cost;\n            e.used = 1;\n        }\n   \
     \     return res;\n    }\n};\n"
-  code: "#pragma once\n/**\n * @brief Kruskal\n */\n#include \"datastructure/UnionFind.hpp\"\
+  code: "#pragma once\n/**\n * @brief Kruskal\n */\n#include \"datastructure/union-find.hpp\"\
     \n\ntemplate<class T>\nstruct Kruskal : UnionFind {\n    using UnionFind::UnionFind;\n\
     \    struct Edge {\n        int from, to;\n        T cost;\n        int used;\n\
     \        int idx;\n        Edge() = default;\n        Edge(int from, int to, T\
@@ -53,14 +50,13 @@ data:
     \ continue;\n            unite(e.from, e.to);\n            res += e.cost;\n  \
     \          e.used = 1;\n        }\n        return res;\n    }\n};"
   dependsOn:
-  - datastructure/UnionFind.hpp
+  - datastructure/union-find.hpp
   isVerificationFile: false
   path: graph/Kruskal.hpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - tests/aoj/GRL_2_A.test.cpp
+  timestamp: '2023-12-13 18:06:09+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: graph/Kruskal.hpp
 layout: document
 redirect_from:

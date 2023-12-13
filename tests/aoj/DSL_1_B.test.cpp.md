@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructure/WeightedUnionFind.hpp
+    path: datastructure/weighted-union-find.hpp
     title: WeightedUnionFind
   - icon: ':heavy_check_mark:'
     path: template/alias.hpp
@@ -108,7 +108,7 @@ data:
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
     }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/WeightedUnionFind.hpp\"\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/weighted-union-find.hpp\"\
     \n/**\n * @brief WeightedUnionFind\n**/\ntemplate <typename T>\nstruct WeightedUnionFind{\n\
     \  private :\n    int n, cnt;\n    std::vector<int> ps, sz;\n    std::vector<T>\
     \ ws;\n\n  public :\n    WeightedUnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1),\
@@ -133,7 +133,7 @@ data:
     \ w);\n        } else {\n            if(uni.same(x, y)) cout << uni.diff(x, y)\
     \ << '\\n';\n            else cout << \"?\\n\";\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\
-    \n#include \"template/template.hpp\"\n#include \"datastructure/WeightedUnionFind.hpp\"\
+    \n#include \"template/template.hpp\"\n#include \"datastructure/weighted-union-find.hpp\"\
     \n\nvoid _main() {\n    int N, Q;\n    cin >> N >> Q;\n    WeightedUnionFind<ll>\
     \ uni(N);\n    rep(qi, Q) {\n        int t, x, y, w;\n        cin >> t >> x >>\
     \ y;\n        if(t == 0) {\n            cin >> w;\n            uni.unite(x, y,\
@@ -145,11 +145,11 @@ data:
   - template/alias.hpp
   - template/inout.hpp
   - template/func.hpp
-  - datastructure/WeightedUnionFind.hpp
+  - datastructure/weighted-union-find.hpp
   isVerificationFile: true
   path: tests/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/DSL_1_B.test.cpp

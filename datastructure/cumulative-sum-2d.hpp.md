@@ -9,7 +9,7 @@ data:
   attributes:
     document_title: CumulativeSum2D
     links: []
-  bundledCode: "#line 2 \"datastructure/CumulativeSum2D.hpp\"\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 2 \"datastructure/cumulative-sum-2d.hpp\"\n#include <bits/stdc++.h>\n\
     /**\n * @brief CumulativeSum2D\n*/\n\ntemplate<typename T>\nstruct CumulativeSum2D\
     \ {\n  private: \n    std::vector<std::vector<T>> data;\n    bool sorted = false;\n\
     \  public:\n    CumulativeSum2D(int H, int W) : data(H + 1, std::vector<T>(W +\
@@ -33,15 +33,15 @@ data:
     \ + data[x1][y1]);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructure/CumulativeSum2D.hpp
+  path: datastructure/cumulative-sum-2d.hpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: datastructure/CumulativeSum2D.hpp
+documentation_of: datastructure/cumulative-sum-2d.hpp
 layout: document
 redirect_from:
-- /library/datastructure/CumulativeSum2D.hpp
-- /library/datastructure/CumulativeSum2D.hpp.html
+- /library/datastructure/cumulative-sum-2d.hpp
+- /library/datastructure/cumulative-sum-2d.hpp.html
 title: CumulativeSum2D
 ---

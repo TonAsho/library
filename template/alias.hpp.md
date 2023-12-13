@@ -10,23 +10,11 @@ data:
     title: Template
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: tests/aoj/ALDS1_5_D.test.cpp
-    title: tests/aoj/ALDS1_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
     path: tests/aoj/DSL_1_B.test.cpp
     title: tests/aoj/DSL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: tests/aoj/DSL_2_A.test.cpp
-    title: tests/aoj/DSL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/DSL_2_B.test.cpp
-    title: tests/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
     path: tests/aoj/DSL_2_B_2.test.cpp
     title: tests/aoj/DSL_2_B_2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/GRL_2_A.test.cpp
-    title: tests/aoj/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/aoj/GRL_5_C.test.cpp
     title: tests/aoj/GRL_5_C.test.cpp
@@ -36,9 +24,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/lca.test.cpp
     title: tests/yosupo/lca.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/yosupo/point_add_range_sum.test.cpp
-    title: tests/yosupo/point_add_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/point_add_range_sum_2.test.cpp
     title: tests/yosupo/point_add_range_sum_2.test.cpp
@@ -96,17 +81,12 @@ data:
   verifiedWith:
   - tests/yosupo/static_range_sum.test.cpp
   - tests/yosupo/shortest_path.test.cpp
-  - tests/yosupo/point_add_range_sum.test.cpp
   - tests/yosupo/point_add_range_sum_2.test.cpp
   - tests/yosupo/lca.test.cpp
   - tests/yosupo/unionfind.test.cpp
   - tests/aoj/GRL_5_C.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
-  - tests/aoj/DSL_2_B.test.cpp
   - tests/aoj/DSL_2_B_2.test.cpp
   - tests/aoj/dijkstra.test.cpp
-  - tests/aoj/ALDS1_5_D.test.cpp
-  - tests/aoj/DSL_2_A.test.cpp
   - tests/aoj/DSL_1_B.test.cpp
   - tests/yukicoder/599.test.cpp
 documentation_of: template/alias.hpp

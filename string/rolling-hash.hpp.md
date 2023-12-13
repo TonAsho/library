@@ -15,7 +15,7 @@ data:
   attributes:
     document_title: RollingHash
     links: []
-  bundledCode: "#line 2 \"string/RollingHash.hpp\"\n#include <bits/stdc++.h>\n/**\n\
+  bundledCode: "#line 2 \"string/rolling-hash.hpp\"\n#include <bits/stdc++.h>\n/**\n\
     \ * @brief RollingHash\n */\n\nstruct RollingHash {\n  private:\n    static const\
     \ uint64_t mod = (1ull << 61ull) - 1;\n    using uint128_t = __uint128_t;\n  \
     \  std::vector<uint64_t> power;\n    const uint64_t base;\n    static inline uint64_t\
@@ -71,17 +71,17 @@ data:
     \ power[h2len]), h2);\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: string/RollingHash.hpp
+  path: string/rolling-hash.hpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yukicoder/599.test.cpp
   - tests/yukicoder/430.test.cpp
-documentation_of: string/RollingHash.hpp
+documentation_of: string/rolling-hash.hpp
 layout: document
 redirect_from:
-- /library/string/RollingHash.hpp
-- /library/string/RollingHash.hpp.html
+- /library/string/rolling-hash.hpp
+- /library/string/rolling-hash.hpp.html
 title: RollingHash
 ---

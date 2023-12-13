@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':warning:'
     path: graph/Kruskal.hpp
     title: Kruskal
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/GRL_2_A.test.cpp
-    title: tests/aoj/GRL_2_A.test.cpp
   - icon: ':heavy_check_mark:'
     path: tests/yosupo/unionfind.test.cpp
     title: tests/yosupo/unionfind.test.cpp
@@ -18,7 +15,7 @@ data:
   attributes:
     document_title: UnionFind
     links: []
-  bundledCode: "#line 2 \"datastructure/UnionFind.hpp\"\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 2 \"datastructure/union-find.hpp\"\n#include <bits/stdc++.h>\n\
     /**\n * @brief UnionFind\n**/\nstruct UnionFind {\n  private :\n    int n, cnt;\n\
     \    std::vector<int> ps, sz;\n\n  public :\n    UnionFind(int n) : n(n), cnt(n),\
     \ ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n \
@@ -50,42 +47,17 @@ data:
     \  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: datastructure/UnionFind.hpp
+  path: datastructure/union-find.hpp
   requiredBy:
   - graph/Kruskal.hpp
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/unionfind.test.cpp
-  - tests/aoj/GRL_2_A.test.cpp
-documentation_of: datastructure/UnionFind.hpp
+documentation_of: datastructure/union-find.hpp
 layout: document
+redirect_from:
+- /library/datastructure/union-find.hpp
+- /library/datastructure/union-find.hpp.html
 title: UnionFind
 ---
-# 使い方
-### unite
-```c++
-int unite(int x, int y)
-```
-辺(x, y)を追加する.<br>
-新たな代表元を返す.<br>
-### same
-```c++
-bool same(int x, int y)
-```
-頂点x, yが連結かどうか返す.
-### leader
-```c++
-int leader(int x)
-```
-頂点xの属する連結成分の代表元を返す.
-### size
-```c++
-int size(int x)
-```
-頂点xの属する連結成分のサイズを返す.
-### groups
-```c++
-vector<vector<int>> groups()
-```
-グラフを連結成分に分け、それぞれの頂点集合を返す.

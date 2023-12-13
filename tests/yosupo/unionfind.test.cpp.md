@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: datastructure/UnionFind.hpp
+    path: datastructure/union-find.hpp
     title: UnionFind
   - icon: ':heavy_check_mark:'
     path: template/alias.hpp
@@ -108,7 +108,7 @@ data:
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
     }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 3 \"datastructure/UnionFind.hpp\"\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 3 \"datastructure/union-find.hpp\"\
     \n/**\n * @brief UnionFind\n**/\nstruct UnionFind {\n  private :\n    int n, cnt;\n\
     \    std::vector<int> ps, sz;\n\n  public :\n    UnionFind(int n) : n(n), cnt(n),\
     \ ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n \
@@ -127,7 +127,7 @@ data:
     \ int t, u, v;\n        cin >> t >> u >> v;\n        if(t == 0) uni.unite(u, v);\n\
     \        else cout << uni.same(u, v) << '\\n';\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n#include \"\
-    template/template.hpp\"\n#include \"datastructure/UnionFind.hpp\"\n\nvoid _main()\
+    template/template.hpp\"\n#include \"datastructure/union-find.hpp\"\n\nvoid _main()\
     \ {\n    int N, Q;\n    cin >> N >> Q;\n    UnionFind uni(N);\n    rep(qi, Q)\
     \ {\n        int t, u, v;\n        cin >> t >> u >> v;\n        if(t == 0) uni.unite(u,\
     \ v);\n        else cout << uni.same(u, v) << '\\n';\n    }\n}"
@@ -137,11 +137,11 @@ data:
   - template/alias.hpp
   - template/inout.hpp
   - template/func.hpp
-  - datastructure/UnionFind.hpp
+  - datastructure/union-find.hpp
   isVerificationFile: true
   path: tests/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/unionfind.test.cpp

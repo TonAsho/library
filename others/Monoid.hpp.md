@@ -1,23 +1,11 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: datastructure/SegmentTree.hpp
-    title: SegmentTree
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/DSL_2_A.test.cpp
-    title: tests/aoj/DSL_2_A.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/aoj/DSL_2_B.test.cpp
-    title: tests/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: tests/yosupo/point_add_range_sum.test.cpp
-    title: tests/yosupo/point_add_range_sum.test.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"others/Monoid.hpp\"\n#include <bits/stdc++.h>\n\nnamespace\
@@ -53,14 +41,10 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: others/Monoid.hpp
-  requiredBy:
-  - datastructure/SegmentTree.hpp
+  requiredBy: []
   timestamp: '2023-11-24 17:52:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - tests/yosupo/point_add_range_sum.test.cpp
-  - tests/aoj/DSL_2_B.test.cpp
-  - tests/aoj/DSL_2_A.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: others/Monoid.hpp
 layout: document
 redirect_from:
