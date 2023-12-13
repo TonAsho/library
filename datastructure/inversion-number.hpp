@@ -3,8 +3,8 @@
  * @brief Inversion Number(転倒数)
 */
 #include <bits/stdc++.h>
-#include "BinaryIndexedTree.hpp"
-#include "others/Compressor.hpp"
+#include "binary-indexed-tree.hpp"
+#include "others/compressor.hpp"
 
 template<typename T>
 long long inversion(std::vector<T> a) {

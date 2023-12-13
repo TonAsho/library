@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
 #include "template/template.hpp"
-#include "datastructure/WeightedUnionFind.hpp"
+#include "datastructure/weighted-union-find.hpp"
 
 void _main() {
     int N, Q;

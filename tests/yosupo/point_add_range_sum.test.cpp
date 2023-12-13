@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_add_range_sum"
 #include "template/template.hpp"
-#include "datastructure/SegmentTree.hpp"
+#include "datastructure/segment-tree.hpp"
 
 void _main() {
     INT(N, Q);

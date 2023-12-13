@@ -4,7 +4,7 @@
 **/
 #include <bits/stdc++.h>
 
-#include "others/Monoid.hpp"
+#include "others/monoid.hpp"
 
 template<class M>
 struct SegmentTree {

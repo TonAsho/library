@@ -1,6 +1,6 @@
 #define PROBLEM "https://yukicoder.me/problems/no/599"
 #include "template/template.hpp"
-#include "string/RollingHash.hpp"
+#include "string/rolling-hash.hpp"
 #include "math/modint.hpp"
 
 using mint = modint1000000007;

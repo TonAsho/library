@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 #include "template/template.hpp"
-#include "datastructure/BinaryIndexedTree.hpp"
+#include "datastructure/binary-indexed-tree.hpp"
 
 void _main() {
     INT(N, Q);

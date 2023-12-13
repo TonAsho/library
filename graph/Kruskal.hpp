@@ -2,7 +2,7 @@
 /**
  * @brief Kruskal
  */
-#include "datastructure/UnionFind.hpp"
+#include "datastructure/union-find.hpp"
 
 template<class T>
 struct Kruskal : UnionFind {
