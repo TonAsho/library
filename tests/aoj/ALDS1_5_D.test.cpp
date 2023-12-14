@@ -4,7 +4,6 @@
 
 void _main() {
     INT(N);
-    vi A(N);
-    input(A);
+    vi A(N); input(A);
     print(inversion(A));
 }
