@@ -158,10 +158,10 @@ data:
     \    BinaryIndexedTree<ll> bit(c.size());\n    for(int i = 0; i < n; ++i) {\n\
     \        res += i - bit.sum(0, b[i] + 1);\n        bit.add(b[i], 1);\n    }\n\
     \    return res;\n}\n#line 4 \"tests/aoj/ALDS1_5_D.test.cpp\"\n\nvoid _main()\
-    \ {\n    INT(N);\n    vi A(N);\n    input(A);\n    print(inversion(A));\n}\n"
+    \ {\n    INT(N);\n    vi A(N); input(A);\n    print(inversion(A));\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_D\"\
     \n#include \"template/template.hpp\"\n#include \"datastructure/inversion-number.hpp\"\
-    \n\nvoid _main() {\n    INT(N);\n    vi A(N);\n    input(A);\n    print(inversion(A));\n\
+    \n\nvoid _main() {\n    INT(N);\n    vi A(N); input(A);\n    print(inversion(A));\n\
     }"
   dependsOn:
   - template/template.hpp
@@ -175,7 +175,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2023-12-14 15:59:46+09:00'
+  timestamp: '2023-12-14 19:52:11+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/ALDS1_5_D.test.cpp
