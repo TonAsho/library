@@ -175,7 +175,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2023-12-14 19:52:11+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/ALDS1_5_D.test.cpp

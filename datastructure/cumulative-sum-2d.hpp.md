@@ -35,7 +35,7 @@ data:
   isVerificationFile: false
   path: datastructure/cumulative-sum-2d.hpp
   requiredBy: []
-  timestamp: '2023-12-13 18:06:09+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: datastructure/cumulative-sum-2d.hpp

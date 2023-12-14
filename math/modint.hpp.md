@@ -142,7 +142,7 @@ data:
   isVerificationFile: false
   path: math/modint.hpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yukicoder/599.test.cpp

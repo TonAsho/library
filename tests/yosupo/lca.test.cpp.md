@@ -174,7 +174,7 @@ data:
   isVerificationFile: true
   path: tests/yosupo/lca.test.cpp
   requiredBy: []
-  timestamp: '2023-12-14 15:59:46+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/lca.test.cpp

@@ -115,7 +115,7 @@ data:
   path: template/func.hpp
   requiredBy:
   - template/template.hpp
-  timestamp: '2023-12-14 15:59:46+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/static_range_sum.test.cpp

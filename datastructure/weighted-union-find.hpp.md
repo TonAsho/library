@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: datastructure/weighted-union-find.hpp
   requiredBy: []
-  timestamp: '2023-12-13 18:06:09+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/aoj/DSL_1_B.test.cpp

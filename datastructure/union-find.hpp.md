@@ -53,7 +53,7 @@ data:
   path: datastructure/union-find.hpp
   requiredBy:
   - graph/kruskal.hpp
-  timestamp: '2023-12-13 18:06:09+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/unionfind.test.cpp

@@ -72,7 +72,7 @@ data:
   path: others/monoid.hpp
   requiredBy:
   - datastructure/segment-tree.hpp
-  timestamp: '2023-12-14 15:11:54+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp

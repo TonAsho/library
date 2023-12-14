@@ -27,7 +27,7 @@ data:
   path: math/prime.hpp
   requiredBy:
   - math/prime-table.hpp
-  timestamp: '2023-11-12 13:41:13+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/prime.hpp

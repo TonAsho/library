@@ -49,7 +49,7 @@ data:
   path: datastructure/binary-indexed-tree.hpp
   requiredBy:
   - datastructure/inversion-number.hpp
-  timestamp: '2023-12-13 18:06:09+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum_2.test.cpp

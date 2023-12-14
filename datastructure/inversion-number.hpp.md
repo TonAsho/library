@@ -72,7 +72,7 @@ data:
   isVerificationFile: false
   path: datastructure/inversion-number.hpp
   requiredBy: []
-  timestamp: '2023-12-14 15:11:54+09:00'
+  timestamp: '2023-12-14 20:01:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/aoj/ALDS1_5_D.test.cpp
