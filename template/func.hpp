@@ -54,7 +54,7 @@ inline constexpr ll my_pow(ll a,ll b){
     }
     return res;
 }
-inline constexpr ll mod_pow(ll a,ll b,const ll&mod){
+inline constexpr ll mod_pow(ll a, ll b, const ll &mod){
     if(mod==1)return 0;
     a%=mod;
     ll res=1;
@@ -64,4 +64,14 @@ inline constexpr ll mod_pow(ll a,ll b,const ll&mod){
         b>>=1;
     }
     return res;
+}
+inline ll mod_inv(ll a, const ll &mod){
+    ll b=mod,x=1,u=0,t;
+    while(b){
+        t=a/b;
+        std::swap(a-=t*b,b);
+        std::swap(x-=t*u,u);
+    }
+    if(x<0)x+=mod;
+    return x;
 }
