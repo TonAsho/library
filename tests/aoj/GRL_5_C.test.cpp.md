@@ -109,41 +109,44 @@ data:
     \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
     \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
-    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    }\ninline constexpr ll mod_pow(ll a, ll b, const ll &mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"graph/lca.hpp\"\
-    \n/**\n * @brief LCA\n */\n#line 2 \"graph/graph-template.hpp\"\n\n/**\n * @brief\
-    \ Graph Template\n */\ntemplate< typename T = int >\nstruct Edge {\n    int from,\
-    \ to;\n    T cost;\n    int idx;\n    Edge() = default;\n    Edge(int from, int\
-    \ to, T cost = 1, int idx = -1) : from(from), to(to), cost(cost), idx(idx) {}\n\
-    \    operator int() const { return to; }\n    bool operator<(const Edge& o) const{return\
-    \ cost<o.cost;}\n};\ntemplate< typename T = int >\nstruct Graph {\n    vector<\
-    \ vector< Edge< T > > > g;\n    int es;\n    Graph() = default;\n    explicit\
-    \ Graph(int n) : g(n), es(0) {}\n    size_t size() const {\n        return g.size();\n\
-    \    }\n    void add_directed_edge(int from, int to, T cost = 1) {\n        g[from].emplace_back(from,\
-    \ to, cost, es++);\n    }\n    void add_edge(int from, int to, T cost = 1) {\n\
-    \        g[from].emplace_back(from, to, cost, es);\n        g[to].emplace_back(to,\
-    \ from, cost, es++);\n    }\n    void read(int M, int padding = -1, bool weighted\
-    \ = false, bool directed = false) {\n        for(int i = 0; i < M; i++) {\n  \
-    \      int a, b;\n        cin >> a >> b;\n        a += padding;\n        b +=\
-    \ padding;\n        T c = T(1);\n        if(weighted) cin >> c;\n        if(directed)\
-    \ add_directed_edge(a, b, c);\n        else add_edge(a, b, c);\n        }\n  \
-    \  }\n    inline vector< Edge< T > > &operator[](const int &k) {\n        return\
-    \ g[k];\n    }\n    inline const vector< Edge< T > > &operator[](const int &k)\
-    \ const {\n        return g[k];\n    }\n};\ntemplate< typename T = int >\nusing\
-    \ Edges = vector< Edge< T > >;\n#line 6 \"graph/lca.hpp\"\n\ntemplate<class T>\n\
-    struct LCA : Graph<T> {\n  private:\n    std::vector<std::vector<int>> parent;\n\
-    \    std::vector<int> depth; // dist from root\n    void dfs(int v, int p, int\
-    \ d) {\n        parent[0][v] = p;\n        depth[v] = d;\n        for(auto e :\
-    \ g[v]) if(e.to != p) {\n            dfs(e.to, v, d + 1);\n        }\n    }\n\
-    \  public:\n    using Graph<T>::g;\n    LCA(int n) : Graph<T>(n) {} \n    void\
-    \ build(int root = 0) {\n        int V = g.size();\n        int K = 1;\n     \
-    \   while((1 << K) < V) K++;\n        parent.assign(K, vector<int>(V, -1));\n\
-    \        depth.assign(V, -1);\n        dfs(root, -1, 0);\n        rep(i, K - 1)\
-    \ rep(j, V) {\n            if(parent[i][j] < 0) {\n                parent[i +\
-    \ 1][j] = -1;\n            } else {\n                parent[i + 1][j] = parent[i][parent[i][j]];\n\
-    \            }\n        }\n    }\n    int lca(int u, int v) {\n        if(depth[u]\
-    \ < depth[v]) swap(u, v);\n        int K = parent.size();\n        rep(i, K) if(depth[u]-depth[v]\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\ninline ll mod_inv(ll\
+    \ a, const ll &mod){\n    ll b=mod,x=1,u=0,t;\n    while(b){\n        t=a/b;\n\
+    \        std::swap(a-=t*b,b);\n        std::swap(x-=t*u,u);\n    }\n    if(x<0)x+=mod;\n\
+    \    return x;\n}\n#line 2 \"graph/lca.hpp\"\n/**\n * @brief LCA\n */\n#line 2\
+    \ \"graph/graph-template.hpp\"\n\n/**\n * @brief Graph Template\n */\ntemplate<\
+    \ typename T = int >\nstruct Edge {\n    int from, to;\n    T cost;\n    int idx;\n\
+    \    Edge() = default;\n    Edge(int from, int to, T cost = 1, int idx = -1) :\
+    \ from(from), to(to), cost(cost), idx(idx) {}\n    operator int() const { return\
+    \ to; }\n    bool operator<(const Edge& o) const{return cost<o.cost;}\n};\ntemplate<\
+    \ typename T = int >\nstruct Graph {\n    vector< vector< Edge< T > > > g;\n \
+    \   int es;\n    Graph() = default;\n    explicit Graph(int n) : g(n), es(0) {}\n\
+    \    size_t size() const {\n        return g.size();\n    }\n    void add_directed_edge(int\
+    \ from, int to, T cost = 1) {\n        g[from].emplace_back(from, to, cost, es++);\n\
+    \    }\n    void add_edge(int from, int to, T cost = 1) {\n        g[from].emplace_back(from,\
+    \ to, cost, es);\n        g[to].emplace_back(to, from, cost, es++);\n    }\n \
+    \   void read(int M, int padding = -1, bool weighted = false, bool directed =\
+    \ false) {\n        for(int i = 0; i < M; i++) {\n        int a, b;\n        cin\
+    \ >> a >> b;\n        a += padding;\n        b += padding;\n        T c = T(1);\n\
+    \        if(weighted) cin >> c;\n        if(directed) add_directed_edge(a, b,\
+    \ c);\n        else add_edge(a, b, c);\n        }\n    }\n    inline vector< Edge<\
+    \ T > > &operator[](const int &k) {\n        return g[k];\n    }\n    inline const\
+    \ vector< Edge< T > > &operator[](const int &k) const {\n        return g[k];\n\
+    \    }\n};\ntemplate< typename T = int >\nusing Edges = vector< Edge< T > >;\n\
+    #line 6 \"graph/lca.hpp\"\n\ntemplate<class T>\nstruct LCA : Graph<T> {\n  private:\n\
+    \    std::vector<std::vector<int>> parent;\n    std::vector<int> depth; // dist\
+    \ from root\n    void dfs(int v, int p, int d) {\n        parent[0][v] = p;\n\
+    \        depth[v] = d;\n        for(auto e : g[v]) if(e.to != p) {\n         \
+    \   dfs(e.to, v, d + 1);\n        }\n    }\n  public:\n    using Graph<T>::g;\n\
+    \    LCA(int n) : Graph<T>(n) {} \n    void build(int root = 0) {\n        int\
+    \ V = g.size();\n        int K = 1;\n        while((1 << K) < V) K++;\n      \
+    \  parent.assign(K, vector<int>(V, -1));\n        depth.assign(V, -1);\n     \
+    \   dfs(root, -1, 0);\n        rep(i, K - 1) rep(j, V) {\n            if(parent[i][j]\
+    \ < 0) {\n                parent[i + 1][j] = -1;\n            } else {\n     \
+    \           parent[i + 1][j] = parent[i][parent[i][j]];\n            }\n     \
+    \   }\n    }\n    int lca(int u, int v) {\n        if(depth[u] < depth[v]) swap(u,\
+    \ v);\n        int K = parent.size();\n        rep(i, K) if(depth[u]-depth[v]\
     \ & 1 << i) u = parent[i][u];\n        if(u == v) return u;\n        for(int i\
     \ = K - 1; i >= 0; i--) {\n            if(parent[i][u] != parent[i][v]) {\n  \
     \              u = parent[i][u];\n                v = parent[i][v];\n        \
@@ -174,7 +177,7 @@ data:
   isVerificationFile: true
   path: tests/aoj/GRL_5_C.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-14 15:59:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/aoj/GRL_5_C.test.cpp

@@ -77,9 +77,12 @@ data:
     \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
     \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
-    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    }\ninline constexpr ll mod_pow(ll a, ll b, const ll &mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n"
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\ninline ll mod_inv(ll\
+    \ a, const ll &mod){\n    ll b=mod,x=1,u=0,t;\n    while(b){\n        t=a/b;\n\
+    \        std::swap(a-=t*b,b);\n        std::swap(x-=t*u,u);\n    }\n    if(x<0)x+=mod;\n\
+    \    return x;\n}\n"
   code: "#pragma once\n#include <bits/stdc++.h>\n\ntemplate<class... T>\nconstexpr\
     \ auto max(T... a){ return max(initializer_list<common_type_t<T...>>{a...}); }\n\
     template<class... T>\nconstexpr auto min(T... a){ return min(initializer_list<common_type_t<T...>>{a...});\
@@ -101,15 +104,18 @@ data:
     \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
     \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
-    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    }\ninline constexpr ll mod_pow(ll a, ll b, const ll &mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}"
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\ninline ll mod_inv(ll\
+    \ a, const ll &mod){\n    ll b=mod,x=1,u=0,t;\n    while(b){\n        t=a/b;\n\
+    \        std::swap(a-=t*b,b);\n        std::swap(x-=t*u,u);\n    }\n    if(x<0)x+=mod;\n\
+    \    return x;\n}"
   dependsOn: []
   isVerificationFile: false
   path: template/func.hpp
   requiredBy:
   - template/template.hpp
-  timestamp: '2023-12-13 17:49:19+09:00'
+  timestamp: '2023-12-14 15:59:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/static_range_sum.test.cpp

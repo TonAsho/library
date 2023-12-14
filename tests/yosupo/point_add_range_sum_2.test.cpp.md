@@ -107,10 +107,13 @@ data:
     \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
     \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
-    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    }\ninline constexpr ll mod_pow(ll a, ll b, const ll &mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/binary-indexed-tree.hpp\"\
-    \n/**\n * @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/binary-indexed-tree.hpp\"\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\ninline ll mod_inv(ll\
+    \ a, const ll &mod){\n    ll b=mod,x=1,u=0,t;\n    while(b){\n        t=a/b;\n\
+    \        std::swap(a-=t*b,b);\n        std::swap(x-=t*u,u);\n    }\n    if(x<0)x+=mod;\n\
+    \    return x;\n}\n#line 2 \"datastructure/binary-indexed-tree.hpp\"\n/**\n *\
+    \ @brief BinaryIndexedTree\n**/\n#line 6 \"datastructure/binary-indexed-tree.hpp\"\
     \n\ntemplate<typename T>\nstruct BinaryIndexedTree {\n  private:\n    int n;\n\
     \    std::vector<T> data;\n    T sum(int x) {\n        T res = 0;\n        while(x)\
     \ {\n            res += data[x];\n            x -= x & -x;\n        }\n      \
@@ -139,7 +142,7 @@ data:
   isVerificationFile: true
   path: tests/yosupo/point_add_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 18:06:09+09:00'
+  timestamp: '2023-12-14 15:59:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/point_add_range_sum_2.test.cpp

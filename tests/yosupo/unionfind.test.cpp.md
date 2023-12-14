@@ -106,20 +106,23 @@ data:
     \    for(ll i=2;i*i<=n;i++){\n        if(n%i==0)return false;\n    }\n    return\
     \ true;\n}\ninline constexpr ll my_pow(ll a,ll b){\n    ll res=1;\n    while(b){\n\
     \        if(b&1)res*=a;\n        a*=a;\n        b>>=1;\n    }\n    return res;\n\
-    }\ninline constexpr ll mod_pow(ll a,ll b,const ll&mod){\n    if(mod==1)return\
+    }\ninline constexpr ll mod_pow(ll a, ll b, const ll &mod){\n    if(mod==1)return\
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
-    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 3 \"datastructure/union-find.hpp\"\
-    \n/**\n * @brief UnionFind\n**/\nstruct UnionFind {\n  private :\n    int n, cnt;\n\
-    \    std::vector<int> ps, sz;\n\n  public :\n    UnionFind(int n) : n(n), cnt(n),\
-    \ ps(n,0), sz(n,1) {\n        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n \
-    \   int leader(int x) {\n        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n\
-    \    }\n    bool same(int x, int y) {\n        return leader(x) == leader(y);\n\
-    \    }\n    int unite(int x, int y) {\n        x = leader(x); y = leader(y);\n\
-    \        if(x == y) return x;\n        if(sz[x] < sz[y]) swap(x, y);\n       \
-    \ sz[x] += sz[y];\n        ps[y] = x;\n        cnt--;\n        return x;\n   \
-    \ }\n    int size(int x) {\n        return sz[leader(x)];\n    }\n    std::vector<std::vector<int>>\
-    \ groups() {\n        std::vector<std::vector<int>> res(n);\n        for(int i\
-    \ = 0; i < n; ++i) res[leader(i)].push_back(i);\n        res.erase(std::remove_if(res.begin(),\
+    \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\ninline ll mod_inv(ll\
+    \ a, const ll &mod){\n    ll b=mod,x=1,u=0,t;\n    while(b){\n        t=a/b;\n\
+    \        std::swap(a-=t*b,b);\n        std::swap(x-=t*u,u);\n    }\n    if(x<0)x+=mod;\n\
+    \    return x;\n}\n#line 3 \"datastructure/union-find.hpp\"\n/**\n * @brief UnionFind\n\
+    **/\nstruct UnionFind {\n  private :\n    int n, cnt;\n    std::vector<int> ps,\
+    \ sz;\n\n  public :\n    UnionFind(int n) : n(n), cnt(n), ps(n,0), sz(n,1) {\n\
+    \        for(int i = 0; i < n; ++i) ps[i] = i;\n    }\n    int leader(int x) {\n\
+    \        return (ps[x] == x ? x : ps[x] = leader(ps[x]));\n    }\n    bool same(int\
+    \ x, int y) {\n        return leader(x) == leader(y);\n    }\n    int unite(int\
+    \ x, int y) {\n        x = leader(x); y = leader(y);\n        if(x == y) return\
+    \ x;\n        if(sz[x] < sz[y]) swap(x, y);\n        sz[x] += sz[y];\n       \
+    \ ps[y] = x;\n        cnt--;\n        return x;\n    }\n    int size(int x) {\n\
+    \        return sz[leader(x)];\n    }\n    std::vector<std::vector<int>> groups()\
+    \ {\n        std::vector<std::vector<int>> res(n);\n        for(int i = 0; i <\
+    \ n; ++i) res[leader(i)].push_back(i);\n        res.erase(std::remove_if(res.begin(),\
     \ res.end(), [&](const std::vector<int>& v) {return v.empty();}), res.end());\n\
     \        return res;\n    }\n    int count() const {\n        return cnt;\n  \
     \  }\n};\n#line 4 \"tests/yosupo/unionfind.test.cpp\"\n\nvoid _main() {\n    int\
@@ -141,7 +144,7 @@ data:
   isVerificationFile: true
   path: tests/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 18:06:09+09:00'
+  timestamp: '2023-12-14 15:59:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/unionfind.test.cpp
