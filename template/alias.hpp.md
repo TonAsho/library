@@ -3,8 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: datastructure/segment-tree.hpp
+    title: SegmentTree
+  - icon: ':heavy_check_mark:'
     path: math/modint.hpp
     title: ModInt
+  - icon: ':heavy_check_mark:'
+    path: others/monoid.hpp
+    title: others/monoid.hpp
   - icon: ':heavy_check_mark:'
     path: template/template.hpp
     title: Template
@@ -90,7 +96,9 @@ data:
   path: template/alias.hpp
   requiredBy:
   - math/modint.hpp
+  - datastructure/segment-tree.hpp
   - template/template.hpp
+  - others/monoid.hpp
   timestamp: '2023-11-24 17:52:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

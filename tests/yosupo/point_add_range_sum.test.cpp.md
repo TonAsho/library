@@ -114,7 +114,7 @@ data:
     \ 0;\n    a%=mod;\n    ll res=1;\n    while(b){\n        if(b&1)(res*=a)%=mod;\n\
     \        (a*=a)%=mod;\n        b>>=1;\n    }\n    return res;\n}\n#line 2 \"datastructure/segment-tree.hpp\"\
     \n/**\n * @brief SegmentTree\n**/\n#line 6 \"datastructure/segment-tree.hpp\"\n\
-    \n#line 3 \"others/monoid.hpp\"\n\nnamespace Monoid {\n    template<typename T>\n\
+    \n#line 4 \"others/monoid.hpp\"\n\nnamespace Monoid {\n    template<typename T>\n\
     \    struct Sum {\n        using value_type = T;\n        static constexpr T op(const\
     \ T &x, const T &y) { return x + y; }\n        static constexpr T e() { return\
     \ T(0); }\n    };\n    template<typename T, T max_value = infinity<T>::value>\n\
@@ -178,7 +178,7 @@ data:
   isVerificationFile: true
   path: tests/yosupo/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2023-12-13 18:22:51+09:00'
+  timestamp: '2023-12-14 15:11:54+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: tests/yosupo/point_add_range_sum.test.cpp
