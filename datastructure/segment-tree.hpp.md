@@ -124,8 +124,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum.test.cpp
-  - tests/aoj/DSL_2_B.test.cpp
   - tests/aoj/DSL_2_A.test.cpp
+  - tests/aoj/DSL_2_B.test.cpp
 documentation_of: datastructure/segment-tree.hpp
 layout: document
 redirect_from:

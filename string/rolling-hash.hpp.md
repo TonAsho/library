@@ -76,8 +76,8 @@ data:
   timestamp: '2023-12-13 18:06:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - tests/yukicoder/599.test.cpp
   - tests/yukicoder/430.test.cpp
+  - tests/yukicoder/599.test.cpp
 documentation_of: string/rolling-hash.hpp
 layout: document
 redirect_from:

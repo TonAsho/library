@@ -53,8 +53,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - tests/yosupo/point_add_range_sum_2.test.cpp
-  - tests/aoj/DSL_2_B_2.test.cpp
   - tests/aoj/ALDS1_5_D.test.cpp
+  - tests/aoj/DSL_2_B_2.test.cpp
 documentation_of: datastructure/binary-indexed-tree.hpp
 layout: document
 redirect_from:

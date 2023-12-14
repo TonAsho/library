@@ -76,9 +76,9 @@ data:
   isVerificationFile: false
   path: graph/graph-template.hpp
   requiredBy:
-  - graph/bellman-ford.hpp
-  - graph/lca.hpp
   - graph/topo_sort.hpp
+  - graph/lca.hpp
+  - graph/bellman-ford.hpp
   - graph/dijkstra.hpp
   timestamp: '2023-12-03 11:28:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
