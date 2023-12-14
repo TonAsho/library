@@ -1,5 +1,6 @@
 #pragma once
 #include <bits/stdc++.h>
+#include "template/alias.hpp"
 
 namespace Monoid {
     template<typename T>
